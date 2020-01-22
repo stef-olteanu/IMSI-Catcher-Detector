@@ -1,0 +1,18 @@
+@startuml
+
+
+
+Telefon -> ImsiCatcher: Cerere autentificare
+ImsiCatcher -> Telefon: Cerere cod IMSI
+
+Telefon -> ImsiCatcher: Trimitere cod
+ImsiCatcher -> Telefon: Localizare Telefon
+
+
+Utilizator -> Telefon: Incepe Verificare Celula
+Telefon -> ImsiCatcher: Verificare parametri
+
+Telefon -> Utilizator: Trimite raspuns catre utilizator
+
+
+@enduml

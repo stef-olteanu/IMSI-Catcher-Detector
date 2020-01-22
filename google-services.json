@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "311586006840",
+    "firebase_url": "https://imsi-catcher-detector.firebaseio.com",
+    "project_id": "imsi-catcher-detector",
+    "storage_bucket": "imsi-catcher-detector.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:311586006840:android:17a94cabb85902322003cd",
+        "android_client_info": {
+          "package_name": "com.example.licentav00"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "311586006840-a9sv6e95et8laqc8anip3m89e5b1450q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFTN1QvDdlF1yoBffbd3xbYkK5VZpKBHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "311586006840-a9sv6e95et8laqc8anip3m89e5b1450q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

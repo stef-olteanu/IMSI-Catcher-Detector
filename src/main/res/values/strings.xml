@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Licenta v0.0</string>
+    <string name="google_maps_key">AIzaSyAkwZKg7l5WjZsV0pNYT16KJOw7ZU5DreA</string>
+    <string name="alert">In apropiere de locatia dvs. se afla un IMSI CATCHER. Va rugam verificati celula la care sunteti conectat!</string>
+    <string name="checkerAdviceTitle">A se citi inainte de folosire!</string>
+    <string name="checkerAdviceSubtitle">Click pe text sau pe imagine</string>
+    <string name="startCheckingActivity">Incepe verificarea celulei</string>
+    <string name="checkerAdvice1">1.Pe durata testului trebuie sa va asigurati ca telefonul ramane nemiscat. Daca miscati telefonul, testul nu va da rezultate corecte.</string>
+    <string-array name="cellTypes">
+        <item>GoodCells</item>
+        <item>WarningCells</item>
+        <item>AlertCells</item>
+    </string-array>
+</resources>
