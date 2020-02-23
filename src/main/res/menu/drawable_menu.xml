@@ -7,32 +7,32 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home"
-            android:title="Acasa"></item>
+            android:title="@string/HOME"></item>
 
         <item
             android:id="@+id/nav_verify"
-            android:title="Verifica celula curenta"
+            android:title="@string/VERIFY"
             android:icon="@drawable/ic_verify"/>
 
         <item
             android:id="@+id/nav_sim_details"
-            android:title="Detalii telefon/ SIM"
+            android:title="@string/SIMDETAILS"
             android:icon="@drawable/ic_sim"/>
 
         <item android:id="@+id/nav_cell_info"
-            android:title="Informatii celula curenta"
+            android:title="@string/CELLINFODETAILS"
             android:icon="@drawable/ic_call_made_black_24dp"/>
 
         <item android:id="@+id/nav_map"
-            android:title="Vizualizare harta celule"
+            android:title="@string/SEECELLMAP"
             android:icon="@drawable/ic_map"/>
     </group>
 
-    <item android:title="Alte detalii">
+    <item android:title="@string/ANOTHERDETAILS">
         <menu>
             <item
                 android:id="@+id/nav_tutorial"
-                android:title="Cum se utilizeaza aplicatia?"
+                android:title="@string/InfOpt"
                 android:icon="@drawable/ic_tutorial"/>
         </menu>
     </item>
