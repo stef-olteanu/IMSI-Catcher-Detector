@@ -45,6 +45,11 @@
     <string name="NETWORKINFO">Informatii despre retea</string>
     <string name="SIMINFO">Informatii despre cartela SIM</string>
     <string name="DEVICEINFO">Informatii despre dispozitiv</string>
+    <string name="OPTIONS">Optiuni</string>
+    <string name="LANG">Limba:</string>
+    <string name="DarkMode">Mod intunecat: </string>
+    <string name="ROMANIAN">Romana</string>
+    <string name="ENGLISH">Engleza</string>
     <string name="alert">In apropiere de locatia dvs. se afla un IMSI CATCHER. Va rugam verificati celula la care sunteti conectat!</string>
     <string name="checkerAdviceTitle">A se citi inainte de folosire!</string>
     <string name="checkerAdviceSubtitle">Click pe text sau pe imagine</string>

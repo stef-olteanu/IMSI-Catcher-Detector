@@ -30,7 +30,7 @@
     <string name="TITLE">IMSI Catcher Detector</string>
     <string name="APPSCOPE">The application which detects false base stations.</string>
     <string name="APPDESCRIPTOR">Application which detects false base stations in GSM Networks.</string>
-    <string name="GREENDESCRIPT">The base station in safe!</string>
+    <string name="GREENDESCRIPT">The base statios in safe!</string>
     <string name="ORANGEDESCRIPT">Investigation is necessary for the base station!</string>
     <string name="REDDESCRIPT">The base station is false!</string>
     <string name="GIT">GITHUB LINK</string>
@@ -61,7 +61,7 @@
     <string name="CELLINFODETAILS">Current Cell Info</string>
     <string name="SEECELLMAP">Cell Map</string>
     <string name="ANOTHERDETAILS">Other details</string>
-    <string name="InfOpt">Options and info</string>
+    <string name="InfOpt">Option and info</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

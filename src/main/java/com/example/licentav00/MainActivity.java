@@ -11,6 +11,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -40,6 +41,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GlobalMainContext.getInstance(MainActivity.this);
+        SharedPreferences sharedPreferences = getPreferences(MainActivity.this.MODE_PRIVATE);
+        String lang = sharedPreferences.getString("Language","ro");
+        GlobalMainContext.setAppLocale(lang);
+
+
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
 
@@ -125,6 +131,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case R.id.nav_verify:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentCellChecker()).commit();
+                        break;
+                    case R.id.nav_tutorial:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentOptions()).commit();
                         break;
 
                 }
