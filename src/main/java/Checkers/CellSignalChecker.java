@@ -68,8 +68,8 @@ public class CellSignalChecker {
      */
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public CheckerResponse checkSignalStrength(){
-        String rssiStatus = MConstants.TEST_PASSED;
-        String asuStatus = MConstants.TEST_PASSED;
+        String rssiStatus = MConstants.TEST_PASSED_RO;
+        String asuStatus = MConstants.TEST_PASSED_RO;
         String checkerStatus = MConstants.CHECKER_STATUS_COMPLETE;
         float currentTimeMilis = System.currentTimeMillis();
 
@@ -87,20 +87,20 @@ public class CellSignalChecker {
                 if (asuLevel < MIN_ASU_RANGE || asuLevel > MAX_ASU_RANGE)
                     checkerASU = false;
                 if (checkerRSSI) {
-                   rssiStatus = MConstants.TEST_PASSED;
+                   rssiStatus = MConstants.TEST_PASSED_RO;
                 } else {
-                    rssiStatus = MConstants.TEST_FAILED;
+                    rssiStatus = MConstants.TEST_FAILED_RO;
                     break;
                 }
                 if (checkerASU) {
-                    asuStatus = MConstants.TEST_PASSED;
+                    asuStatus = MConstants.TEST_PASSED_RO;
                 } else {
-                    asuStatus = MConstants.TEST_FAILED;
+                    asuStatus = MConstants.TEST_FAILED_RO;
                     break;
                 }
             }
         } else {
-            checkerStatus = MConstants.SIGNAL_CHECKER_STATUS_FAILED;
+            checkerStatus = MConstants.SIGNAL_CHECKER_STATUS_FAILED_RO;
         }
         return  new SignalCheckerResponse(checkerStatus, rssiStatus, asuStatus);
     }

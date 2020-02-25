@@ -3,16 +3,30 @@ package Utils;
 public class MConstants {
     //region Checker Constant Strings
     public static final String CHECKER_STATUS_COMPLETE = "Done completely";
-    public static final String SIGNAL_CHECKER_STATUS_FAILED = "Telefonul a fost mutat";
-    public static final String TEST_PASSED = "Testul a trecut";
-    public static final String TEST_FAILED = "Testul a picat";
+    public static final String SIGNAL_CHECKER_STATUS_FAILED_RO = "Telefonul a fost mutat";
+    public static final String SIGNAL_CHECKER_STATUS_FAILED_EN = "The device was moved";
+    public static final String TEST_PASSED_RO = "Testul a trecut";
+    public static final String TEST_PASSED_EN = "Test passed";
+    public static final String TEST_FAILED_RO = "Testul a picat";
+    public static final String TEST_FAILED_EN = "Test failed";
+    public static final String TEST_NEUTRAL_RO = "Neutru";
+    public static final String TEST_NEUTRAL_EN = "Neutral";
 
     //region Checking Signal
     public static final String SIGNAL_CHECKER = "sigcheck";
-    public static final String SIGNAL_CHECKING_TEXT = "Verificare putere semnal";
+    public static final String SIGNAL_CHECKING_TEXT_RO = "Verificare putere semnal";
+    public static final String SIGNAL_CHECKING_TEXT_EN = "Checking signal power";
     public static final int SIGNAL_CHECKING_TEXT_VIEW_ID = 9458654;
-    public static final int SINGAL_CHECKING_STATUS_ID1 = 1000000;
+    public static final int SIGNAL_CHECKING_STATUS_ID1 = 1000000;
     //endregion
+
+    //region Checking Public DB
+    public static final String PUBLIC_DB_CHECKER = "pbdbcheck";
+    public static final String PUBLIC_DB_CHECKING_TEXT_RO = "Verificare BD publica";
+    public static final String PUBLIC_DB_CHECKING_TEXT_EN ="Checking public DB";
+    public static final int PBDB_CHECKING_TEXT_VIEW_ID = 9458655;
+    public static final int PBDB_CHECKING_STATUS_ID1 = 1000001;
+    //enderegion
 
 
     public static final class TextViewParameters {
@@ -20,6 +34,17 @@ public class MConstants {
         public static final String BLACK_COLOR_ID = "#000000";
         public static final String GREEN_COLOR_ID = "#014a21";
         public static final String RED_COLOR_ID = "#a90000";
+    }
+
+    public static final class AppLanguages {
+        public static final String RO_LANG = "ro";
+        public static final String EN_LANG = "en";
+    }
+
+    public static final class Cell {
+        public static final String GOOD = "GOOD";
+        public static final String WARNING = "WARNING";
+        public static final String ALERT = "ALERT";
     }
 
     //endregion

@@ -16,6 +16,8 @@ import androidx.fragment.app.Fragment;
 
 import Utils.GlobalMainContext;
 
+import Utils.MConstants.*;
+
 public class FragmentOptions extends Fragment {
 
 
@@ -33,20 +35,20 @@ public class FragmentOptions extends Fragment {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                SharedPreferences sharedPreferences = getActivity().getPreferences(GlobalMainContext.getMainContext().MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AppLanguage",GlobalMainContext.getMainContext().MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 Intent refresh = new Intent(GlobalMainContext.getMainContext(), MainActivity.class);
-                String lang = sharedPreferences.getString("Language","ro");
+                String lang = sharedPreferences.getString("Language", AppLanguages.RO_LANG);
 
-                if(checkedId == R.id.radioRO && !lang.equals("ro")){
-                    GlobalMainContext.setAppLocale("ro");
-                    editor.putString("Language","ro");
+                if(checkedId == R.id.radioRO && !lang.equals(AppLanguages.RO_LANG)){
+                    GlobalMainContext.setAppLocale(AppLanguages.RO_LANG);
+                    editor.putString("Language", AppLanguages.RO_LANG);
                     startActivity(refresh);
                 }
 
-                if(checkedId == R.id.radioEN && !lang.equals("en")) {
-                    GlobalMainContext.setAppLocale("en");
-                    editor.putString("Language","en");
+                if(checkedId == R.id.radioEN && !lang.equals(AppLanguages.EN_LANG)) {
+                    GlobalMainContext.setAppLocale(AppLanguages.EN_LANG);
+                    editor.putString("Language", AppLanguages.EN_LANG);
                     startActivity(refresh);
                 }
 
@@ -56,13 +58,13 @@ public class FragmentOptions extends Fragment {
             }
         });
 
-        SharedPreferences sharedPreferences = getActivity().getPreferences(GlobalMainContext.getMainContext().MODE_PRIVATE);
-        String lang = sharedPreferences.getString("Language","ro");
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("AppLanguage",GlobalMainContext.getMainContext().MODE_PRIVATE);
+        String lang = sharedPreferences.getString("Language", AppLanguages.RO_LANG);
 
-        if(lang.equals("ro")) {
+        if(lang.equals(AppLanguages.RO_LANG)) {
             radioRO.setChecked(true);
         }
-        if(lang.equals("en")) {
+        if(lang.equals(AppLanguages.EN_LANG)) {
             radioEN.setChecked(true);
         }
 

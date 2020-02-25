@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import Listeners.CellLocationChangeListener;
 import Utils.GlobalMainContext;
+import Utils.MConstants;
 
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         GlobalMainContext.getInstance(MainActivity.this);
-        SharedPreferences sharedPreferences = getPreferences(MainActivity.this.MODE_PRIVATE);
-        String lang = sharedPreferences.getString("Language","ro");
+        SharedPreferences sharedPreferences = getSharedPreferences("AppLanguage",MainActivity.this.MODE_PRIVATE);
+        String lang = sharedPreferences.getString("Language", MConstants.AppLanguages.RO_LANG);
         GlobalMainContext.setAppLocale(lang);
 
 

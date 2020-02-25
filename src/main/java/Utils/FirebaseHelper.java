@@ -57,34 +57,52 @@ public class FirebaseHelper {
         dataToInsert.put("status", cellToInsert.getmCellStatus());
 
         if(cellToInsert.getmCellStatus() == "GOOD"){
-            DocumentReference cellReference = mDatabaseReference.collection("GoodCells").document(cellToInsert.GetCid());
+            //Daca exista celula in colectia WARNING se va sterge si va fi stearsa - pentru cazul in care s-a efectuat analiza si s-a stabilit ca celula este GOOD
+            DocumentReference cellReference = mDatabaseReference.collection("WarningCells").document(cellToInsert.GetCid());
             cellReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override
                 public void onSuccess(DocumentSnapshot documentSnapshot) {
-                    if(!documentSnapshot.exists()){
-                        mDatabaseReference.collection("GoodCells")
-                                .document(cellToInsert.GetCid())
-                                .set(dataToInsert)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.i("INFO: ", "Celula "  + cellToInsert.GetCid() +" a fost adaugata cu succes in baza de date");
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Log.i("INFO: ", "Adaugarea celulei "  + cellToInsert.GetCid() +" in baza de date nu a reusit" );
-                                    }
-                                });
-                    }else{
-                        Log.i("INFO: ", "Celula "  + cellToInsert.GetCid() +" exista deja in baza de date");
+                    if (documentSnapshot.exists()) {
+                        mDatabaseReference.collection("WarningCells").document(cellToInsert.GetCid()).delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.i("INFO:", "Stergerea celulei " + cellToInsert.GetCid() + " din colectia Warning s-a efectuat cu succes");
+                            }
+                        });
                     }
+
+                    //se va introduce in colectia GOOD celula
+                    DocumentReference cellReference = mDatabaseReference.collection("GoodCells").document(cellToInsert.GetCid());
+                    cellReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            if (!documentSnapshot.exists()) {
+                                mDatabaseReference.collection("GoodCells")
+                                        .document(cellToInsert.GetCid())
+                                        .set(dataToInsert)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Log.i("INFO: ", "Celula " + cellToInsert.GetCid() + " a fost adaugata cu succes in baza de date");
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Log.i("INFO: ", "Adaugarea celulei " + cellToInsert.GetCid() + " in baza de date nu a reusit");
+                                            }
+                                        });
+                            } else {
+                                Log.i("INFO: ", "Celula " + cellToInsert.GetCid() + " exista deja in baza de date");
+                            }
+                        }
+                    });
                 }
             });
 
         }
         if(cellToInsert.getmCellStatus() == "WARNING") {
+            //Daca celula exista deja in colectia AlertCells sau GoodCells atunci nu se va introduce in WARNING
             DocumentReference cellReference = mDatabaseReference.collection("AlertCells").document(cellToInsert.GetCid());
             cellReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                 @Override

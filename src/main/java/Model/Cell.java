@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.List;
 
 import Controller.CellController;
+import Utils.MConstants;
 
 public class Cell {
     //region Constructor
@@ -54,13 +55,13 @@ public class Cell {
         In the beginning we assume that all cells are good. We will change the status later if necessary.
          */
         if(mCellAddress == "Cell not found"){
-            mCellStatus = "WARNING";
+            mCellStatus = MConstants.Cell.WARNING;
             Dispozitiv dispozitiv = new Dispozitiv(mainContext);
             mCellLat = dispozitiv.GetLatitude();
             mCellLong = dispozitiv.GetLongitude();
         }
         else
-            mCellStatus = "GOOD";
+            mCellStatus = MConstants.Cell.GOOD;
     }
     //endregion
 

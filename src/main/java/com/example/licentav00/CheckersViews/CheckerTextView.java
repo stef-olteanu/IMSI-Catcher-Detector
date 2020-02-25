@@ -2,6 +2,7 @@ package com.example.licentav00.CheckersViews;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.view.View;
@@ -19,6 +20,8 @@ public class CheckerTextView extends AppCompatTextView {
     //region Private Methods
     private ConstraintLayout mConstraintLayout;
     private ConstraintSet mConstraintSet;
+    private SharedPreferences mSharedPreferences;
+    private String mAppLanguage;
     //endregion
 
     //region Constructor
@@ -26,6 +29,8 @@ public class CheckerTextView extends AppCompatTextView {
         super(context);
         this.mConstraintLayout = view.findViewById(R.id.checkerConstraintLayout);
         this.mConstraintSet = new ConstraintSet();
+        this.mSharedPreferences = context.getSharedPreferences("AppLanguage",context.MODE_PRIVATE);
+        this.mAppLanguage = mSharedPreferences.getString("Language",MConstants.AppLanguages.RO_LANG);
     }
     //endregion
 
@@ -38,8 +43,20 @@ public class CheckerTextView extends AppCompatTextView {
     public void SetParamsTextView(String checkDone) {
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
-                this.setText(MConstants.SIGNAL_CHECKING_TEXT);
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.RO_LANG))
+                    this.setText(MConstants.SIGNAL_CHECKING_TEXT_RO);
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.EN_LANG))
+                    this.setText(MConstants.SIGNAL_CHECKING_TEXT_EN);
                 String checkStatus = MConstants.STRING_EMPTY;
+                setViewParameters(checkDone,checkStatus);
+                setViewConstraints(checkDone);
+                break;
+            case MConstants.PUBLIC_DB_CHECKER:
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.RO_LANG))
+                    this.setText(MConstants.PUBLIC_DB_CHECKING_TEXT_RO);
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.EN_LANG))
+                    this.setText(MConstants.PUBLIC_DB_CHECKING_TEXT_EN);
+                checkStatus = MConstants.STRING_EMPTY;
                 setViewParameters(checkDone,checkStatus);
                 setViewConstraints(checkDone);
                 break;
@@ -48,6 +65,16 @@ public class CheckerTextView extends AppCompatTextView {
     }
 
     public void SetParamsTextView(String checkDone, String checkStatus) {
+            if(this.mAppLanguage.equals(MConstants.AppLanguages.EN_LANG)) {
+                switch (checkStatus) {
+                    case MConstants.TEST_FAILED_RO:
+                        checkStatus = MConstants.TEST_FAILED_EN;
+                        break;
+                    case MConstants.TEST_PASSED_RO:
+                        checkStatus = MConstants.TEST_PASSED_EN;
+                        break;
+                }
+            }
         this.setText(checkStatus);
         setViewParameters(checkDone,checkStatus);
         setViewConstraints(checkDone,checkStatus);
@@ -72,10 +99,16 @@ public class CheckerTextView extends AppCompatTextView {
             this.setTextColor(Color.parseColor(MConstants.TextViewParameters.BLACK_COLOR_ID));
         else {
             switch (checkStatus) {
-                case MConstants.TEST_PASSED:
+                case MConstants.TEST_PASSED_RO:
                     this.setTextColor(Color.parseColor(MConstants.TextViewParameters.GREEN_COLOR_ID));
                     break;
-                case MConstants.TEST_FAILED:
+                case MConstants.TEST_FAILED_RO:
+                    this.setTextColor(Color.parseColor(MConstants.TextViewParameters.RED_COLOR_ID));
+                    break;
+                case MConstants.TEST_PASSED_EN:
+                    this.setTextColor(Color.parseColor(MConstants.TextViewParameters.GREEN_COLOR_ID));
+                    break;
+                case MConstants.TEST_FAILED_EN:
                     this.setTextColor(Color.parseColor(MConstants.TextViewParameters.RED_COLOR_ID));
                     break;
             }
@@ -84,11 +117,18 @@ public class CheckerTextView extends AppCompatTextView {
             case MConstants.SIGNAL_CHECKER:
                 this.setId(MConstants.SIGNAL_CHECKING_TEXT_VIEW_ID);
                 break;
+            case MConstants.PUBLIC_DB_CHECKER:
+                this.setId(MConstants.PBDB_CHECKING_TEXT_VIEW_ID);
+                break;
+
         }
         if(!checkStatus.equals(MConstants.STRING_EMPTY)) {
             switch (checkDone) {
                 case MConstants.SIGNAL_CHECKER:
-                    this.setId(MConstants.SINGAL_CHECKING_STATUS_ID1);
+                    this.setId(MConstants.SIGNAL_CHECKING_STATUS_ID1);
+                    break;
+                case MConstants.PUBLIC_DB_CHECKER:
+                    this.setId(MConstants.PBDB_CHECKING_STATUS_ID1);
                     break;
             }
         }
@@ -108,6 +148,9 @@ public class CheckerTextView extends AppCompatTextView {
             case MConstants.SIGNAL_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,R.id.checkerStartButtonView,ConstraintSet.BOTTOM,30);
                 break;
+            case MConstants.PUBLIC_DB_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.SIGNAL_CHECKING_TEXT_VIEW_ID,ConstraintSet.BOTTOM, 30);
+                break;
         }
     }
 
@@ -117,6 +160,9 @@ public class CheckerTextView extends AppCompatTextView {
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,R.id.checkerStartButtonView,ConstraintSet.BOTTOM,30);
+                break;
+            case MConstants.PUBLIC_DB_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.SIGNAL_CHECKING_STATUS_ID1,ConstraintSet.BOTTOM,30);
                 break;
         }
     }

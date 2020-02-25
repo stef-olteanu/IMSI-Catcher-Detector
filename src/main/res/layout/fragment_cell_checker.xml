@@ -92,4 +92,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/littleAdviceTextView" />
+
+    <ProgressBar
+        android:id="@+id/progressBarCheck"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:theme="@style/progressBarBleu"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/checkerStartButtonView"
+        app:layout_constraintEnd_toStartOf="@+id/checkerStartButtonView"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/checkerStartButtonView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
