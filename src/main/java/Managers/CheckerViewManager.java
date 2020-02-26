@@ -37,6 +37,10 @@ public class CheckerViewManager {
         TextView publicDbTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
         ((CheckerTextView) publicDbTextView).SetParamsTextView(checkDone);
         ((CheckerTextView) publicDbTextView).ShowTextView();
+
+        TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+        ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone);
+        ((CheckerTextView) internalDBTextView).ShowTextView();
     }
 
     /**
@@ -52,6 +56,10 @@ public class CheckerViewManager {
         TextView finalPublicDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(),this.mView);
         ((CheckerTextView) finalPublicDBTextView).SetParamsTextView(checkDone,checkStatus);
         ((CheckerTextView) finalPublicDBTextView).ShowTextView();
+
+        TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+        ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone,checkStatus);
+        ((CheckerTextView) internalDBTextView).ShowTextView();
     }
 
 

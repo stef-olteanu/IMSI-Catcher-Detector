@@ -28,12 +28,22 @@ public class MConstants {
     public static final int PBDB_CHECKING_STATUS_ID1 = 1000001;
     //enderegion
 
+    //region Checking Internal DB
+    public static final String INTERNAL_DB_CHECKER = "intdbcheck";
+    public static final String INTERNAL_DB_CHECKING_TEXT_RO = "Verificare BD interna";
+    public static final String INTERNAL_DB_CHECKING_TEXT_EN ="Checking internal DB";
+    public static final int INTERNAL_CHECKING_TEXT_VIEW_ID = 9458656;
+    public static final int INTERNAL_CHECKING_STATUS_ID1 = 1000002;
+
+    //endregion
+
 
     public static final class TextViewParameters {
         public static final String SHARE_TECH_MONO_FONT = "share_tech_mono";
         public static final String BLACK_COLOR_ID = "#000000";
         public static final String GREEN_COLOR_ID = "#014a21";
         public static final String RED_COLOR_ID = "#a90000";
+        public static final String BLEU_COLOR_ID = "#00bcd4";
     }
 
     public static final class AppLanguages {
@@ -52,4 +62,11 @@ public class MConstants {
     //region Global Constants
     public static final String STRING_EMPTY = "";
     //endregion
+
+
+    public static class FirebaseHelper {
+        public static final String EXISTS_IN_GOOD = "Exists in GOOD";
+        public static final String EXISTS_IN_WARNING = "Exists in WARNING";
+        public static final String EXISTS_IN_ALERT = "Exists in ALERT";
+    }
 }

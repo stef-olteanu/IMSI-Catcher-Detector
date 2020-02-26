@@ -1,7 +1,6 @@
 package com.example.licentav00;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
@@ -18,6 +17,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
 
+import Checkers.InternalDBChecker;
 import Listeners.CellLocationChangeListener;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences sharedPreferences = getSharedPreferences("AppLanguage",MainActivity.this.MODE_PRIVATE);
         String lang = sharedPreferences.getString("Language", MConstants.AppLanguages.RO_LANG);
         GlobalMainContext.setAppLocale(lang);
+
 
 
 

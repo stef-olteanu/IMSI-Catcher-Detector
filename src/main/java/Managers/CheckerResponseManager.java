@@ -1,6 +1,7 @@
 package Managers;
 
 import Responses.CheckerResponse;
+import Responses.InternalDBCheckerResponse;
 import Responses.SignalCheckerResponse;
 import Utils.MConstants;
 
@@ -8,6 +9,7 @@ public class CheckerResponseManager {
     //region Private Members
     private SignalCheckerResponse mSignalCheckerResponse;
     private CheckerResponse mPublicDbCheckerResponse;
+    private InternalDBCheckerResponse mInternalDBCheckerResponse;
     //endregion
 
     //region Constructor
@@ -38,6 +40,14 @@ public class CheckerResponseManager {
 
     public void setmPublicDbCheckerResponse(CheckerResponse mPublicDbCheckerResponse) {
         this.mPublicDbCheckerResponse = mPublicDbCheckerResponse;
+    }
+
+    public void setmInternalDBCheckerResponse(InternalDBCheckerResponse mInternalDBCheckerResponse) {
+        this.mInternalDBCheckerResponse = mInternalDBCheckerResponse;
+    }
+
+    public InternalDBCheckerResponse getmInternalDBCheckerResponse() {
+        return mInternalDBCheckerResponse;
     }
 
     //endregion

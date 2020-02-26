@@ -1,7 +1,9 @@
 package Utils;
 
 
+import android.app.Activity;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
@@ -19,11 +21,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.CountDownLatch;
 
 import CallBacks.DatabaseReaderCallBack;
+import CallBacks.InternalDatabaseCallBack;
+import Checkers.InternalDBChecker;
 import Model.Cell;
 
 public class FirebaseHelper {
+    //region Private Members
+    private FirebaseFirestore mDatabaseReference;
+    private String mDatabaseResponse;
+    //endregion
+
     //region Constructor
     public FirebaseHelper(){
         mDatabaseReference = FirebaseFirestore.getInstance();
@@ -31,13 +41,34 @@ public class FirebaseHelper {
     //endregion
 
 
-    //region Private Members
-    private FirebaseFirestore mDatabaseReference;
-
-    //endregion
-
-
     //region Public Methods
+    public void checkDatabaseEntry(final Cell cell, final InternalDatabaseCallBack internalDatabaseCallBack) {
+        DocumentReference cellReference = mDatabaseReference.collection("GoodCells").document(cell.GetCid());
+        cellReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if(task.getResult().exists() && task.isSuccessful()) {
+                    mDatabaseResponse = MConstants.FirebaseHelper.EXISTS_IN_GOOD;
+                    internalDatabaseCallBack.OnReturnResponseCallback(mDatabaseResponse);
+                } else {
+                    DocumentReference cellReference = mDatabaseReference.collection("WarningCells").document(cell.GetCid());
+                    cellReference.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(Task<DocumentSnapshot> task) {
+                            if(task.getResult().exists()) {
+                                mDatabaseResponse = MConstants.FirebaseHelper.EXISTS_IN_WARNING;
+                                internalDatabaseCallBack.OnReturnResponseCallback(mDatabaseResponse);
+                            } else {
+                                mDatabaseResponse = MConstants.FirebaseHelper.EXISTS_IN_ALERT;
+                                internalDatabaseCallBack.OnReturnResponseCallback(mDatabaseResponse);
+                            }
+                            //latch.countDown();
+                        }
+                    });
+                }
+            }
+        });
+    }
 
     /**
      *

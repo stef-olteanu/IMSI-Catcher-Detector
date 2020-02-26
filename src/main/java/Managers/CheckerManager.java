@@ -13,9 +13,12 @@ import com.example.licentav00.R;
 import java.util.HashMap;
 
 import CallBacks.CheckerCallBack;
+import CallBacks.InternalDatabaseCallBack;
 import Checkers.CellSignalChecker;
+import Checkers.InternalDBChecker;
 import Checkers.PublicDBChecker;
 import Responses.CheckerResponse;
+import Responses.InternalDBCheckerResponse;
 import Responses.SignalCheckerResponse;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
@@ -40,6 +43,7 @@ public class CheckerManager {
     public void RunCheckers(CheckerCallBack checkerStatusInformer, View view) {
         performSignalCheck(checkerStatusInformer);
         performPublicDBCheck(checkerStatusInformer);
+        performInteralDBCheck(checkerStatusInformer);
     }
 
     public CheckerResponseManager getmCheckerResponseManager() {
@@ -66,6 +70,20 @@ public class CheckerManager {
         CheckerResponse publicDBResponse = publicDBChecker.checkPublicDB();
         mCheckerResponseManager.setmPublicDbCheckerResponse(publicDBResponse);
         checkerStatusInformer.OnCheckCompleted(MConstants.PUBLIC_DB_CHECKER, publicDBResponse.getmCheckingStatus());
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    public void performInteralDBCheck(final CheckerCallBack checkerStatusInformer) {
+        checkerStatusInformer.OnCheckStarted(MConstants.INTERNAL_DB_CHECKER);
+        InternalDBChecker internalDBChecker = new InternalDBChecker();
+        internalDBChecker.checkInternalDatabase(new InternalDatabaseCallBack() {
+            @Override
+            public void OnReturnResponseCallback(String response) {
+                InternalDBCheckerResponse internalDBCheckerResponse = new InternalDBCheckerResponse(response);
+                mCheckerResponseManager.setmInternalDBCheckerResponse(internalDBCheckerResponse);
+                checkerStatusInformer.OnCheckCompleted(MConstants.INTERNAL_DB_CHECKER,response);
+            }
+        });
     }
     //endregion
 }
