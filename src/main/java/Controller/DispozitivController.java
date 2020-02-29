@@ -112,6 +112,10 @@ public class DispozitivController {
         return Double.toString(mLon);
     }
 
+    public String GetDeviceManufacturer() {
+        String manufacturer = Build.MANUFACTURER;
+        return manufacturer;
+    }
 
 
     //endregion

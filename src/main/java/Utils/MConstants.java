@@ -11,6 +11,7 @@ public class MConstants {
     public static final String TEST_FAILED_EN = "Test failed";
     public static final String TEST_NEUTRAL_RO = "Neutru";
     public static final String TEST_NEUTRAL_EN = "Neutral";
+    public static final int NUM_OF_CHECKS = 4;
 
     //region Checking Signal
     public static final String SIGNAL_CHECKER = "sigcheck";
@@ -34,7 +35,15 @@ public class MConstants {
     public static final String INTERNAL_DB_CHECKING_TEXT_EN ="Checking internal DB";
     public static final int INTERNAL_CHECKING_TEXT_VIEW_ID = 9458656;
     public static final int INTERNAL_CHECKING_STATUS_ID1 = 1000002;
+    //endregion
 
+    //region Checking Neighbour List
+    public static final String NEIGHBOUR_LIST_CHECKER = "nblistcheck";
+    public static final String NEIGHBOUR_LIST_TEXT_RO = "Verificare lista vecini";
+    public static final String NEIGHBOUR_LIST_TEXT_EN ="Checking neighbour list";
+    public static final int NEIGHBOUR_LIST_TEXT_VIEW_ID = 9458657;
+    public static final int NEIGHBOUR_LIST_STATUS_ID1 = 1000003;
+    public static final String SAMSUNG_PHONE_MODEL = "SAMSUNG";
     //endregion
 
 

@@ -30,17 +30,28 @@ public class CheckerViewManager {
      * Function that creates the view when the check is started
      */
     public void CreateView(String checkDone) {
-        TextView sigCheckTextView = new CheckerTextView(GlobalMainContext.getMainContext(),this.mView);
-        ((CheckerTextView) sigCheckTextView).SetParamsTextView(checkDone);
-        ((CheckerTextView) sigCheckTextView).ShowTextView();
-
-        TextView publicDbTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-        ((CheckerTextView) publicDbTextView).SetParamsTextView(checkDone);
-        ((CheckerTextView) publicDbTextView).ShowTextView();
-
-        TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-        ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone);
-        ((CheckerTextView) internalDBTextView).ShowTextView();
+        switch (checkDone) {
+            case MConstants.SIGNAL_CHECKER:
+                TextView sigCheckTextView = new CheckerTextView(GlobalMainContext.getMainContext(),this.mView);
+                ((CheckerTextView) sigCheckTextView).SetParamsTextView(checkDone);
+                ((CheckerTextView) sigCheckTextView).ShowTextView();
+                break;
+            case MConstants.PUBLIC_DB_CHECKER:
+                TextView publicDbTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) publicDbTextView).SetParamsTextView(checkDone);
+                ((CheckerTextView) publicDbTextView).ShowTextView();
+                break;
+            case MConstants.INTERNAL_DB_CHECKER:
+                TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone);
+                ((CheckerTextView) internalDBTextView).ShowTextView();
+                break;
+            case MConstants.NEIGHBOUR_LIST_CHECKER:
+                TextView neighbourListTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) neighbourListTextView).SetParamsTextView(checkDone);
+                ((CheckerTextView) neighbourListTextView).ShowTextView();
+                break;
+        }
     }
 
     /**
@@ -49,17 +60,31 @@ public class CheckerViewManager {
      * @param checkStatus
      */
     public void CreateView(String checkDone, String checkStatus) {
-        TextView finalCheckTextView = new CheckerTextView(GlobalMainContext.getMainContext(),this.mView);
-        ((CheckerTextView) finalCheckTextView).SetParamsTextView(checkDone,checkStatus);
-        ((CheckerTextView) finalCheckTextView).ShowTextView();
+        switch (checkDone) {
+            case MConstants.SIGNAL_CHECKER:
+                TextView finalCheckTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) finalCheckTextView).SetParamsTextView(checkDone, checkStatus);
+                ((CheckerTextView) finalCheckTextView).ShowTextView();
+                break;
+            case MConstants.PUBLIC_DB_CHECKER:
+                TextView finalPublicDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) finalPublicDBTextView).SetParamsTextView(checkDone, checkStatus);
+                ((CheckerTextView) finalPublicDBTextView).ShowTextView();
+            case MConstants.INTERNAL_DB_CHECKER:
+                TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone, checkStatus);
+                ((CheckerTextView) internalDBTextView).ShowTextView();
+                break;
+            case MConstants.NEIGHBOUR_LIST_CHECKER:
+                TextView neighbourListTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) neighbourListTextView).SetParamsTextView(checkDone, checkStatus);
+                ((CheckerTextView) neighbourListTextView).ShowTextView();
+                break;
+        }
 
-        TextView finalPublicDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(),this.mView);
-        ((CheckerTextView) finalPublicDBTextView).SetParamsTextView(checkDone,checkStatus);
-        ((CheckerTextView) finalPublicDBTextView).ShowTextView();
 
-        TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-        ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone,checkStatus);
-        ((CheckerTextView) internalDBTextView).ShowTextView();
+
+
     }
 
 

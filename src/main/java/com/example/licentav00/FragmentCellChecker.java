@@ -2,7 +2,9 @@ package com.example.licentav00;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -14,17 +16,22 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import Informers.CheckerStatusInformer;
+import Listeners.OnClickListeners.CheckerFinishOnTouchListener;
 import Listeners.OnClickListeners.CheckerStartOnClickListener;
 import Listeners.OnClickListeners.DialogOpenOnClickListener;
 import Managers.CheckerManager;
+import Utils.MConstants;
 
 public class FragmentCellChecker extends Fragment {
     //region Private Members
-
+    CheckerManager mCheckerManager;
     //endregion
 
     //region Constructor
-    public FragmentCellChecker(){ }
+    public FragmentCellChecker(){
+        this.mCheckerManager = new CheckerManager();
+    }
     //endregion
 
 
@@ -39,7 +46,7 @@ public class FragmentCellChecker extends Fragment {
         return inflaterView;
     }
 
-    private void setOnClickListeners(View inflatedView){
+    private void setOnClickListeners(final View inflatedView){
         ImageView warningImageView = inflatedView.findViewById(R.id.warningImageView);
         warningImageView.setOnClickListener(new DialogOpenOnClickListener(this));
 
@@ -49,10 +56,11 @@ public class FragmentCellChecker extends Fragment {
         TextView littleWarningTextView = inflatedView.findViewById(R.id.littleAdviceTextView);
         littleWarningTextView.setOnClickListener(new DialogOpenOnClickListener(this));
 
-        Button checkerStart = inflatedView.findViewById(R.id.checkerStartButtonView);
-        checkerStart.setOnTouchListener(new CheckerStartOnClickListener(inflatedView));
-
-
+        final Button checkerStart = inflatedView.findViewById(R.id.checkerStartButtonView);
+        checkerStart.setOnClickListener(new CheckerStartOnClickListener(inflatedView, this.mCheckerManager));
+        checkerStart.setOnTouchListener(new CheckerFinishOnTouchListener(inflatedView,this.mCheckerManager));
     }
+
+
     //endregion
 }

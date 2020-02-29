@@ -28,6 +28,7 @@ import java.io.IOException;
 
 import Checkers.InternalDBChecker;
 import Listeners.CellLocationChangeListener;
+import Model.Dispozitiv;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 
@@ -46,7 +47,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences sharedPreferences = getSharedPreferences("AppLanguage",MainActivity.this.MODE_PRIVATE);
         String lang = sharedPreferences.getString("Language", MConstants.AppLanguages.RO_LANG);
         GlobalMainContext.setAppLocale(lang);
-
 
 
 
@@ -89,13 +89,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         CellLocationChangeListener mListener = null;
         try {
-            mListener = new CellLocationChangeListener(this);
+            mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext());
         } catch (IOException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         mTelephonyManager.listen(mListener, PhoneStateListener.LISTEN_CELL_LOCATION);
+
+
     }
 
 

@@ -13,11 +13,12 @@ public class Dispozitiv {
     @TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public Dispozitiv(Context mContext){
-        mDispozitivController = new DispozitivController(mContext);
-        mPhoneType = mDispozitivController.GetPhoneType();
-        mIMEI = mDispozitivController.GetIMEI();
-        mLat = mDispozitivController.GetLatitude();
-        mLon = mDispozitivController.GetLongitude();
+        this.mDispozitivController = new DispozitivController(mContext);
+        this.mPhoneType = mDispozitivController.GetPhoneType();
+        this.mIMEI = mDispozitivController.GetIMEI();
+        this.mLat = mDispozitivController.GetLatitude();
+        this.mLon = mDispozitivController.GetLongitude();
+        this.mManufacturer = mDispozitivController.GetDeviceManufacturer();
     }
     //endregion
 
@@ -26,21 +27,24 @@ public class Dispozitiv {
     private String mIMEI;
     private String mLat;
     private String mLon;
+    private String mManufacturer;
     private DispozitivController mDispozitivController;
     //endregion
 
     //region Public Methods
     public String getPhoneType(){
-        return mPhoneType;
+        return this.mPhoneType;
     }
 
     public String getIMEI(){
-        return mIMEI;
+        return this.mIMEI;
     }
 
-    public String GetLatitude(){ return mLat; }
+    public String GetLatitude(){ return this.mLat; }
 
-    public String GetLongitude(){ return mLon; }
+    public String GetLongitude(){ return this.mLon; }
+
+    public String GetManufacturer() { return this.mManufacturer; }
 
     //endregion
 }

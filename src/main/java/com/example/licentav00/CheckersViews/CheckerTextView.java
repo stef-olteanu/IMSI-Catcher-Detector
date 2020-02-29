@@ -69,6 +69,15 @@ public class CheckerTextView extends AppCompatTextView {
                 setViewParameters(checkDone,checkStatus);
                 setViewConstraints(checkDone);
                 break;
+            case MConstants.NEIGHBOUR_LIST_CHECKER:
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.RO_LANG))
+                    this.setText(MConstants.NEIGHBOUR_LIST_TEXT_RO);
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.EN_LANG))
+                    this.setText(MConstants.NEIGHBOUR_LIST_TEXT_EN);
+                checkStatus = MConstants.STRING_EMPTY;
+                setViewParameters(checkDone,checkStatus);
+                setViewConstraints(checkDone);
+                break;
 
         }
     }
@@ -141,6 +150,9 @@ public class CheckerTextView extends AppCompatTextView {
             case MConstants.INTERNAL_DB_CHECKER:
                 this.setId(MConstants.INTERNAL_CHECKING_TEXT_VIEW_ID);
                 break;
+            case MConstants.NEIGHBOUR_LIST_CHECKER:
+                this.setId(MConstants.NEIGHBOUR_LIST_TEXT_VIEW_ID);
+                break;
 
         }
         if(!checkStatus.equals(MConstants.STRING_EMPTY)) {
@@ -154,6 +166,8 @@ public class CheckerTextView extends AppCompatTextView {
                 case MConstants.INTERNAL_DB_CHECKER:
                     this.setId(MConstants.INTERNAL_CHECKING_STATUS_ID1);
                     break;
+                case MConstants.NEIGHBOUR_LIST_CHECKER:
+                    this.setId(MConstants.NEIGHBOUR_LIST_STATUS_ID1);
 
             }
         }
@@ -179,6 +193,9 @@ public class CheckerTextView extends AppCompatTextView {
             case MConstants.INTERNAL_DB_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.PBDB_CHECKING_TEXT_VIEW_ID,ConstraintSet.BOTTOM,30);
                 break;
+            case MConstants.NEIGHBOUR_LIST_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.INTERNAL_CHECKING_TEXT_VIEW_ID,ConstraintSet.BOTTOM,30);
+                break;
         }
     }
 
@@ -194,6 +211,9 @@ public class CheckerTextView extends AppCompatTextView {
                 break;
             case MConstants.INTERNAL_DB_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.PBDB_CHECKING_STATUS_ID1,ConstraintSet.BOTTOM,30);
+                break;
+            case MConstants.NEIGHBOUR_LIST_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.INTERNAL_CHECKING_STATUS_ID1,ConstraintSet.BOTTOM,30);
                 break;
         }
     }
