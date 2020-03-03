@@ -85,9 +85,33 @@ public class CheckerFinishOnTouchListener implements View.OnTouchListener {
                                 @Override
                                 public void run() {
                                     checkerStatusInformer.OnCheckCompleted(MConstants.NEIGHBOUR_LIST_CHECKER,mCheckerManager.getmCheckerResponseManager().getmNeighbourListCheckerResponse().getmCheckingStatus());
-                                    mView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
                                 }
                             },counter * 3 * 500 + 1000);
+                            break;
+                        case 4:
+                            handler1.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    checkerStatusInformer.OnCheckStarted(MConstants.CELL_CONSISTENCY_CHECKER);
+                                }
+
+                            },counter * 4 * 500);
+                            handler1.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.CELL_CONSISTENCY_CHECKER,mCheckerManager.getmCheckerResponseManager().getmCellConsistencyCheckerResponse().getmCheckingStatus());
+                                }
+                            },counter * 4 * 500 + 1000);
+                            break;
+                        case 5:
+                            handler1.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mCheckerManager.performOverallCheck();
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.OVERALL_CHECKER,mCheckerManager.getmCheckerResponseManager().getmOverallResponse().getmCheckingStatus());
+                                    mView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
+                                }
+                            },counter * 5 * 500);
                             break;
 
                     }

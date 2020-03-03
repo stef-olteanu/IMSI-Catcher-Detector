@@ -51,6 +51,11 @@ public class CheckerViewManager {
                 ((CheckerTextView) neighbourListTextView).SetParamsTextView(checkDone);
                 ((CheckerTextView) neighbourListTextView).ShowTextView();
                 break;
+            case MConstants.CELL_CONSISTENCY_CHECKER:
+                TextView cellConsistencyTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) cellConsistencyTextView).SetParamsTextView(checkDone);
+                ((CheckerTextView) cellConsistencyTextView).ShowTextView();
+                break;
         }
     }
 
@@ -79,6 +84,16 @@ public class CheckerViewManager {
                 TextView neighbourListTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
                 ((CheckerTextView) neighbourListTextView).SetParamsTextView(checkDone, checkStatus);
                 ((CheckerTextView) neighbourListTextView).ShowTextView();
+                break;
+            case MConstants.CELL_CONSISTENCY_CHECKER:
+                TextView cellConsistencyTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) cellConsistencyTextView).SetParamsTextView(checkDone,checkStatus);
+                ((CheckerTextView) cellConsistencyTextView).ShowTextView();
+                break;
+            case MConstants.OVERALL_CHECKER:
+                TextView overallTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
+                ((CheckerTextView) overallTextView).SetParamsTextView(checkDone,checkStatus);
+                ((CheckerTextView) overallTextView).ShowTextView();
                 break;
         }
 

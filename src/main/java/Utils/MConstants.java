@@ -11,7 +11,8 @@ public class MConstants {
     public static final String TEST_FAILED_EN = "Test failed";
     public static final String TEST_NEUTRAL_RO = "Neutru";
     public static final String TEST_NEUTRAL_EN = "Neutral";
-    public static final int NUM_OF_CHECKS = 4;
+    public static final int NUM_OF_CHECKS = 6;
+    //endregion
 
     //region Checking Signal
     public static final String SIGNAL_CHECKER = "sigcheck";
@@ -27,7 +28,7 @@ public class MConstants {
     public static final String PUBLIC_DB_CHECKING_TEXT_EN ="Checking public DB";
     public static final int PBDB_CHECKING_TEXT_VIEW_ID = 9458655;
     public static final int PBDB_CHECKING_STATUS_ID1 = 1000001;
-    //enderegion
+    //endregion
 
     //region Checking Internal DB
     public static final String INTERNAL_DB_CHECKER = "intdbcheck";
@@ -44,6 +45,23 @@ public class MConstants {
     public static final int NEIGHBOUR_LIST_TEXT_VIEW_ID = 9458657;
     public static final int NEIGHBOUR_LIST_STATUS_ID1 = 1000003;
     public static final String SAMSUNG_PHONE_MODEL = "SAMSUNG";
+    //endregion
+
+    //region Checking Cell Consistency
+    public static final String CELL_CONSISTENCY_CHECKER = "consistencytcheck";
+    public static final String CELL_CONSISTENCY_TEXT_RO = "Verificare date celula";
+    public static final String CELL_CONSISTENCY_TEXT_EN ="Checking cell consistency";
+    public static final int CELL_CONSISTENCY_TEXT_VIEW_ID = 9458658;
+    public static final int CELL_CONSISTENCY_STATUS_ID1 = 1000004;
+    //endregion
+
+    //region Checking Overall
+    public static final String OVERALL_CHECKER = "overallcheck";
+    public static final String OVERALL_PASSED_RO = "Celula apartine unui furnizor GSM";
+    public static final String OVERALL_PASSED_EN ="The base station is real";
+    public static final String OVERALL_FAILED_RO = "Celula este un IMSI Catcher!";
+    public static final String OVERALL_FAILED_EN ="The cell is an IMSI Catcher!";
+    public static final int OVERALL_TEXT_VIEW_ID = 9458659;
     //endregion
 
 

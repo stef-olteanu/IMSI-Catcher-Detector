@@ -78,6 +78,15 @@ public class CheckerTextView extends AppCompatTextView {
                 setViewParameters(checkDone,checkStatus);
                 setViewConstraints(checkDone);
                 break;
+            case MConstants.CELL_CONSISTENCY_CHECKER:
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.RO_LANG))
+                    this.setText(MConstants.CELL_CONSISTENCY_TEXT_RO);
+                if(this.mAppLanguage.equals(MConstants.AppLanguages.EN_LANG))
+                    this.setText(MConstants.CELL_CONSISTENCY_TEXT_EN);
+                checkStatus = MConstants.STRING_EMPTY;
+                setViewParameters(checkDone,checkStatus);
+                setViewConstraints(checkDone);
+                break;
 
         }
     }
@@ -93,6 +102,12 @@ public class CheckerTextView extends AppCompatTextView {
                         break;
                     case MConstants.TEST_NEUTRAL_RO:
                         checkStatus = MConstants.TEST_NEUTRAL_EN;
+                        break;
+                    case MConstants.OVERALL_PASSED_RO:
+                        checkStatus = MConstants.OVERALL_PASSED_EN;
+                        break;
+                    case MConstants.OVERALL_FAILED_RO:
+                        checkStatus = MConstants.OVERALL_FAILED_EN;
                         break;
                 }
             }
@@ -115,7 +130,7 @@ public class CheckerTextView extends AppCompatTextView {
     private void setViewParameters(String checkDone,String checkStatus) {
         this.setTypeface(null, Typeface.NORMAL);
         this.setTypeface(ResourcesCompat.getFont(GlobalMainContext.getMainContext(),R.font.share_tech_mono));
-        this.setTextSize(14);
+        this.setTextSize(15);
         if(checkStatus.equals(MConstants.STRING_EMPTY))
             this.setTextColor(Color.parseColor(MConstants.TextViewParameters.BLACK_COLOR_ID));
         else {
@@ -138,6 +153,18 @@ public class CheckerTextView extends AppCompatTextView {
                 case MConstants.TEST_NEUTRAL_EN:
                     this.setTextColor(Color.parseColor(MConstants.TextViewParameters.BLEU_COLOR_ID));
                     break;
+                case MConstants.OVERALL_PASSED_RO:
+                    this.setTextColor(Color.parseColor(MConstants.TextViewParameters.GREEN_COLOR_ID));
+                    break;
+                case MConstants.OVERALL_FAILED_RO:
+                    this.setTextColor(Color.parseColor(MConstants.TextViewParameters.RED_COLOR_ID));
+                    break;
+                case MConstants.OVERALL_PASSED_EN:
+                    this.setTextColor(Color.parseColor(MConstants.TextViewParameters.GREEN_COLOR_ID));
+                    break;
+                case MConstants.OVERALL_FAILED_EN:
+                    this.setTextColor(Color.parseColor(MConstants.TextViewParameters.RED_COLOR_ID));
+                    break;
             }
         }
         switch (checkDone) {
@@ -152,6 +179,9 @@ public class CheckerTextView extends AppCompatTextView {
                 break;
             case MConstants.NEIGHBOUR_LIST_CHECKER:
                 this.setId(MConstants.NEIGHBOUR_LIST_TEXT_VIEW_ID);
+                break;
+            case MConstants.CELL_CONSISTENCY_CHECKER:
+                this.setId(MConstants.CELL_CONSISTENCY_TEXT_VIEW_ID);
                 break;
 
         }
@@ -168,6 +198,13 @@ public class CheckerTextView extends AppCompatTextView {
                     break;
                 case MConstants.NEIGHBOUR_LIST_CHECKER:
                     this.setId(MConstants.NEIGHBOUR_LIST_STATUS_ID1);
+                    break;
+                case MConstants.CELL_CONSISTENCY_CHECKER:
+                    this.setId(MConstants.CELL_CONSISTENCY_STATUS_ID1);
+                    break;
+                case MConstants.OVERALL_CHECKER:
+                    this.setId(MConstants.OVERALL_TEXT_VIEW_ID);
+                    break;
 
             }
         }
@@ -196,6 +233,9 @@ public class CheckerTextView extends AppCompatTextView {
             case MConstants.NEIGHBOUR_LIST_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.INTERNAL_CHECKING_TEXT_VIEW_ID,ConstraintSet.BOTTOM,30);
                 break;
+            case MConstants.CELL_CONSISTENCY_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.NEIGHBOUR_LIST_TEXT_VIEW_ID,ConstraintSet.BOTTOM,30);
+                break;
         }
     }
 
@@ -214,6 +254,12 @@ public class CheckerTextView extends AppCompatTextView {
                 break;
             case MConstants.NEIGHBOUR_LIST_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.INTERNAL_CHECKING_STATUS_ID1,ConstraintSet.BOTTOM,30);
+                break;
+            case MConstants.CELL_CONSISTENCY_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.NEIGHBOUR_LIST_STATUS_ID1,ConstraintSet.BOTTOM,30);
+                break;
+            case MConstants.OVERALL_CHECKER:
+                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.CELL_CONSISTENCY_STATUS_ID1,ConstraintSet.BOTTOM,30);
                 break;
         }
     }

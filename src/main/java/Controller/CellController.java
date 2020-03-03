@@ -41,7 +41,7 @@ public class CellController {
         }
         //region Request Cell Coordinates
         mRequester = new Requester(mainContext);
-        mRequester.PostToLocation("https://us1.unwiredlabs.com/v2/process.php",
+        mRequester.PostToLocation("https://us2.unwiredlabs.com/v2/process.php",
                 "e4509bb63be6b3", "gsm", this.GetMcc(), this.GetMnc(), this.GetLac(), this.GetCid(), "1");
         AsyncGetter asyncGetter = AsyncGetter.getInstance();
         mCellLocationJson = asyncGetter.getJsonObject();

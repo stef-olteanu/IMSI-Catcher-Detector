@@ -1,8 +1,10 @@
 package Managers;
 
+import Responses.CellConsistencyCheckerResponse;
 import Responses.CheckerResponse;
 import Responses.InternalDBCheckerResponse;
 import Responses.NeighbourListCheckerResponse;
+import Responses.OverallResponse;
 import Responses.SignalCheckerResponse;
 import Utils.MConstants;
 
@@ -12,6 +14,8 @@ public class CheckerResponseManager {
     private CheckerResponse mPublicDbCheckerResponse;
     private InternalDBCheckerResponse mInternalDBCheckerResponse;
     private NeighbourListCheckerResponse mNeighbourListCheckerResponse;
+    private CellConsistencyCheckerResponse mCellConsistencyCheckerResponse;
+    private OverallResponse mOverallResponse;
     //endregion
 
     //region Constructor
@@ -58,6 +62,22 @@ public class CheckerResponseManager {
 
     public void setmNeighbourListCheckerResponse(NeighbourListCheckerResponse mNeighbourListCheckerResponse) {
         this.mNeighbourListCheckerResponse = mNeighbourListCheckerResponse;
+    }
+
+    public void setmCellConsistencyCheckerResponse(CellConsistencyCheckerResponse mCellConsistencyCheckerResponse) {
+        this.mCellConsistencyCheckerResponse = mCellConsistencyCheckerResponse;
+    }
+
+    public CellConsistencyCheckerResponse getmCellConsistencyCheckerResponse() {
+        return mCellConsistencyCheckerResponse;
+    }
+
+    public OverallResponse getmOverallResponse() {
+        return mOverallResponse;
+    }
+
+    public void setmOverallResponse(OverallResponse mOverallResponse) {
+        this.mOverallResponse = mOverallResponse;
     }
 
     //endregion

@@ -16,5 +16,9 @@ public class CheckerResponse {
     public String getmCheckingStatus() {
         return this.mCheckingStatus;
     }
+
+    public void setmCheckingStatus(String status) {
+        this.mCheckingStatus = status;
+    }
     //endregion
 }

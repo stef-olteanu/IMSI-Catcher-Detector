@@ -1,6 +1,7 @@
 package Managers;
 
 import android.os.Build;
+import android.os.Handler;
 import android.view.View;
 
 import androidx.annotation.RequiresApi;
@@ -9,13 +10,17 @@ import java.util.HashMap;
 
 import CallBacks.CheckerCallBack;
 import CallBacks.InternalDatabaseCallBack;
+import Checkers.CellConsistencyChecker;
 import Checkers.CellSignalChecker;
 import Checkers.InternalDBChecker;
 import Checkers.NeighbourListChecker;
+import Checkers.OverallChecker;
 import Checkers.PublicDBChecker;
+import Responses.CellConsistencyCheckerResponse;
 import Responses.CheckerResponse;
 import Responses.InternalDBCheckerResponse;
 import Responses.NeighbourListCheckerResponse;
+import Responses.OverallResponse;
 import Responses.SignalCheckerResponse;
 import Utils.MConstants;
 
@@ -24,7 +29,6 @@ public class CheckerManager {
     private CheckerResponseManager mCheckerResponseManager;
     private HashMap<String,String> FinalCheckerResponse;
     private String mFinalSignalStatus;
-    private boolean mFinish;
     //endregion
 
 
@@ -32,7 +36,6 @@ public class CheckerManager {
     public CheckerManager() {
         this.mCheckerResponseManager = new CheckerResponseManager();
         this.FinalCheckerResponse = new HashMap<>();
-        this.mFinish = false;
     }
     //endregion
 
@@ -43,16 +46,14 @@ public class CheckerManager {
                 performPublicDBCheck();
                 performInteralDBCheck();
                 performNeighbourListCheck();
-                this.mFinish = true;
+                performCellConsistencyCheck();
+                //performOverallCheck();
     }
 
     public CheckerResponseManager getmCheckerResponseManager() {
         return this.mCheckerResponseManager;
     }
 
-    public boolean ismFinish() {
-        return mFinish;
-    }
     //endregion
 
     //region Private Methods
@@ -92,6 +93,28 @@ public class CheckerManager {
         NeighbourListCheckerResponse neighbourListCheckerResponse =  neighbourListChecker.CheckNeighbourList();
         mCheckerResponseManager.setmNeighbourListCheckerResponse(neighbourListCheckerResponse);
 
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    public void performCellConsistencyCheck() {
+        CellConsistencyChecker cellConsistencyChecker = new CellConsistencyChecker();
+        cellConsistencyChecker.CheckCellConsistency(new InternalDatabaseCallBack() {
+            @Override
+            public void OnReturnResponseCallback(String response) {
+                CellConsistencyCheckerResponse cellConsistencyCheckerResponse = new CellConsistencyCheckerResponse(response);
+                mCheckerResponseManager.setmCellConsistencyCheckerResponse(cellConsistencyCheckerResponse);
+            }
+        });
+    }
+
+    public void performOverallCheck() {
+        OverallChecker overallChecker = new OverallChecker(mCheckerResponseManager);
+        OverallResponse overallResponse = overallChecker.OverallCheck();
+        if(overallResponse.getmCheckingStatus().equals(MConstants.TEST_PASSED_RO))
+            overallResponse.setmCheckingStatus(MConstants.OVERALL_PASSED_RO);
+        else
+            overallResponse.setmCheckingStatus(MConstants.OVERALL_FAILED_RO);
+        mCheckerResponseManager.setmOverallResponse(overallResponse);
     }
     //endregion
 }
