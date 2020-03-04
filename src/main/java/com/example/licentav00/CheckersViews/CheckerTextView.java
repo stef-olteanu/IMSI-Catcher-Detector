@@ -208,7 +208,7 @@ public class CheckerTextView extends AppCompatTextView {
 
             }
         }
-
+        this.setGeneralConstraints();
     }
 
 
@@ -218,7 +218,6 @@ public class CheckerTextView extends AppCompatTextView {
      * @param checkDone I need to set constraints which depend on the check done
      */
     private void setViewConstraints(String checkDone) {
-        this.setGeneralConstraints();
         this.mConstraintSet.connect(this.getId(),ConstraintSet.LEFT, R.id.checkerConstraintLayout,ConstraintSet.LEFT,20);
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
@@ -240,7 +239,6 @@ public class CheckerTextView extends AppCompatTextView {
     }
 
     private void setViewConstraints(String checkDone, String checkStatus) {
-       this.setGeneralConstraints();
         this.mConstraintSet.connect(this.getId(),ConstraintSet.RIGHT, R.id.checkerConstraintLayout,ConstraintSet.RIGHT,20);
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
@@ -265,7 +263,7 @@ public class CheckerTextView extends AppCompatTextView {
     }
 
     private void setGeneralConstraints() {
-        this.mConstraintLayout.addView(this,0);
+        this.mConstraintLayout.addView(this);
         this.mConstraintSet.clone(this.mConstraintLayout);
         this.mConstraintSet.constrainWidth(this.getId(), ConstraintSet.WRAP_CONTENT);
         this.mConstraintSet.constrainHeight(this.getId(),ConstraintSet.WRAP_CONTENT);

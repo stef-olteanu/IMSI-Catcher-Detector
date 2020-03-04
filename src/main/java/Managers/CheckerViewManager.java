@@ -75,6 +75,7 @@ public class CheckerViewManager {
                 TextView finalPublicDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
                 ((CheckerTextView) finalPublicDBTextView).SetParamsTextView(checkDone, checkStatus);
                 ((CheckerTextView) finalPublicDBTextView).ShowTextView();
+                break;
             case MConstants.INTERNAL_DB_CHECKER:
                 TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
                 ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone, checkStatus);
