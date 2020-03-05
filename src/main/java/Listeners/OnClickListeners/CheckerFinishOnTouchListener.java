@@ -37,8 +37,7 @@ public class CheckerFinishOnTouchListener implements View.OnTouchListener {
     //region Public Methods
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-        Button button = this.mView.findViewById(R.id.checkerStartButtonView);
-        if(button.isClickable()) {
+       // Button button = this.mView.findViewById(R.id.checkerStartButtonView);
             ConstraintLayout constraintLayout = this.mView.findViewById(R.id.checkerConstraintLayout);
             TextView tv = this.mView.findViewById(MConstants.SIGNAL_CHECKING_TEXT_VIEW_ID);
             if (tv != null) {
@@ -128,10 +127,10 @@ public class CheckerFinishOnTouchListener implements View.OnTouchListener {
 
                                         mView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
                                         mVibratorHelper.Vibrate(response);
-                                        Button button = mView.findViewById(R.id.checkerStartButtonView);
-                                        button.setClickable(true);
-                                        button.setBackground(mView.getResources().getDrawable(R.drawable.custom_button));
-                                        button.setTextColor(mView.getResources().getColor(R.color.blue));
+                                        //Button button = mView.findViewById(R.id.checkerStartButtonView);
+                                      //  button.setClickable(true);
+                                       // button.setBackground(mView.getResources().getDrawable(R.drawable.custom_button));
+                                       // button.setTextColor(mView.getResources().getColor(R.color.blue));
                                     }
                                 }, counter * 5 * 500);
                                 break;
@@ -141,7 +140,6 @@ public class CheckerFinishOnTouchListener implements View.OnTouchListener {
 
                 }
             }, 5000);
-        }
         return false;
     }
 

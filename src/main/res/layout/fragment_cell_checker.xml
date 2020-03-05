@@ -25,93 +25,18 @@
         app:layout_constraintStart_toEndOf="@+id/hamburger"
         app:layout_constraintTop_toTopOf="@+id/hamburger" />
 
-    <ImageView
-        android:id="@+id/warningImageView"
-        android:layout_width="70dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView52"
-        app:srcCompat="@drawable/warning" />
-
-    <TextView
-        android:id="@+id/adviceTextView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:fontFamily="@font/share_tech_mono"
-        android:foregroundGravity="center"
-        android:gravity="center"
-        android:text="@string/checkerAdviceTitle"
-        android:textColor="#FF0000"
-        android:textSize="20sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/warningImageView"
-        app:layout_constraintTop_toTopOf="@+id/warningImageView" />
-
-    <TextView
-        android:id="@+id/littleAdviceTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:fontFamily="@font/share_tech_mono"
-        android:text="@string/checkerAdviceSubtitle"
-        android:textColor="#FF0000"
-        android:textSize="16sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="@+id/warningImageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toEndOf="@+id/warningImageView"
-        app:layout_constraintTop_toBottomOf="@+id/adviceTextView"
-        app:layout_constraintVertical_bias="0.75" />
-
-    <Button
-        android:id="@+id/checkerStartButtonView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/share_tech_mono"
-        android:padding="4dp"
-        android:text="@string/startCheckingActivity"
-        android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/littleAdviceTextView" />
-
     <ProgressBar
         android:id="@+id/progressBarCheck"
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:theme="@style/progressBarBleu"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/checkerStartButtonView"
-        app:layout_constraintEnd_toStartOf="@+id/checkerStartButtonView"
-        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/checkerStartButtonView" />
+        app:layout_constraintTop_toBottomOf="@+id/hamburger" />
 
     <ImageView
         android:id="@+id/hamburger"
@@ -123,4 +48,259 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/hamburger" />
+
+    <ImageView
+        android:id="@+id/imageInfoCheck"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/info" />
+
+    <TextView
+        android:id="@+id/checkStartedText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="@font/share_tech_mono"
+        android:text="@string/CHECKSTARTED"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBarCheck"
+        app:layout_constraintStart_toEndOf="@+id/progressBarCheck"
+        app:layout_constraintTop_toTopOf="@+id/progressBarCheck" />
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="367dp"
+        android:layout_height="236dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="8dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkStartedText">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0001"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/CHECKNAME"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView68"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/RESULT"
+                android:textColor="@android:color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_button">
+
+            <TextView
+                android:id="@+id/textView57"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0001"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/CHECKINGSIGNAL"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:id="@+id/imageSignal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/check" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_button">
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0001"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/CHECKINGPBDB"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:id="@+id/imagePBDB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/x" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_button">
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0001"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/CHECKINGINDB"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:id="@+id/imageINTDB"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/check" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_button">
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0001"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/CHECKINGNEIGHBOUR"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:id="@+id/imageNeigh"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/x" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/custom_button">
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0001"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/share_tech_mono"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/CHECKINGCONSISTENCY"
+                android:textColor="@color/blue" />
+
+            <ImageView
+                android:id="@+id/imageCell"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.8"
+                android:visibility="invisible"
+                app:srcCompat="@drawable/check" />
+
+        </TableRow>
+    </TableLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/share_tech_mono"
+        android:padding="10dp"
+        android:text="@string/FINAlRESULT"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+
+    <TextView
+        android:id="@+id/textView60"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/share_tech_mono"
+        android:padding="10dp"
+        android:text="TextView"
+        android:textSize="16sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_button"
+        android:padding="5dp"
+        android:text="@string/RETAKE"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

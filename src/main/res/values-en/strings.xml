@@ -55,6 +55,7 @@
     <string name="checkerAdviceSubtitle">Click on the image or text</string>
     <string name="startCheckingActivity">Start checking the cell</string>
     <string name="checkerAdvice1">1.Please assure that during the test your device does not move.Otherwise the output of the test will not be correct.</string>
+    <string name="checkerAdvice2">2.You can see a detailed report of the failed test by pressing on the result.</string>
     <string name="HOME">Home</string>
     <string name="VERIFY">Check Current Cell</string>
     <string name="SIMDETAILS">SIM/Device Info</string>
@@ -65,6 +66,17 @@
     <string name="GOOD">GOOD</string>
     <string name="WARNING">WARNING</string>
     <string name="ALERT">ALERT</string>
+    <string name="CHECK">Always show this info</string>
+    <string name="CHECKSTARTED">The check has started</string>
+    <string name="CHECKINGSIGNAL">Checking signal power</string>
+    <string name="CHECKINGPBDB">Checking public DB</string>
+    <string name="CHECKINGINDB">Checking internal DB</string>
+    <string name="CHECKINGNEIGHBOUR">Checking neighbour list</string>
+    <string name="CHECKINGCONSISTENCY">Checking cell consistency</string>
+    <string name="CHECKNAME">Check done</string>
+    <string name="RESULT">Result</string>
+    <string name="FINAlRESULT">Final result:</string>
+    <string name="RETAKE">Retake the tests</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

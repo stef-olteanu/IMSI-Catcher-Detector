@@ -221,7 +221,7 @@ public class CheckerTextView extends AppCompatTextView {
         this.mConstraintSet.connect(this.getId(),ConstraintSet.LEFT, R.id.checkerConstraintLayout,ConstraintSet.LEFT,20);
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
-                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,R.id.checkerStartButtonView,ConstraintSet.BOTTOM,30);
+                //this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,R.id.checkerStartButtonView,ConstraintSet.BOTTOM,30);
                 break;
             case MConstants.PUBLIC_DB_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.SIGNAL_CHECKING_TEXT_VIEW_ID,ConstraintSet.BOTTOM, 30);
@@ -242,7 +242,7 @@ public class CheckerTextView extends AppCompatTextView {
         this.mConstraintSet.connect(this.getId(),ConstraintSet.RIGHT, R.id.checkerConstraintLayout,ConstraintSet.RIGHT,20);
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
-                this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,R.id.checkerStartButtonView,ConstraintSet.BOTTOM,30);
+               // this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,R.id.checkerStartButtonView,ConstraintSet.BOTTOM,30);
                 break;
             case MConstants.PUBLIC_DB_CHECKER:
                 this.mConstraintSet.connect(this.getId(),ConstraintSet.TOP,MConstants.SIGNAL_CHECKING_STATUS_ID1,ConstraintSet.BOTTOM,30);

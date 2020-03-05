@@ -55,6 +55,7 @@
     <string name="checkerAdviceSubtitle">Click pe text sau pe imagine</string>
     <string name="startCheckingActivity">Incepe verificarea celulei</string>
     <string name="checkerAdvice1">1.Pe durata testului trebuie sa va asigurati ca telefonul ramane nemiscat. Daca miscati telefonul, testul nu va da rezultate corecte.</string>
+    <string name="checkerAdvice2">2.Un rezultat detaliat pentru fiecare test picat se poate vedea prin apasarea pe rezultatul testului.</string>
     <string name="HOME">Acasa</string>
     <string name="VERIFY">Verifica celula curenta</string>
     <string name="SIMDETAILS">Detalii telefon/ SIM</string>
@@ -65,6 +66,17 @@
     <string name="GOOD">GOOD</string>
     <string name="WARNING">WARNING</string>
     <string name="ALERT">ALERT</string>
+    <string name="CHECK">Afiseaza intotdeauna aceste informatii</string>
+    <string name="CHECKSTARTED">Verificarea a inceput</string>
+    <string name="CHECKINGPBDB">Verificare BD publica</string>
+    <string name="CHECKINGINDB">Verificare BD interna</string>
+    <string name="CHECKINGNEIGHBOUR">Verificare lista vecini</string>
+    <string name="CHECKINGCONSISTENCY">Verificare date celula</string>
+    <string name="CHECKINGSIGNAL">Verificare putere semnal</string>
+    <string name="CHECKNAME">Verificare efectuata</string>
+    <string name="RESULT">Rezultat</string>
+    <string name="FINAlRESULT">Rezultat final:</string>
+    <string name="RETAKE">Reia testele</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>
