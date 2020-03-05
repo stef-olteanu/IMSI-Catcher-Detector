@@ -66,6 +66,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="@string/CHECKSTARTED"
         android:textColor="@color/blue"
@@ -73,7 +75,7 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/progressBarCheck"
         app:layout_constraintStart_toEndOf="@+id/progressBarCheck"
-        app:layout_constraintTop_toTopOf="@+id/progressBarCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/hamburger" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -271,36 +273,51 @@
         app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <TextView
-        android:id="@+id/textView60"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/finalResult"
+        android:layout_width="230dp"
+        android:layout_height="87dp"
         android:layout_margin="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/share_tech_mono"
+        android:gravity="center_horizontal"
         android:padding="10dp"
         android:text="TextView"
         android:textSize="16sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonRetake"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/custom_button"
         android:padding="5dp"
         android:text="@string/RETAKE"
         android:textColor="@color/blue"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonPause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/custom_button"
+        android:padding="5dp"
+        android:text="@string/STOP"
+        android:textColor="@color/blue"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

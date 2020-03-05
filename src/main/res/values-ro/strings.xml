@@ -68,6 +68,7 @@
     <string name="ALERT">ALERT</string>
     <string name="CHECK">Afiseaza intotdeauna aceste informatii</string>
     <string name="CHECKSTARTED">Verificarea a inceput</string>
+    <string name="CHECKSENDED">Verificarea s-a terminat</string>
     <string name="CHECKINGPBDB">Verificare BD publica</string>
     <string name="CHECKINGINDB">Verificare BD interna</string>
     <string name="CHECKINGNEIGHBOUR">Verificare lista vecini</string>
@@ -77,6 +78,9 @@
     <string name="RESULT">Rezultat</string>
     <string name="FINAlRESULT">Rezultat final:</string>
     <string name="RETAKE">Reia testele</string>
+    <string name="TESTPASSED">Testul a trecut</string>
+    <string name="TESTFAILED">Testul a picat</string>
+    <string name="STOP">Opreste testele</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

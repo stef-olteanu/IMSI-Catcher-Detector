@@ -1,12 +1,17 @@
 package Managers;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 
 import com.example.licentav00.CheckersViews.CheckerTextView;
+import com.example.licentav00.R;
+
+import org.w3c.dom.Text;
 
 import Utils.GlobalMainContext;
 import Utils.MConstants;
@@ -14,12 +19,16 @@ import Utils.MConstants;
 public class CheckerViewManager {
     //region Private Members
     private View mView;
+    private SharedPreferences mSharedPreferences;
+    private String mAppLanguage;
     //endregion
 
 
     //region Constructor
     public CheckerViewManager(View view) {
         this.mView = view;
+        this.mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("AppLanguage",GlobalMainContext.getMainContext().MODE_PRIVATE);
+        this.mAppLanguage = mSharedPreferences.getString("Language",MConstants.AppLanguages.RO_LANG);
     }
     //endregion
 
@@ -27,83 +36,85 @@ public class CheckerViewManager {
     //region Public Methods
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     /**
-     * Function that creates the view when the check is started
-     */
-    public void CreateView(String checkDone) {
-        switch (checkDone) {
-            case MConstants.SIGNAL_CHECKER:
-                TextView sigCheckTextView = new CheckerTextView(GlobalMainContext.getMainContext(),this.mView);
-                ((CheckerTextView) sigCheckTextView).SetParamsTextView(checkDone);
-                ((CheckerTextView) sigCheckTextView).ShowTextView();
-                break;
-            case MConstants.PUBLIC_DB_CHECKER:
-                TextView publicDbTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) publicDbTextView).SetParamsTextView(checkDone);
-                ((CheckerTextView) publicDbTextView).ShowTextView();
-                break;
-            case MConstants.INTERNAL_DB_CHECKER:
-                TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone);
-                ((CheckerTextView) internalDBTextView).ShowTextView();
-                break;
-            case MConstants.NEIGHBOUR_LIST_CHECKER:
-                TextView neighbourListTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) neighbourListTextView).SetParamsTextView(checkDone);
-                ((CheckerTextView) neighbourListTextView).ShowTextView();
-                break;
-            case MConstants.CELL_CONSISTENCY_CHECKER:
-                TextView cellConsistencyTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) cellConsistencyTextView).SetParamsTextView(checkDone);
-                ((CheckerTextView) cellConsistencyTextView).ShowTextView();
-                break;
-        }
-    }
-
-    /**
      * Function that creates view when the checker stops
      * @param checkDone
      * @param checkStatus
      */
     public void CreateView(String checkDone, String checkStatus) {
+        ImageView imageView = null;
+        TextView textView = null;
         switch (checkDone) {
             case MConstants.SIGNAL_CHECKER:
-                TextView finalCheckTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) finalCheckTextView).SetParamsTextView(checkDone, checkStatus);
-                ((CheckerTextView) finalCheckTextView).ShowTextView();
+                imageView = this.mView.findViewById(R.id.imageSignal);
+                selectImage(imageView,checkStatus);
+                imageView.setVisibility(View.VISIBLE);
                 break;
             case MConstants.PUBLIC_DB_CHECKER:
-                TextView finalPublicDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) finalPublicDBTextView).SetParamsTextView(checkDone, checkStatus);
-                ((CheckerTextView) finalPublicDBTextView).ShowTextView();
+                imageView = this.mView.findViewById(R.id.imagePBDB);
+                selectImage(imageView,checkStatus);
+                imageView.setVisibility(View.VISIBLE);
                 break;
             case MConstants.INTERNAL_DB_CHECKER:
-                TextView internalDBTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) internalDBTextView).SetParamsTextView(checkDone, checkStatus);
-                ((CheckerTextView) internalDBTextView).ShowTextView();
+                imageView = this.mView.findViewById(R.id.imageINTDB);
+                selectImage(imageView,checkStatus);
+                imageView.setVisibility(View.VISIBLE);
                 break;
             case MConstants.NEIGHBOUR_LIST_CHECKER:
-                TextView neighbourListTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) neighbourListTextView).SetParamsTextView(checkDone, checkStatus);
-                ((CheckerTextView) neighbourListTextView).ShowTextView();
+                imageView = this.mView.findViewById(R.id.imageNeigh);
+                selectImage(imageView,checkStatus);
+                imageView.setVisibility(View.VISIBLE);
                 break;
             case MConstants.CELL_CONSISTENCY_CHECKER:
-                TextView cellConsistencyTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) cellConsistencyTextView).SetParamsTextView(checkDone,checkStatus);
-                ((CheckerTextView) cellConsistencyTextView).ShowTextView();
+                imageView = this.mView.findViewById(R.id.imageCell);
+                selectImage(imageView,checkStatus);
+                imageView.setVisibility(View.VISIBLE);
                 break;
             case MConstants.OVERALL_CHECKER:
-                TextView overallTextView = new CheckerTextView(GlobalMainContext.getMainContext(), this.mView);
-                ((CheckerTextView) overallTextView).SetParamsTextView(checkDone,checkStatus);
-                ((CheckerTextView) overallTextView).ShowTextView();
+                textView = this.mView.findViewById(R.id.finalResult);
+                selectTextView(textView,checkStatus);
+                textView.setVisibility(View.VISIBLE);
                 break;
         }
 
 
+    }
+    //endregion
 
-
+    //Private Methods
+    private void selectImage(ImageView resultImage,String checkStatus) {
+        switch (checkStatus) {
+            case MConstants.TEST_PASSED_RO:
+                resultImage.setImageResource(R.drawable.check);
+                break;
+            case MConstants.TEST_FAILED_RO:
+                resultImage.setImageResource(R.drawable.x);
+                break;
+        }
     }
 
-
-
+    private void selectTextView(TextView resultText,String checkStatus) {
+        if(this.mAppLanguage.equals(MConstants.AppLanguages.EN_LANG)) {
+            switch (checkStatus) {
+                case MConstants.OVERALL_FAILED_RO:
+                    checkStatus = MConstants.OVERALL_FAILED_EN;
+                    resultText.setTextColor(GlobalMainContext.getMainContext().getResources().getColor(R.color.red));
+                    break;
+                case MConstants.OVERALL_PASSED_RO:
+                    checkStatus = MConstants.OVERALL_PASSED_EN;
+                    resultText.setTextColor(GlobalMainContext.getMainContext().getResources().getColor(R.color.green));
+                    break;
+            }
+        } else {
+            switch (checkStatus) {
+                case MConstants.OVERALL_FAILED_RO:
+                    resultText.setTextColor(GlobalMainContext.getMainContext().getResources().getColor(R.color.red));
+                    break;
+                case MConstants.OVERALL_PASSED_RO:
+                    resultText.setTextColor(GlobalMainContext.getMainContext().getResources().getColor(R.color.green));
+                    break;
+            }
+        }
+        resultText.setText(checkStatus);
+    }
     //endregion
 }

@@ -15,9 +15,23 @@ import androidx.fragment.app.DialogFragment;
 
 import com.example.licentav00.R;
 
+import Checkers.CheckerStarter;
 import Utils.GlobalMainContext;
 
 public class CheckerPopUpDialog extends DialogFragment {
+
+    //region Members declarations
+    private CheckerStarter mCheckerStarter;
+    private String mOpenType;
+    //endregion
+
+
+    //region Constructor
+    public CheckerPopUpDialog(CheckerStarter checkerStarter, String openType) {
+        this.mCheckerStarter = checkerStarter;
+        this.mOpenType = openType;
+    }
+    //endregion
 
 
     @Nullable
@@ -33,6 +47,8 @@ public class CheckerPopUpDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 getDialog().dismiss();
+                if(mOpenType.equals("FIRST"))
+                    mCheckerStarter.startChecker();
             }
         });
 

@@ -24,11 +24,6 @@ public class CheckerStatusInformer implements CheckerCallBack {
     //region Public Methods
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     @Override
-    public void OnCheckStarted(String checkDone) {
-        this.mCheckerViewManager.CreateView(checkDone);
-    }
-
-    @Override
     public void OnCheckCompleted(String checkDone, String checkStatus) {
         this.mCheckerViewManager.CreateView(checkDone,checkStatus);
 
