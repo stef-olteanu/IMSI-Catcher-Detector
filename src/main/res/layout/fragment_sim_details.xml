@@ -12,14 +12,15 @@
         android:layout_height="20dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="@string/NETWORKINFO"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/hamburger"
+        app:layout_constraintStart_toEndOf="@+id/hamburger"
+        app:layout_constraintTop_toTopOf="@+id/hamburger"
+        app:layout_constraintVertical_bias="0.6" />
 
     <View
         android:id="@+id/view3"
@@ -65,7 +66,7 @@
         android:foregroundGravity="center"
         android:gravity="center"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.033"
@@ -91,7 +92,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/providerNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/providerNameTextView" />
@@ -115,7 +116,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/operatorCodeTextView"
         app:layout_constraintTop_toBottomOf="@+id/operatorCodeTextView" />
@@ -151,7 +152,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/typeTextView"
         app:layout_constraintTop_toBottomOf="@+id/typeTextView" />
@@ -163,7 +164,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/lacTextView"
         app:layout_constraintTop_toBottomOf="@+id/lacTextView" />
@@ -178,7 +179,7 @@
         android:fontFamily="@font/share_tech_mono"
         android:foregroundGravity="center"
         android:gravity="center"
-        android:text="Informatii despre cartela SIM"
+        android:text="@string/SIMINFO"
         android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -265,7 +266,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/cidTextView"
         app:layout_constraintTop_toBottomOf="@+id/view4" />
@@ -277,7 +278,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/countryTextView"
         app:layout_constraintTop_toBottomOf="@+id/countryTextView" />
@@ -289,7 +290,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/codeTextView"
         app:layout_constraintTop_toBottomOf="@+id/codeTextView" />
@@ -301,7 +302,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/simOpNameTextView"
         app:layout_constraintTop_toBottomOf="@+id/simOpNameTextView" />
@@ -313,7 +314,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/imsiCodeTextView"
         app:layout_constraintTop_toBottomOf="@+id/imsiCodeTextView" />
@@ -381,7 +382,7 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/simSerialTextView"
         app:layout_constraintTop_toBottomOf="@+id/view5" />
@@ -393,9 +394,20 @@
         android:layout_marginTop="10dp"
         android:fontFamily="@font/share_tech_mono"
         android:text="TextView"
-        android:textColor="#00BCD4"
+        android:textColor="@color/blue"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/phoneTypeTextView"
         app:layout_constraintTop_toBottomOf="@+id/phoneTypeTextView" />
+
+    <ImageView
+        android:id="@+id/hamburger"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/hamburger" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

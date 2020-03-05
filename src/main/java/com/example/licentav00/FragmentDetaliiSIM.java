@@ -4,14 +4,17 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 
@@ -34,6 +37,14 @@ public class FragmentDetaliiSIM extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         //inflater transforma XML in View
         View inflaterView =  inflater.inflate(R.layout.fragment_sim_details, container, false);
+        final DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawer_layout);
+        ImageView hamburger = inflaterView.findViewById(R.id.hamburger);
+        hamburger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
         //region Set network Information
         Network network = new Network(mainContext);

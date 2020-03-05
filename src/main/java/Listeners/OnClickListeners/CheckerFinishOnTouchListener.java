@@ -12,11 +12,8 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.example.licentav00.R;
 
-import org.w3c.dom.Text;
-
 import Informers.CheckerStatusInformer;
 import Managers.CheckerManager;
-import Utils.GlobalMainContext;
 import Utils.MConstants;
 import Utils.VibratorHelper;
 
@@ -134,7 +131,7 @@ public class CheckerFinishOnTouchListener implements View.OnTouchListener {
                                         Button button = mView.findViewById(R.id.checkerStartButtonView);
                                         button.setClickable(true);
                                         button.setBackground(mView.getResources().getDrawable(R.drawable.custom_button));
-                                        button.setTextColor(mView.getResources().getColor(R.color.bleu));
+                                        button.setTextColor(mView.getResources().getColor(R.color.blue));
                                     }
                                 }, counter * 5 * 500);
                                 break;

@@ -19,7 +19,7 @@
 
 
     <style name="progressBarBleu" parent="@style/Theme.AppCompat">
-        <item name="colorAccent">@color/bleu</item>
+        <item name="colorAccent">@color/blue</item>
     </style>
 
 

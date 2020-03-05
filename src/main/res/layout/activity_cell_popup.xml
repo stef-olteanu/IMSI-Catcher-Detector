@@ -6,7 +6,7 @@
     android:layout_width="350dp"
     android:layout_height="350dp"
     android:layout_gravity="center"
-    android:background="@color/bleu">
+    android:background="@color/blue">
 
     <ImageView
         android:id="@+id/circlePopImageView"

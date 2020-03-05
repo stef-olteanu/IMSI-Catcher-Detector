@@ -5,14 +5,17 @@ import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -63,6 +66,15 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
      */
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflateView =  inflater.inflate(R.layout.fragment_cell_details, container, false);
+
+        final DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawer_layout);
+        ImageView hamburger = inflateView.findViewById(R.id.hamburger);
+        hamburger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawerLayout.openDrawer(Gravity.LEFT);
+            }
+        });
 
 
         TextView arfcnTextView = (TextView) inflateView.findViewById(R.id.arfcnTextView);

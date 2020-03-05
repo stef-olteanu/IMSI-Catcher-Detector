@@ -62,6 +62,9 @@
     <string name="SEECELLMAP">Vizualizare harta celule</string>
     <string name="ANOTHERDETAILS">Alte detalii</string>
     <string name="InfOpt">Informatii si optiuni</string>
+    <string name="GOOD">GOOD</string>
+    <string name="WARNING">WARNING</string>
+    <string name="ALERT">ALERT</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>
