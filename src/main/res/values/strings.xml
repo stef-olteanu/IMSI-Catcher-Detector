@@ -81,6 +81,7 @@
     <string name="TESTPASSED">Test passed</string>
     <string name="TESTFAILED">Test failed</string>
     <string name="STOP">Stop tests</string>
+    <string name="LASTCHECK">Last check:</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

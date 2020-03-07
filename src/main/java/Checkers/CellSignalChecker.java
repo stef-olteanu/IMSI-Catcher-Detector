@@ -77,9 +77,9 @@ public class CellSignalChecker {
             ArrayList<Integer> signalValues =  this.mDatabase.getSignalValues(Integer.parseInt(this.mCurrentCell.GetCid()));
             Double signalAverage = signalValues.stream().mapToInt(val -> val).average().orElse(0.0);
             int currentSignalStrenght = Integer.parseInt(this.mCurrentCell.GetSignalDbm());
-            if(currentSignalStrenght > signalAverage + 5)
+            if(currentSignalStrenght > signalAverage + 6)
                 return new CheckerResponse(MConstants.TEST_FAILED_RO);
-            if(currentSignalStrenght < signalAverage - 5)
+            if(currentSignalStrenght < signalAverage - 6)
                 return new CheckerResponse(MConstants.TEST_FAILED_RO);
         }
         return new CheckerResponse(MConstants.TEST_PASSED_RO);

@@ -81,6 +81,7 @@
     <string name="TESTPASSED">Testul a trecut</string>
     <string name="TESTFAILED">Testul a picat</string>
     <string name="STOP">Opreste testele</string>
+    <string name="LASTCHECK">Ultima verificare:</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

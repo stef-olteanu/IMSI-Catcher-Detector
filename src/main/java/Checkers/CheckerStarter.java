@@ -1,5 +1,7 @@
 package Checkers;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.view.View;
 import android.widget.Button;
@@ -10,13 +12,21 @@ import androidx.annotation.RequiresApi;
 
 import com.example.licentav00.R;
 
+import org.w3c.dom.Text;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import Managers.CheckerManager;
+import Utils.GlobalMainContext;
 
 public class CheckerStarter {
     //region Members Declaration
     private CheckerManager mCheckerManager;
     private View mView;
     private CheckerFinish mCheckerFinish;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
     //endregion
 
 
@@ -25,6 +35,8 @@ public class CheckerStarter {
         this.mCheckerManager = checkerManager;
         this.mView = view;
         this.mCheckerFinish = checkerFinish;
+        this.mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("LastActivity", Context.MODE_PRIVATE);
+        this.mEditor = this.mSharedPreferences.edit();
     }
     //endregion
 
@@ -42,6 +54,7 @@ public class CheckerStarter {
 
         Button buttonStop = this.mView.findViewById(R.id.buttonPause);
         buttonStop.setVisibility(View.VISIBLE);
+
 
         Thread th = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.P)
