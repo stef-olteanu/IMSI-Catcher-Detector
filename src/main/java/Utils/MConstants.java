@@ -96,4 +96,17 @@ public class MConstants {
         public static final String EXISTS_IN_WARNING = "Exists in WARNING";
         public static final String EXISTS_IN_ALERT = "Exists in ALERT";
     }
+
+    public static class Database {
+        public static final String DATABASE_NAME = "imsiCatcherDetector.db";
+        public static final int VERSION = 1;
+
+        public static class SIGNAL_TABLE {
+            public static final String TABLE_NAME = "SIGNAl";
+            public static final String KEY_ID = "ID";
+            public static final String CELL_ID = "CELL_ID";
+            public  static final String KEY_SIGNAL_VALUE = "SIGNAL_VALUE";
+        }
+
+    }
 }

@@ -1,6 +1,5 @@
 package com.example.licentav00;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,7 +28,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.List;
 
 import Model.Cell;
-import Utils.FirebaseHelper;
+import DatabaseLogic.FirebaseHelper;
 import CallBacks.DatabaseReaderCallBack;
 
 public class FragmentCellMap extends Fragment implements OnMapReadyCallback {

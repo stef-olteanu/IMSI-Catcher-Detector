@@ -1,16 +1,14 @@
 package Checkers;
 
 import android.os.Build;
-import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
-import java.util.concurrent.CountDownLatch;
 
 import CallBacks.InternalDatabaseCallBack;
 import Model.Cell;
-import Utils.FirebaseHelper;
+import DatabaseLogic.FirebaseHelper;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 

@@ -1,4 +1,4 @@
-package Utils;
+package DatabaseLogic;
 
 
 import android.app.Activity;
@@ -27,6 +27,7 @@ import CallBacks.DatabaseReaderCallBack;
 import CallBacks.InternalDatabaseCallBack;
 import Checkers.InternalDBChecker;
 import Model.Cell;
+import Utils.MConstants;
 
 public class FirebaseHelper {
     //region Private Members
@@ -285,5 +286,6 @@ public class FirebaseHelper {
                     });
         }
     }
+
     //endregion
 }

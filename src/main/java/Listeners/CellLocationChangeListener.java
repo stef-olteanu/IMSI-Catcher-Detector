@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 import Model.Cell;
-import Utils.FirebaseHelper;
+import DatabaseLogic.FirebaseHelper;
 
 public class CellLocationChangeListener extends PhoneStateListener {
     //region Constructor

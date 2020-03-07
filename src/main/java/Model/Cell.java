@@ -60,8 +60,10 @@ public class Cell {
             mCellLat = dispozitiv.GetLatitude();
             mCellLong = dispozitiv.GetLongitude();
         }
-        else
+        else {
             mCellStatus = MConstants.Cell.GOOD;
+            mCellController.addSignalStrengthToDB(Integer.parseInt(GetCid()),Integer.parseInt(GetSignalDbm()));
+        }
     }
     //endregion
 

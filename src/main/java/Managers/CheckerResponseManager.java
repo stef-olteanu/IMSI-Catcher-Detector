@@ -10,7 +10,7 @@ import Utils.MConstants;
 
 public class CheckerResponseManager {
     //region Private Members
-    private SignalCheckerResponse mSignalCheckerResponse;
+    private CheckerResponse mSignalCheckerResponse;
     private CheckerResponse mPublicDbCheckerResponse;
     private InternalDBCheckerResponse mInternalDBCheckerResponse;
     private NeighbourListCheckerResponse mNeighbourListCheckerResponse;
@@ -24,20 +24,12 @@ public class CheckerResponseManager {
 
     //region Public Methods
 
-    public void setmSignalCheckerResponse(SignalCheckerResponse mSignalCheckerResponse) {
+    public void setmSignalCheckerResponse(CheckerResponse mSignalCheckerResponse) {
         this.mSignalCheckerResponse = mSignalCheckerResponse;
     }
 
     public String GetFinalSignalResponse(){
-        if (mSignalCheckerResponse.getmCheckingStatus().equals(MConstants.CHECKER_STATUS_COMPLETE)) {
-            if (mSignalCheckerResponse.getmAsuStatus().equals(MConstants.TEST_PASSED_RO) && mSignalCheckerResponse.getmRssiStatus().equals(MConstants.TEST_PASSED_RO)) {
-                return MConstants.TEST_PASSED_RO;
-            } else {
-                return MConstants.TEST_FAILED_RO;
-            }
-        } else {
-            return this.mSignalCheckerResponse.getmCheckingStatus();
-        }
+        return this.mSignalCheckerResponse.getmCheckingStatus();
     }
 
     public CheckerResponse getmPublicDbCheckerResponse() {

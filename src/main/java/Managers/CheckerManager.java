@@ -61,7 +61,7 @@ public class CheckerManager {
     public void performSignalCheck() {
                 CellSignalChecker cellSignalChecker = new CellSignalChecker();
                 CheckerResponse signalCheckerResponse = cellSignalChecker.checkSignalStrength();
-                mCheckerResponseManager.setmSignalCheckerResponse((SignalCheckerResponse)signalCheckerResponse);
+                mCheckerResponseManager.setmSignalCheckerResponse(signalCheckerResponse);
                 mFinalSignalStatus =  mCheckerResponseManager.GetFinalSignalResponse();
                 FinalCheckerResponse.put(MConstants.SIGNAL_CHECKER, mFinalSignalStatus);
     }
@@ -76,12 +76,9 @@ public class CheckerManager {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void performInteralDBCheck() {
                 InternalDBChecker internalDBChecker = new InternalDBChecker();
-                internalDBChecker.checkInternalDatabase(new InternalDatabaseCallBack() {
-                    @Override
-                    public void OnReturnResponseCallback(String response) {
-                        InternalDBCheckerResponse internalDBCheckerResponse = new InternalDBCheckerResponse(response);
-                        mCheckerResponseManager.setmInternalDBCheckerResponse(internalDBCheckerResponse);
-                    }
+                internalDBChecker.checkInternalDatabase(response -> {
+                    InternalDBCheckerResponse internalDBCheckerResponse = new InternalDBCheckerResponse(response);
+                    mCheckerResponseManager.setmInternalDBCheckerResponse(internalDBCheckerResponse);
                 });
 
 

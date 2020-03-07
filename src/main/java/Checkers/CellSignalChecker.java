@@ -1,5 +1,6 @@
 package Checkers;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -7,7 +8,9 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
+import DatabaseLogic.IMSICatcherDetectorDatabase;
 import Model.Cell;
 import Responses.CheckerResponse;
 import Responses.SignalCheckerResponse;
@@ -28,13 +31,9 @@ public class CellSignalChecker {
     private Cell mCurrentCell = null;
     private long mLastMovementTime;
     final private long MAXIMUM_SAFE_PERIOD = 5000;
-    final private long COUNTS_VERIFY_SIGNAL = 5000;
-    final private int MIN_RSSI_RANGE = -110;
-    final private int MAX_RSSI_RANGE = -50;
-    final private int MIN_ASU_RANGE = 0;
-    final private int MAX_ASU_RANGE = 31;
     private SharedPreferences mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("sharedTime",Context.MODE_PRIVATE);
     private SharedPreferences.Editor mEditor = mSharedPreferences.edit();
+    private IMSICatcherDetectorDatabase mDatabase;
     //endregion
 
 
@@ -49,6 +48,7 @@ public class CellSignalChecker {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        this.mDatabase = new IMSICatcherDetectorDatabase(GlobalMainContext.getMainContext());
     }
     //endregion
 
@@ -66,45 +66,24 @@ public class CellSignalChecker {
      * If the phone is moved while checking, it will interrupt the process and it won't be taken into consideration.
      * This is done using the status, which won't be modified unless the phone is moved.
      */
+    @TargetApi(Build.VERSION_CODES.N)
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public CheckerResponse checkSignalStrength(){
-        String rssiStatus = MConstants.TEST_PASSED_RO;
-        String asuStatus = MConstants.TEST_PASSED_RO;
-        String checkerStatus = MConstants.CHECKER_STATUS_COMPLETE;
+    public CheckerResponse checkSignalStrength() {
         float currentTimeMilis = System.currentTimeMillis();
-
 
 
         mLastMovementTime = mSharedPreferences.getLong("lastMovementTime", mLastMovementTime);
         if (currentTimeMilis - mLastMovementTime >= MAXIMUM_SAFE_PERIOD) {
-            for (int count = 0; count < COUNTS_VERIFY_SIGNAL; count++) {
-                boolean checkerRSSI = true;
-                boolean checkerASU = true;
-                int rssiLevel = Integer.parseInt(mCurrentCell.GetSignalDbm());
-                int asuLevel = Integer.parseInt(mCurrentCell.GetAsuLevel());
-                if (rssiLevel < MIN_RSSI_RANGE || rssiLevel > MAX_RSSI_RANGE)
-                    checkerRSSI = false;
-                if (asuLevel < MIN_ASU_RANGE || asuLevel > MAX_ASU_RANGE)
-                    checkerASU = false;
-                if (checkerRSSI) {
-                   rssiStatus = MConstants.TEST_PASSED_RO;
-                } else {
-                    rssiStatus = MConstants.TEST_FAILED_RO;
-                    break;
-                }
-                if (checkerASU) {
-                    asuStatus = MConstants.TEST_PASSED_RO;
-                } else {
-                    asuStatus = MConstants.TEST_FAILED_RO;
-                    break;
-                }
-            }
-        } else {
-            checkerStatus = MConstants.SIGNAL_CHECKER_STATUS_FAILED_RO;
+            ArrayList<Integer> signalValues =  this.mDatabase.getSignalValues(Integer.parseInt(this.mCurrentCell.GetCid()));
+            Double signalAverage = signalValues.stream().mapToInt(val -> val).average().orElse(0.0);
+            int currentSignalStrenght = Integer.parseInt(this.mCurrentCell.GetSignalDbm());
+            if(currentSignalStrenght > signalAverage + 5)
+                return new CheckerResponse(MConstants.TEST_FAILED_RO);
+            if(currentSignalStrenght < signalAverage - 5)
+                return new CheckerResponse(MConstants.TEST_FAILED_RO);
         }
-        return  new SignalCheckerResponse(checkerStatus, rssiStatus, asuStatus);
+        return new CheckerResponse(MConstants.TEST_PASSED_RO);
     }
-
 
     //endregion
 }

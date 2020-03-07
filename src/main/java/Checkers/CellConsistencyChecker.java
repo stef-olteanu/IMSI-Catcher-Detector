@@ -5,13 +5,12 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import CallBacks.DatabaseReaderCallBack;
 import CallBacks.InternalDatabaseCallBack;
 import Model.Cell;
-import Utils.FirebaseHelper;
+import DatabaseLogic.FirebaseHelper;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 

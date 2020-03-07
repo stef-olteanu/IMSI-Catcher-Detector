@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import DatabaseLogic.IMSICatcherDetectorDatabase;
 import Model.Cell;
 import Model.Dispozitiv;
 import Utils.AsyncGetter;
@@ -30,6 +31,7 @@ public class CellController {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public CellController(Context mContext) throws IOException, InterruptedException {
         mainContext = mContext;
+        this.mDatabase = new IMSICatcherDetectorDatabase(this.mainContext);
         mTelephonyManager = (TelephonyManager) mainContext.getSystemService(Context.TELEPHONY_SERVICE);
         if (mainContext.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mCellInfoList = (List<CellInfo>) mTelephonyManager.getAllCellInfo();
@@ -59,6 +61,7 @@ public class CellController {
     private CellSignalStrengthGsm mCellSignalStrengthGsm;
     private Requester mRequester;
     private JsonObject mCellLocationJson;
+    private IMSICatcherDetectorDatabase mDatabase;
     //endregion
 
 
@@ -195,6 +198,10 @@ public class CellController {
         return cellNeighbours;
     }
     //endregion
+    //region Database Interraction
+    public void addSignalStrengthToDB(int cellId, int signalStrength) {
+        this.mDatabase.AddSignalStrength(cellId,signalStrength);
+    }
     //endregion
 
 
