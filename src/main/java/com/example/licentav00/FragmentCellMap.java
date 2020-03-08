@@ -43,7 +43,7 @@ public class FragmentCellMap extends Fragment implements OnMapReadyCallback {
     //region Private Members
     private MapView mMapView;
     private FirebaseHelper mDatabase;
-
+    private View mInflatedView;
     //endregion
 
 
@@ -66,7 +66,7 @@ public class FragmentCellMap extends Fragment implements OnMapReadyCallback {
         mMapView = inflateView.findViewById(R.id.cellsMapView);
         mMapView.onCreate(savedInstanceState);
         mMapView.getMapAsync(this);
-
+        this.mInflatedView = inflateView;
         return inflateView;
 
     }

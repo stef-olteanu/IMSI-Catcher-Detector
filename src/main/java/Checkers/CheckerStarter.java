@@ -35,12 +35,13 @@ public class CheckerStarter {
         this.mCheckerManager = checkerManager;
         this.mView = view;
         this.mCheckerFinish = checkerFinish;
-        this.mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("LastActivity", Context.MODE_PRIVATE);
+        this.mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
         this.mEditor = this.mSharedPreferences.edit();
     }
     //endregion
 
     //region Public Methods
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public void startChecker() {
         ProgressBar progressBar = this.mView.findViewById(R.id.progressBarCheck);
         progressBar.setVisibility(View.VISIBLE);
@@ -55,6 +56,8 @@ public class CheckerStarter {
         Button buttonStop = this.mView.findViewById(R.id.buttonPause);
         buttonStop.setVisibility(View.VISIBLE);
 
+        mEditor.putBoolean("isPaused",false);
+        mEditor.commit();
 
         Thread th = new Thread(new Runnable() {
             @RequiresApi(api = Build.VERSION_CODES.P)

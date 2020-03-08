@@ -1,5 +1,6 @@
 package com.example.licentav00.Popups;
 
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -18,7 +19,7 @@ import com.example.licentav00.R;
 import Checkers.CheckerStarter;
 import Utils.GlobalMainContext;
 
-public class CheckerPopUpDialog extends DialogFragment {
+public class CheckerPopUpDialog extends DialogFragment implements DialogInterface.OnDismissListener {
 
     //region Members declarations
     private CheckerStarter mCheckerStarter;
@@ -49,8 +50,9 @@ public class CheckerPopUpDialog extends DialogFragment {
                 getDialog().dismiss();
                 if(mOpenType.equals("FIRST"))
                     mCheckerStarter.startChecker();
-            }
+        }
         });
+
 
         CheckBox checkBox = inflatedView.findViewById(R.id.checkBox);
         boolean isChecked = sharedPreferences.getBoolean("checked",true);
@@ -72,4 +74,10 @@ public class CheckerPopUpDialog extends DialogFragment {
         return inflatedView;
     }
 
+    @Override
+    public void onDismiss(@NonNull DialogInterface dialog) {
+        super.onDismiss(dialog);
+        if(mOpenType.equals("FIRST"))
+            mCheckerStarter.startChecker();
+    }
 }

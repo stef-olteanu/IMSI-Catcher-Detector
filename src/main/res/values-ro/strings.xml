@@ -69,6 +69,7 @@
     <string name="CHECK">Afiseaza intotdeauna aceste informatii</string>
     <string name="CHECKSTARTED">Verificarea a inceput</string>
     <string name="CHECKSENDED">Verificarea s-a terminat</string>
+    <string name="CHECKSTOPPED">Verificarea a fost oprita</string>
     <string name="CHECKINGPBDB">Verificare BD publica</string>
     <string name="CHECKINGINDB">Verificare BD interna</string>
     <string name="CHECKINGNEIGHBOUR">Verificare lista vecini</string>

@@ -69,6 +69,7 @@
     <string name="CHECK">Always show this info</string>
     <string name="CHECKSTARTED">The check has started</string>
     <string name="CHECKSENDED">The check has ended</string>
+    <string name="CHECKSTOPPED">The check was stopped</string>
     <string name="CHECKINGSIGNAL">Checking signal power</string>
     <string name="CHECKINGPBDB">Checking public DB</string>
     <string name="CHECKINGINDB">Checking internal DB</string>

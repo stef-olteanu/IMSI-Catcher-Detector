@@ -89,10 +89,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/values-en/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-en/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
@@ -138,8 +139,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
+                <state relative-caret-position="612">
+                  <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -147,7 +148,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MConstants.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1411">
+                <state relative-caret-position="538">
                   <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
                   <folding>
                     <element signature="e#3457#3835#0" />
@@ -159,11 +160,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="521">
-                  <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+                <state relative-caret-position="320">
+                  <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -171,10 +172,32 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="152">
+                  <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#4450#4470#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="527">
+                  <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="373">
+                <state relative-caret-position="1122">
                   <caret line="81" column="56" selection-start-line="81" selection-start-column="56" selection-end-line="81" selection-end-column="56" />
                 </state>
               </provider>
@@ -182,12 +205,12 @@
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_checker_info_popup.xml">
-              <provider selected="true" editor-type-id="android-designer2" />
               <provider editor-type-id="text-editor">
                 <state relative-caret-position="1190">
                   <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
                 </state>
               </provider>
+              <provider selected="true" editor-type-id="android-designer2" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -205,19 +228,25 @@
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml">
-              <provider selected="true" editor-type-id="android-designer2" />
-              <provider editor-type-id="text-editor">
-                <state relative-caret-position="1445">
-                  <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="335">
+                  <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+                  <folding>
+                    <element signature="e#2901#2923#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
+              <provider editor-type-id="android-designer2" />
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+                <state relative-caret-position="206">
+                  <caret line="122" column="43" lean-forward="true" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+                  <folding>
+                    <element signature="e#5918#5939#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -225,7 +254,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentOptions.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="408">
+                <state relative-caret-position="561">
                   <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -265,6 +294,8 @@
       <find>siminfoSIMINFO</find>
       <find>OVERALL</find>
       <find>a</find>
+      <find>CHECKSTA</find>
+      <find>checkstarted</find>
     </findStrings>
     <replaceStrings>
       <replace>MConstants.AppLanguages.RO_LANG</replace>
@@ -298,7 +329,6 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_options.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellDetails.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentDetaliiSIM.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentHome.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentOptions.java" />
@@ -312,8 +342,6 @@
         <option value="$PROJECT_DIR$/src/main/java/Informers/CheckerStatusInformer.java" />
         <option value="$PROJECT_DIR$/src/main/java/Managers/CheckerViewManager.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_checker_info_popup.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/FirebaseHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/Controller/CellController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/MConstants.java" />
@@ -321,13 +349,16 @@
         <option value="$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java" />
         <option value="$PROJECT_DIR$/src/main/java/Managers/CheckerResponseManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/Managers/CheckerManager.java" />
+        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" />
         <option value="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values-en/strings.xml" />
         <option value="$PROJECT_DIR$/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" />
       </list>
     </option>
   </component>
@@ -370,6 +401,13 @@
               <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="licentav00" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Popups" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="Managers" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
             <path>
@@ -382,6 +420,12 @@
               <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
             <path>
               <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
@@ -405,7 +449,6 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -533,10 +576,12 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultPlantUmlFileTemplate" value="UML Sequence" />
+    <property name="adb_path" value="D:\AndroidSDK\platform-tools\adb.exe" />
     <property name="android.sdk.path" value="D:/AndroidSDK" />
     <property name="device.picker.selection" value="GSM9X18922W06488" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
@@ -544,7 +589,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="instant.run" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -702,7 +747,6 @@
       <window_info id="Capture Tool" order="6" />
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info id="Resources Explorer" order="8" weight="0.32995737" />
-      <window_info anchor="bottom" id="Statistic" weight="0.32936078" />
       <window_info anchor="bottom" id="Version Control" order="0" weight="0.32936078" />
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.32827735" />
@@ -711,19 +755,21 @@
       <window_info anchor="bottom" id="Run" order="5" weight="0.32827735" />
       <window_info anchor="bottom" id="Logcat" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Debug" order="8" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32936078" />
+      <window_info anchor="bottom" id="Statistic" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.32995737" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="right" id="Gradle" order="2" weight="0.32995737" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
       <window_info anchor="right" id="Preview" order="5" weight="0.20362474" />
-      <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" visible="true" weight="0.25426438" />
+      <window_info anchor="right" id="Device File Explorer" order="6" side_tool="true" weight="0.25426438" />
       <window_info anchor="right" id="Android WiFi ADB" order="7" weight="0.32942432" />
       <window_info anchor="right" id="PlantUML" order="8" weight="0.29957357" />
       <window_info anchor="right" id="UML design tool window" order="9" weight="0.3001066" />
       <window_info anchor="right" id="Code Iris" order="10" weight="0.29104477" />
+      <window_info anchor="right" id="WIFI ADB ULTIMATE" order="11" weight="0.32995737" />
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
@@ -786,16 +832,10 @@
           <option name="timeStamp" value="117" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java</url>
-          <line>68</line>
+          <url>file://$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java</url>
+          <line>44</line>
           <properties />
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="121" />
+          <option name="timeStamp" value="122" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -837,31 +877,20 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_cell_popup.xml">
-      <provider editor-type-id="android-designer2" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_details.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml">
       <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
-          <folding>
-            <element signature="e#1528#1543#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_options.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellDetails.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -870,17 +899,6 @@
           <folding>
             <element signature="e#2238#2409#0" expanded="true" />
             <element signature="e#2408#2409#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="62" selection-end-column="11" />
-          <folding>
-            <element signature="e#1886#2057#0" expanded="true" />
-            <element signature="e#2056#2057#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -897,12 +915,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_sim_details.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="6817">
           <caret line="401" column="4" selection-start-line="401" selection-start-column="4" selection-end-line="401" selection-end-column="4" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Listeners/OnClickListeners/DialogOpenOnClickListener.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java">
@@ -936,12 +954,12 @@
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_home.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
         <state relative-caret-position="510">
           <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
         </state>
       </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -1084,17 +1102,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="97" lean-forward="true" selection-start-line="97" selection-end-line="97" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4792#4812#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CellConsistencyChecker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1102,86 +1109,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="83" column="49" selection-start-line="83" selection-start-column="49" selection-end-line="83" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values-en/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="83" column="3" selection-start-line="83" selection-start-column="3" selection-end-line="83" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/values-ro/strings.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="83" column="4" lean-forward="true" selection-start-line="83" selection-start-column="4" selection-end-line="83" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="37" column="13" selection-start-line="37" selection-start-column="13" selection-end-line="37" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1411">
-          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
-          <folding>
-            <element signature="e#3457#3835#0" />
-            <element signature="e#3841#3989#0" />
-            <element signature="e#3995#4191#0" />
-            <element signature="e#4312#4572#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_checker_info_popup.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="202" column="63" selection-start-line="202" selection-start-column="63" selection-end-line="202" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1445">
-          <caret line="85" column="8" selection-start-line="85" selection-start-column="8" selection-end-line="85" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/huawei-atu_l21-GSM9X18922W06488/data/data/com.example.licentav00/shared_prefs/sharedTime.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentOptions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/huawei-atu_l21-GSM9X18922W06488/data/data/com.example.licentav00/shared_prefs/MainActivity.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/huawei-atu_l21-GSM9X18922W06488/data/data/com.example.licentav00/shared_prefs/sharedTime.xml" />
+    <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/huawei-atu_l21-GSM9X18922W06488/data/data/com.example.licentav00/shared_prefs/MainActivity.xml" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.fragment/fragment/1.1.0/b9ebb04df2cb0cad4419af3c658690bc82aa5706/fragment-1.1.0-sources.jar!/androidx/fragment/app/Fragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1201,15 +1130,92 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
+        <state relative-caret-position="1122">
           <caret line="81" column="56" selection-start-line="81" selection-start-column="56" selection-end-line="81" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_checker_info_popup.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3043">
+          <caret line="202" column="63" selection-start-line="202" selection-start-column="63" selection-end-line="202" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentOptions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="54" column="59" selection-start-line="54" selection-start-column="59" selection-end-line="54" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="100" column="74" selection-start-line="100" selection-start-column="74" selection-end-line="100" selection-end-column="74" />
+          <folding>
+            <element signature="e#3457#3835#0" />
+            <element signature="e#3841#3989#0" />
+            <element signature="e#3995#4191#0" />
+            <element signature="e#4312#4572#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="82" column="1" selection-start-line="82" selection-start-column="1" selection-end-line="82" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_checker.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="71" column="21" selection-start-line="71" selection-start-column="21" selection-end-line="71" selection-end-column="21" />
+          <folding>
+            <element signature="e#2901#2923#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values-ro/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="71" column="4" lean-forward="true" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="71" column="62" selection-start-line="71" selection-start-column="62" selection-end-line="71" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/values-en/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="71" column="4" selection-start-line="71" selection-start-column="3" selection-end-line="71" selection-end-column="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="521">
-          <caret line="55" column="47" selection-start-line="55" selection-start-column="47" selection-end-line="55" selection-end-column="47" />
+        <state relative-caret-position="320">
+          <caret line="50" column="47" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1219,10 +1225,39 @@
     <entry file="file://$USER_HOME$/Documents/AndroidStudio/DeviceExplorer/huawei-atu_l21-GSM9X18922W06488/data/data/com.example.licentav00/shared_prefs/CheckInfo.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="74" column="55" selection-start-line="74" selection-start-column="55" selection-end-line="74" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="91" column="31" lean-forward="true" selection-start-line="91" selection-start-column="31" selection-end-line="91" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4450#4470#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="105" column="28" selection-start-line="105" selection-start-column="28" selection-end-line="105" selection-end-column="28" />
+        <state relative-caret-position="206">
+          <caret line="122" column="43" lean-forward="true" selection-start-line="122" selection-start-column="43" selection-end-line="122" selection-end-column="43" />
+          <folding>
+            <element signature="e#5918#5939#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

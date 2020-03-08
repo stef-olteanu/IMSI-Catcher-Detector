@@ -68,7 +68,7 @@ public class FragmentCellChecker extends Fragment {
 
         SimpleDateFormat formattter = new SimpleDateFormat("yyyy-MM-dd ' ' HH:mm:ss");
         Date date = new Date(System.currentTimeMillis());
-        String lastActivity = this.mSharedPreferences.getString("last","bla");
+        String lastActivity = this.mSharedPreferences.getString("last",formattter.format(date));
         TextView lastActivityTV = inflaterView.findViewById(R.id.LastActivity);
         lastActivityTV.setText(lastActivity);
         SharedPreferences.Editor editor = this.mSharedPreferences.edit();
@@ -88,6 +88,7 @@ public class FragmentCellChecker extends Fragment {
         return inflaterView;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     private void setOnClickListeners(final View inflatedView, final FragmentManager fragmentManager){
         ImageView imgInfo = inflatedView.findViewById(R.id.imageInfoCheck);
         imgInfo.setOnClickListener(v -> {
@@ -120,6 +121,20 @@ public class FragmentCellChecker extends Fragment {
             inflatedView.findViewById(R.id.imageCell).setVisibility(View.INVISIBLE);
             inflatedView.findViewById(R.id.finalResult).setVisibility(View.INVISIBLE);
             mCheckerStarter.startChecker();
+        });
+
+        Button buttonStop = inflatedView.findViewById(R.id.buttonPause);
+        buttonStop.setOnClickListener(v -> {
+            v.setVisibility(View.INVISIBLE);
+            SharedPreferences.Editor editor = mSharedPreferences.edit();
+            editor.putBoolean("isPaused",true);
+            editor.apply();
+            Button buttonRetake = inflatedView.findViewById(R.id.buttonRetake);
+            buttonRetake.setVisibility(View.VISIBLE);
+
+            inflatedView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
+            TextView textAnnounce =  inflatedView.findViewById(R.id.checkStartedText);
+            textAnnounce.setText(R.string.CHECKSTOPPED);
         });
     }
 
