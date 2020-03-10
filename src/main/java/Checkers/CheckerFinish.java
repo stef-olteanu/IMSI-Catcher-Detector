@@ -1,5 +1,6 @@
 package Checkers;
 
+import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Build;
@@ -35,6 +36,7 @@ public class CheckerFinish {
 
 
     //region Public methods
+    @TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public boolean onFinish() {
         Handler handler = new Handler();
@@ -49,77 +51,73 @@ public class CheckerFinish {
                         case 0:
                             SharedPreferences sharedPreferences2 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                             boolean isPaused2 = sharedPreferences2.getBoolean("isPaused",false);
-                            if(!isPaused) {
+                            if(!isPaused2) {
                                 checkerStatusInformer.OnCheckCompleted(MConstants.SIGNAL_CHECKER, mCheckerManager.getmCheckerResponseManager().GetFinalSignalResponse());
-                            } else return;
+                            } else {
+                                handler1.removeCallbacksAndMessages(null);
+                            }
                             break;
                         case 1:
-                            handler1.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    SharedPreferences sharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
-                                    boolean isPaused = sharedPreferences.getBoolean("isPaused",false);
-                                    if(!isPaused) {
-                                        checkerStatusInformer.OnCheckCompleted(MConstants.PUBLIC_DB_CHECKER, mCheckerManager.getmCheckerResponseManager().getmPublicDbCheckerResponse().getmCheckingStatus());
-                                    } else return;
+                            handler1.postDelayed(() -> {
+                                SharedPreferences sharedPreferences1 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                                boolean isPaused1 = sharedPreferences1.getBoolean("isPaused",false);
+                                if(!isPaused1) {
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.PUBLIC_DB_CHECKER, mCheckerManager.getmCheckerResponseManager().getmPublicDbCheckerResponse().getmCheckingStatus());
+                                } else {
+                                    handler1.removeCallbacksAndMessages(null);
                                 }
                             }, counter * 1000);
                             break;
                         case 2:
-                            handler1.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    SharedPreferences sharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
-                                    boolean isPaused = sharedPreferences.getBoolean("isPaused",false);
-                                    if(!isPaused) {
-                                        checkerStatusInformer.OnCheckCompleted(MConstants.INTERNAL_DB_CHECKER, mCheckerManager.getmCheckerResponseManager().getmInternalDBCheckerResponse().getmCheckingStatus());
-                                    } else return;
+                            handler1.postDelayed(() -> {
+                                SharedPreferences sharedPreferences12 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                                boolean isPaused12 = sharedPreferences12.getBoolean("isPaused",false);
+                                if(!isPaused12) {
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.INTERNAL_DB_CHECKER, mCheckerManager.getmCheckerResponseManager().getmInternalDBCheckerResponse().getmCheckingStatus());
+                                } else {
+                                    handler1.removeCallbacksAndMessages(null);
                                 }
                             }, counter * 2 * 500 + 1000);
                             break;
                         case 3:
-                                handler1.postDelayed(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        SharedPreferences sharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
-                                        boolean isPaused = sharedPreferences.getBoolean("isPaused",false);
-                                        if(!isPaused) {
-                                            checkerStatusInformer.OnCheckCompleted(MConstants.NEIGHBOUR_LIST_CHECKER, mCheckerManager.getmCheckerResponseManager().getmNeighbourListCheckerResponse().getmCheckingStatus());
-                                        } else return;
+                                handler1.postDelayed(() -> {
+                                    SharedPreferences sharedPreferences13 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                                    boolean isPaused13 = sharedPreferences13.getBoolean("isPaused",false);
+                                    if(!isPaused13) {
+                                        checkerStatusInformer.OnCheckCompleted(MConstants.NEIGHBOUR_LIST_CHECKER, mCheckerManager.getmCheckerResponseManager().getmNeighbourListCheckerResponse().getmCheckingStatus());
+                                    } else {
+                                        handler1.removeCallbacksAndMessages(null);
                                     }
                                 }, counter * 3 * 500 + 1000);
                                 break;
                         case 4:
-                            handler1.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    SharedPreferences sharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
-                                    boolean isPaused = sharedPreferences.getBoolean("isPaused",false);
-                                    if(!isPaused) {
-                                        checkerStatusInformer.OnCheckCompleted(MConstants.CELL_CONSISTENCY_CHECKER, mCheckerManager.getmCheckerResponseManager().getmCellConsistencyCheckerResponse().getmCheckingStatus());
-                                    } else return;
+                            handler1.postDelayed(() -> {
+                                SharedPreferences sharedPreferences14 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                                boolean isPaused14 = sharedPreferences14.getBoolean("isPaused",false);
+                                if(!isPaused14) {
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.CELL_CONSISTENCY_CHECKER, mCheckerManager.getmCheckerResponseManager().getmCellConsistencyCheckerResponse().getmCheckingStatus());
+                                } else {
+                                    handler1.removeCallbacksAndMessages(null);
                                 }
                             }, counter * 4 * 500 + 1000);
                             break;
                         case 5:
-                            handler1.postDelayed(new Runnable() {
-                                @RequiresApi(api = Build.VERSION_CODES.O)
-                                @Override
-                                public void run() {
-                                    SharedPreferences sharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
-                                    boolean isPaused = sharedPreferences.getBoolean("isPaused",false);
-                                    if(!isPaused) {
-                                        mCheckerManager.performOverallCheck();
-                                        String response = mCheckerManager.getmCheckerResponseManager().getmOverallResponse().getmCheckingStatus();
-                                        checkerStatusInformer.OnCheckCompleted(MConstants.OVERALL_CHECKER, response);
+                            handler1.postDelayed(() -> {
+                                SharedPreferences sharedPreferences15 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                                boolean isPaused15 = sharedPreferences15.getBoolean("isPaused",false);
+                                if(!isPaused15) {
+                                    mCheckerManager.performOverallCheck();
+                                    String response = mCheckerManager.getmCheckerResponseManager().getmOverallResponse().getmCheckingStatus();
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.OVERALL_CHECKER, response);
 
-                                        mView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
-                                        mVibratorHelper.Vibrate(response);
-                                        mView.findViewById(R.id.buttonRetake).setVisibility(View.VISIBLE);
-                                        mView.findViewById(R.id.buttonPause).setVisibility(View.INVISIBLE);
-                                        TextView textView = mView.findViewById(R.id.checkStartedText);
-                                        textView.setText(R.string.CHECKSENDED);
-                                    } else return;
+                                    mView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
+                                    mVibratorHelper.Vibrate(response);
+                                    mView.findViewById(R.id.buttonRetake).setVisibility(View.VISIBLE);
+                                    mView.findViewById(R.id.buttonPause).setVisibility(View.INVISIBLE);
+                                    TextView textView = mView.findViewById(R.id.checkStartedText);
+                                    textView.setText(R.string.CHECKSENDED);
+                                } else {
+                                    handler1.removeCallbacksAndMessages(null);
                                 }
                             }, counter * 5 * 500);
                             break;
@@ -127,7 +125,19 @@ public class CheckerFinish {
                 } else return;
             }
 
+            Runnable runnable = () -> {
+                while (true) {
+                    SharedPreferences sharedPreferences15 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                    boolean isPaused = sharedPreferences15.getBoolean("isPaused",false);
+                    if(isPaused)
+                        handler1.removeCallbacksAndMessages(null);
+                }
+            };
+            Thread thread = new Thread(runnable);
+            thread.start();
+
         }, 5000);
+
         return false;
     }
 

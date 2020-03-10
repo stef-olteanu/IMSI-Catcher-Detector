@@ -126,7 +126,7 @@ public class FragmentCellChecker extends Fragment {
         Button buttonStop = inflatedView.findViewById(R.id.buttonPause);
         buttonStop.setOnClickListener(v -> {
             v.setVisibility(View.INVISIBLE);
-            SharedPreferences.Editor editor = mSharedPreferences.edit();
+            SharedPreferences.Editor editor = this.mSharedPreferences.edit();
             editor.putBoolean("isPaused",true);
             editor.apply();
             Button buttonRetake = inflatedView.findViewById(R.id.buttonRetake);
@@ -138,6 +138,13 @@ public class FragmentCellChecker extends Fragment {
         });
     }
 
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        SharedPreferences.Editor editor = this.mSharedPreferences.edit();
+        editor.putBoolean("isPaused",true);
+        editor.apply();
+    }
 
 
     //endregion
