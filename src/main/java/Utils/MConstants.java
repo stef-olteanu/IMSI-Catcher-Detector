@@ -84,6 +84,13 @@ public class MConstants {
         public static final String ALERT = "ALERT";
     }
 
+    public static final class Map_Choices {
+        public static final String ALL = "ALL";
+        public static final String GOOD = "GOOD";
+        public static final String WARNING = "WARNING";
+        public static final String ALERT = "ALERT";
+    }
+
     //endregion
 
     //region Global Constants

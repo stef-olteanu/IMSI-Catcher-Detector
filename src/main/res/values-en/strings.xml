@@ -83,6 +83,12 @@
     <string name="TESTFAILED">Test failed</string>
     <string name="STOP">Stop tests</string>
     <string name="LASTCHECK">Last check:</string>
+    <string name="SIGNALINFOR">For this test, there was calculated an average value of all the values for the signal power for this cell. The test failed because the current values is higher than the average +/- deviation.</string>
+    <string name="PBDBINFO">The test failed because the data of this cell was not found in the public database. This might be possible because of the restriction put on the number of searches per day.</string>
+    <string name="INTERNALINFO">The test failed because the data of this cell was not found in the database of the application which contains verified cells.</string>
+    <string name="NEIGHINFO">The test failed because the cell does not provide a list with the neighbouring antenas. An IMSI Catcher never provides a list with the neighbours.</string>
+    <string name="CONSISTENCYINFO">The test failed because the data of the cell does not correspond with the data of the one in the application database. The LAC of the current cell is different from the one of the cell in database.</string>
+    <string name="ALLCELLS">ALL</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

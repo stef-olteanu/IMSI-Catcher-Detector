@@ -52,18 +52,13 @@ public class FragmentCellChecker extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View inflaterView =  inflater.inflate(R.layout.fragment_cell_checker, container,false);
         this.mSharedPreferences = getActivity().getSharedPreferences("CheckInfo", GlobalMainContext.getMainContext().MODE_PRIVATE);
-        setOnClickListeners(inflaterView,this.getFragmentManager());
+        setOnClickListeners(inflaterView,getFragmentManager());
         final DrawerLayout drawerLayout = getActivity().findViewById(R.id.drawer_layout);
         ImageView hamburger = inflaterView.findViewById(R.id.hamburger);
-        hamburger.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                drawerLayout.openDrawer(Gravity.LEFT);
-            }
-        });
+        hamburger.setOnClickListener(v -> drawerLayout.openDrawer(Gravity.LEFT));
         boolean isChecked = this.mSharedPreferences.getBoolean("checked",true);
 
-        this.mCheckerFinish = new CheckerFinish(inflaterView,this.mCheckerManager);
+        this.mCheckerFinish = new CheckerFinish(inflaterView,this.mCheckerManager,getFragmentManager());
         this.mCheckerStarter = new CheckerStarter(inflaterView,this.mCheckerManager, this.mCheckerFinish);
 
         SimpleDateFormat formattter = new SimpleDateFormat("yyyy-MM-dd ' ' HH:mm:ss");

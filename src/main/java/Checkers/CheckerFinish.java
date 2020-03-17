@@ -6,10 +6,14 @@ import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Handler;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
+import com.example.licentav00.Popups.ResultInfoPopup;
 import com.example.licentav00.R;
 
 import Informers.CheckerStatusInformer;
@@ -23,14 +27,16 @@ public class CheckerFinish {
     private View mView;
     private CheckerManager mCheckerManager;
     private VibratorHelper mVibratorHelper;
+    private FragmentManager mFragmentManager;
     //endregion
 
 
     //region Constructor
-    public CheckerFinish(View view, CheckerManager checkerManager) {
+    public CheckerFinish(View view, CheckerManager checkerManager, FragmentManager fragmentManager) {
         this.mCheckerManager = checkerManager;
         this.mView = view;
         this.mVibratorHelper = new VibratorHelper();
+        this.mFragmentManager = fragmentManager;
     }
     //endregion
 
@@ -52,7 +58,9 @@ public class CheckerFinish {
                             SharedPreferences sharedPreferences2 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                             boolean isPaused2 = sharedPreferences2.getBoolean("isPaused",false);
                             if(!isPaused2) {
-                                checkerStatusInformer.OnCheckCompleted(MConstants.SIGNAL_CHECKER, mCheckerManager.getmCheckerResponseManager().GetFinalSignalResponse());
+                                String result = mCheckerManager.getmCheckerResponseManager().GetFinalSignalResponse();
+                                checkerStatusInformer.OnCheckCompleted(MConstants.SIGNAL_CHECKER, result);
+                                startOnClickListeners(MConstants.SIGNAL_CHECKER,result);
                             } else {
                                 handler1.removeCallbacksAndMessages(null);
                             }
@@ -62,7 +70,9 @@ public class CheckerFinish {
                                 SharedPreferences sharedPreferences1 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused1 = sharedPreferences1.getBoolean("isPaused",false);
                                 if(!isPaused1) {
-                                    checkerStatusInformer.OnCheckCompleted(MConstants.PUBLIC_DB_CHECKER, mCheckerManager.getmCheckerResponseManager().getmPublicDbCheckerResponse().getmCheckingStatus());
+                                    String result = mCheckerManager.getmCheckerResponseManager().getmPublicDbCheckerResponse().getmCheckingStatus();
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.PUBLIC_DB_CHECKER, result);
+                                    startOnClickListeners(MConstants.PUBLIC_DB_CHECKER,result);
                                 } else {
                                     handler1.removeCallbacksAndMessages(null);
                                 }
@@ -73,7 +83,9 @@ public class CheckerFinish {
                                 SharedPreferences sharedPreferences12 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused12 = sharedPreferences12.getBoolean("isPaused",false);
                                 if(!isPaused12) {
-                                    checkerStatusInformer.OnCheckCompleted(MConstants.INTERNAL_DB_CHECKER, mCheckerManager.getmCheckerResponseManager().getmInternalDBCheckerResponse().getmCheckingStatus());
+                                    String result = mCheckerManager.getmCheckerResponseManager().getmInternalDBCheckerResponse().getmCheckingStatus();
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.INTERNAL_DB_CHECKER, result);
+                                    startOnClickListeners(MConstants.INTERNAL_DB_CHECKER,result);
                                 } else {
                                     handler1.removeCallbacksAndMessages(null);
                                 }
@@ -84,7 +96,9 @@ public class CheckerFinish {
                                     SharedPreferences sharedPreferences13 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                     boolean isPaused13 = sharedPreferences13.getBoolean("isPaused",false);
                                     if(!isPaused13) {
-                                        checkerStatusInformer.OnCheckCompleted(MConstants.NEIGHBOUR_LIST_CHECKER, mCheckerManager.getmCheckerResponseManager().getmNeighbourListCheckerResponse().getmCheckingStatus());
+                                        String result = mCheckerManager.getmCheckerResponseManager().getmNeighbourListCheckerResponse().getmCheckingStatus();
+                                        checkerStatusInformer.OnCheckCompleted(MConstants.NEIGHBOUR_LIST_CHECKER, result);
+                                        startOnClickListeners(MConstants.NEIGHBOUR_LIST_CHECKER,result);
                                     } else {
                                         handler1.removeCallbacksAndMessages(null);
                                     }
@@ -95,7 +109,9 @@ public class CheckerFinish {
                                 SharedPreferences sharedPreferences14 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused14 = sharedPreferences14.getBoolean("isPaused",false);
                                 if(!isPaused14) {
+                                    String result = mCheckerManager.getmCheckerResponseManager().getmCellConsistencyCheckerResponse().getmCheckingStatus();
                                     checkerStatusInformer.OnCheckCompleted(MConstants.CELL_CONSISTENCY_CHECKER, mCheckerManager.getmCheckerResponseManager().getmCellConsistencyCheckerResponse().getmCheckingStatus());
+                                    startOnClickListeners(MConstants.CELL_CONSISTENCY_CHECKER,result);
                                 } else {
                                     handler1.removeCallbacksAndMessages(null);
                                 }
@@ -139,6 +155,34 @@ public class CheckerFinish {
         }, 5000);
 
         return false;
+    }
+
+    public void startOnClickListeners(String testDone, String result) {
+        if(result.equals(MConstants.TEST_FAILED_RO)) {
+            ImageView imageView = null;
+            switch (testDone) {
+                case MConstants.SIGNAL_CHECKER:
+                    imageView = this.mView.findViewById(R.id.imageSignal);
+                    break;
+                case MConstants.PUBLIC_DB_CHECKER:
+                    imageView = this.mView.findViewById(R.id.imagePBDB);
+                    break;
+                case MConstants.INTERNAL_DB_CHECKER:
+                    imageView = this.mView.findViewById(R.id.imageINTDB);
+                    break;
+                case MConstants.NEIGHBOUR_LIST_CHECKER:
+                    imageView = this.mView.findViewById(R.id.imageNeigh);
+                    break;
+                case MConstants.CELL_CONSISTENCY_CHECKER:
+                    imageView = this.mView.findViewById(R.id.imageCell);
+                    break;
+            }
+            imageView.setOnClickListener(v -> {
+                DialogFragment infoFragment = new ResultInfoPopup(testDone);
+                infoFragment.show(this.mFragmentManager,"infopop");
+            });
+        }
+
     }
 
     //endregion

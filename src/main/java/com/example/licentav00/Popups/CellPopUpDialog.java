@@ -2,7 +2,6 @@ package com.example.licentav00.Popups;
 
 
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,7 +32,7 @@ public class CellPopUpDialog extends DialogFragment {
      * Creates a popup view in the moment the user clicks on one cell on the map. It will display information about the cell it receives in the constructor.
      */
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.activity_cell_popup,container,false);
+        View view = inflater.inflate(R.layout.fragment_cell_popup,container,false);
         ImageView circleImageView = view.findViewById(R.id.circlePopImageView);
         switch (mCell.getmCellStatus()){
             case "GOOD":

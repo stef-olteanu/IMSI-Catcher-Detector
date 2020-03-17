@@ -83,6 +83,12 @@
     <string name="TESTFAILED">Testul a picat</string>
     <string name="STOP">Opreste testele</string>
     <string name="LASTCHECK">Ultima verificare:</string>
+    <string name="SIGNALINFOR">Pentru testul semnalului s-a realizat o medie a puterilor semnalului pentru aceasta celula. Testul a picat deoarece valoarea semnalului curent este mai mare decat media puterilor semnalului +/- o deviatie.</string>
+    <string name="PBDBINFO">Testul a picat deoarece datele celulei curente nu au fost gasite in baza de date publica. Acest lucru este posibil si datorita limitarii de cautari impusa intr-o zi.</string>
+    <string name="INTERNALINFO">Testul a picat deoarece celula nu a fost gasita in baza de date ce contine celule verificate a aplicatiei.</string>
+    <string name="NEIGHINFO">Testul a picat deoarece celula nu a furnizat lista cu antenele vecine. Un IMSI Catcher nu dezvaluie niciodata lista cu vecini.</string>
+    <string name="CONSISTENCYINFO">Testul a picat deoarece datele celulei nu corespund cu cele aflate in baza de date a aplicatiei. Lac-ul celulei curente este diferit de cel al celulei din baza de date.</string>
+    <string name="ALLCELLS">TOATE</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>
