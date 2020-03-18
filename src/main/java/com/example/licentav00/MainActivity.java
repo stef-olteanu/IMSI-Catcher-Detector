@@ -26,6 +26,7 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
 
+import Checkers.ConectivityChecker;
 import Checkers.InternalDBChecker;
 import Listeners.CellLocationChangeListener;
 import Model.Dispozitiv;
@@ -47,6 +48,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         SharedPreferences sharedPreferences = getSharedPreferences("AppLanguage",MainActivity.this.MODE_PRIVATE);
         String lang = sharedPreferences.getString("Language", MConstants.AppLanguages.RO_LANG);
         GlobalMainContext.setAppLocale(lang);
+
+        ConectivityChecker conectivityChecker = new ConectivityChecker();
+        conectivityChecker.checkForInternetConnection();
 
 
 

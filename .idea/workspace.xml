@@ -88,23 +88,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/ResultInfoPopup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_result_info_popup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/gradle_models.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utils/MConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utils/MConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CellPopUpDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CellPopUpDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_cell_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_popup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_checker_info_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_checker_info_popup.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values-en/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-en/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -146,20 +133,40 @@
         <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml">
           <provider selected="true" editor-type-id="android-designer2" />
           <provider editor-type-id="text-editor">
-            <state relative-caret-position="527">
+            <state relative-caret-position="561">
               <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="28">
-              <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
+            <state relative-caret-position="351">
+              <caret line="119" column="72" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="319">
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
               <folding>
-                <element signature="e#2555#2556#0" expanded="true" />
-                <element signature="e#2624#2625#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="503">
+              <caret line="63" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,14 +175,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MConstants.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
+            <state relative-caret-position="1275">
               <caret line="88" column="47" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="47" />
               <folding>
                 <element signature="e#3457#3835#0" />
                 <element signature="e#3841#3989#0" />
                 <element signature="e#3995#4191#0" />
-                <element signature="e#4312#4572#0" />
-                <element signature="e#4578#5042#0" />
               </folding>
             </state>
           </provider>
@@ -246,11 +251,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Responses/NeighbourListCheckerResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/Checkers/NeighbourListChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/CallBacks/ManagerThreadCallBack.java" />
         <option value="$PROJECT_DIR$/src/main/java/CallBacks/CheckerManagerResponseCallBack.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Checkers/CellConsistency.java" />
         <option value="$PROJECT_DIR$/src/main/java/Checkers/CellConsistencyChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/Responses/CellConsistencyCheckerResponse.java" />
@@ -297,6 +300,8 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/MConstants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java" />
       </list>
     </option>
   </component>
@@ -311,7 +316,40 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="manifests" type="f94875db:AndroidManifestsGroupNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Checkers" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="licentav00" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -467,59 +505,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="Checkers" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="licentav00" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
-              <item name="Utils" type="cbb59c9e:AndroidPsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-            </path>
-            <path>
-              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-              <item name="res" type="d4f16f75:AndroidResFolderNode" />
-              <item name="values" type="ddeffd01:AndroidResFolderTypeNode" />
-              <item name="strings" type="c431d0b8:AndroidResGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -695,10 +681,10 @@
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="4" weight="0.20693392" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.32827735" />
       <window_info anchor="bottom" id="Logcat" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32922733" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.3261105" />
+      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.3261105" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.32995737" />
@@ -766,6 +752,12 @@
           <properties />
           <option name="timeStamp" value="146" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java</url>
+          <line>28</line>
+          <properties />
+          <option name="timeStamp" value="147" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
@@ -775,14 +767,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_details.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="15" column="43" selection-start-line="15" selection-start-column="43" selection-end-line="15" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_options.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
@@ -818,16 +802,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Listeners/OnClickListeners/DialogOpenOnClickListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="72" column="12" selection-start-line="72" selection-start-column="12" selection-end-line="72" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentHome.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -1089,23 +1063,6 @@
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2720">
-          <caret line="180" column="74" selection-start-line="180" selection-start-column="74" selection-end-line="180" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3043">
-          <caret line="202" column="63" selection-start-line="202" selection-start-column="63" selection-end-line="202" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values-ro/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="538">
@@ -1144,20 +1101,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="88" column="47" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="47" />
-          <folding>
-            <element signature="e#3457#3835#0" />
-            <element signature="e#3841#3989#0" />
-            <element signature="e#3995#4191#0" />
-            <element signature="e#4312#4572#0" />
-            <element signature="e#4578#5042#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/AndroidSDK/sources/android-29/android/os/Looper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1175,18 +1118,63 @@
     <entry file="file://$PROJECT_DIR$/src/main/res/layout/fragment_cell_map.xml">
       <provider selected="true" editor-type-id="android-designer2" />
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="527">
+        <state relative-caret-position="561">
           <caret line="33" column="40" selection-start-line="33" selection-start-column="40" selection-end-line="33" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Utils/MConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="88" column="47" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="47" />
+          <folding>
+            <element signature="e#3457#3835#0" />
+            <element signature="e#3841#3989#0" />
+            <element signature="e#3995#4191#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2720">
+          <caret line="180" column="74" selection-start-line="180" selection-start-column="74" selection-end-line="180" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3043">
+          <caret line="202" column="63" selection-start-line="202" selection-start-column="63" selection-end-line="202" selection-end-column="63" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="100" column="30" selection-start-line="100" selection-start-column="30" selection-end-line="100" selection-end-column="30" />
+        <state relative-caret-position="351">
+          <caret line="119" column="72" selection-start-line="119" selection-start-column="72" selection-end-line="119" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="503">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
           <folding>
-            <element signature="e#2555#2556#0" expanded="true" />
-            <element signature="e#2624#2625#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="319">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
