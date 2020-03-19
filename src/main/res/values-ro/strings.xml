@@ -75,6 +75,7 @@
     <string name="CHECKINGNEIGHBOUR">Verificare lista vecini</string>
     <string name="CHECKINGCONSISTENCY">Verificare date celula</string>
     <string name="CHECKINGSIGNAL">Verificare putere semnal</string>
+    <string name="CHECKINGCONECTIVITY">Verificare conectivitate</string>
     <string name="CHECKNAME">Verificare efectuata</string>
     <string name="RESULT">Rezultat</string>
     <string name="FINAlRESULT">Rezultat final:</string>
@@ -88,6 +89,7 @@
     <string name="INTERNALINFO">Testul a picat deoarece celula nu a fost gasita in baza de date ce contine celule verificate a aplicatiei.</string>
     <string name="NEIGHINFO">Testul a picat deoarece celula nu a furnizat lista cu antenele vecine. Un IMSI Catcher nu dezvaluie niciodata lista cu vecini.</string>
     <string name="CONSISTENCYINFO">Testul a picat deoarece datele celulei nu corespund cu cele aflate in baza de date a aplicatiei. Lac-ul celulei curente este diferit de cel al celulei din baza de date.</string>
+    <string name="CONNECTIVITYINFO">Testul a picat deoarece telefonul nu este conectat la internet sau este conectat la internet dar nu ofera servicii de date mobile.</string>
     <string name="ALLCELLS">TOATE</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>

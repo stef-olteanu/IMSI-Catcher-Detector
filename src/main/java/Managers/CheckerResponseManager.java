@@ -16,6 +16,7 @@ public class CheckerResponseManager {
     private NeighbourListCheckerResponse mNeighbourListCheckerResponse;
     private CellConsistencyCheckerResponse mCellConsistencyCheckerResponse;
     private OverallResponse mOverallResponse;
+    private CheckerResponse mConectivityCheckerResponse;
     //endregion
 
     //region Constructor
@@ -70,6 +71,14 @@ public class CheckerResponseManager {
 
     public void setmOverallResponse(OverallResponse mOverallResponse) {
         this.mOverallResponse = mOverallResponse;
+    }
+
+    public CheckerResponse getmConectivityCheckerResponse() {
+        return mConectivityCheckerResponse;
+    }
+
+    public void setmConectivityCheckerResponse(CheckerResponse mConectivityCheckerResponse) {
+        this.mConectivityCheckerResponse = mConectivityCheckerResponse;
     }
 
     //endregion

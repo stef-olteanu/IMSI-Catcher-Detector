@@ -58,6 +58,19 @@ public class CheckerFinish {
                             SharedPreferences sharedPreferences2 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                             boolean isPaused2 = sharedPreferences2.getBoolean("isPaused",false);
                             if(!isPaused2) {
+                                this.mCheckerManager.performConectivityCheck();
+                                String result = mCheckerManager.getmCheckerResponseManager().getmConectivityCheckerResponse().getmCheckingStatus();
+                                checkerStatusInformer.OnCheckCompleted(MConstants.CONNECTIVITY_CHECKER,result);
+                                startOnClickListeners(MConstants.CONNECTIVITY_CHECKER,result);
+                            } else {
+                                handler1.removeCallbacksAndMessages(null);
+                            }
+
+
+                        case 1:
+                            sharedPreferences2 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
+                            isPaused2 = sharedPreferences2.getBoolean("isPaused",false);
+                            if(!isPaused2) {
                                 String result = mCheckerManager.getmCheckerResponseManager().GetFinalSignalResponse();
                                 checkerStatusInformer.OnCheckCompleted(MConstants.SIGNAL_CHECKER, result);
                                 startOnClickListeners(MConstants.SIGNAL_CHECKER,result);
@@ -65,7 +78,7 @@ public class CheckerFinish {
                                 handler1.removeCallbacksAndMessages(null);
                             }
                             break;
-                        case 1:
+                        case 2:
                             handler1.postDelayed(() -> {
                                 SharedPreferences sharedPreferences1 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused1 = sharedPreferences1.getBoolean("isPaused",false);
@@ -78,7 +91,7 @@ public class CheckerFinish {
                                 }
                             }, counter * 1000);
                             break;
-                        case 2:
+                        case 3:
                             handler1.postDelayed(() -> {
                                 SharedPreferences sharedPreferences12 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused12 = sharedPreferences12.getBoolean("isPaused",false);
@@ -91,7 +104,7 @@ public class CheckerFinish {
                                 }
                             }, counter * 2 * 500 + 1000);
                             break;
-                        case 3:
+                        case 4:
                                 handler1.postDelayed(() -> {
                                     SharedPreferences sharedPreferences13 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                     boolean isPaused13 = sharedPreferences13.getBoolean("isPaused",false);
@@ -104,7 +117,7 @@ public class CheckerFinish {
                                     }
                                 }, counter * 3 * 500 + 1000);
                                 break;
-                        case 4:
+                        case 5:
                             handler1.postDelayed(() -> {
                                 SharedPreferences sharedPreferences14 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused14 = sharedPreferences14.getBoolean("isPaused",false);
@@ -117,7 +130,7 @@ public class CheckerFinish {
                                 }
                             }, counter * 4 * 500 + 1000);
                             break;
-                        case 5:
+                        case 6:
                             handler1.postDelayed(() -> {
                                 SharedPreferences sharedPreferences15 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                                 boolean isPaused15 = sharedPreferences15.getBoolean("isPaused",false);
@@ -175,6 +188,9 @@ public class CheckerFinish {
                     break;
                 case MConstants.CELL_CONSISTENCY_CHECKER:
                     imageView = this.mView.findViewById(R.id.imageCell);
+                    break;
+                case MConstants.CONNECTIVITY_CHECKER:
+                    imageView = this.mView.findViewById(R.id.conectivityImageView);
                     break;
             }
             imageView.setOnClickListener(v -> {

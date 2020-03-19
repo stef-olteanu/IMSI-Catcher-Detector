@@ -29,6 +29,7 @@ public class OverallChecker {
         String internalDBCheckerResponse  = this.mCheckerResponseManager.getmInternalDBCheckerResponse().getmCheckingStatus();
         String neighbourListChecker = this.mCheckerResponseManager.getmNeighbourListCheckerResponse().getmCheckingStatus();
         String cellConsistencyChecker = this.mCheckerResponseManager.getmCellConsistencyCheckerResponse().getmCheckingStatus();
+        String connectivityChecker = this.mCheckerResponseManager.getmConectivityCheckerResponse().getmCheckingStatus();
 
         int score = 0;
         if(signalCheckerResponse.equals(MConstants.TEST_PASSED_RO)) {
@@ -63,6 +64,12 @@ public class OverallChecker {
             score += 10;
         } else {
             score -= 10;
+        }
+
+        if(connectivityChecker.equals(MConstants.TEST_PASSED_RO)) {
+            score += 10;
+        } else {
+            score -=10;
         }
 
         if(score >= 0)

@@ -49,10 +49,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         String lang = sharedPreferences.getString("Language", MConstants.AppLanguages.RO_LANG);
         GlobalMainContext.setAppLocale(lang);
 
-        ConectivityChecker conectivityChecker = new ConectivityChecker();
-        conectivityChecker.checkForInternetConnection();
-
-
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentHome()).commit();
 

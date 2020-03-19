@@ -57,6 +57,9 @@ public class ResultInfoPopup extends DialogFragment {
             case MConstants.CELL_CONSISTENCY_CHECKER:
                 resultTextView.setText(R.string.CELLINFO);
                 break;
+            case MConstants.CONNECTIVITY_CHECKER:
+                resultTextView.setText(R.string.CONNECTIVITYINFO);
+                break;
         }
 
 

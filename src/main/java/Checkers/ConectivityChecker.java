@@ -8,7 +8,9 @@ import android.telephony.TelephonyManager;
 
 import java.io.IOException;
 
+import Responses.CheckerResponse;
 import Utils.GlobalMainContext;
+import Utils.MConstants;
 
 public class ConectivityChecker {
     //region Members Declaration
@@ -25,15 +27,18 @@ public class ConectivityChecker {
 
 
     //region Public Methods
-    public void checkForInternetConnection() {
+    public CheckerResponse checkForInternetConnection() {
         mWifiManager.setWifiEnabled(false);
-        boolean isConnected = false;
+        boolean isConnected;
         if(isOnline())
             isConnected = true;
         else
             isConnected = false;
 
         mWifiManager.setWifiEnabled(true);
+        if(isConnected)
+            return new CheckerResponse(MConstants.TEST_PASSED_RO);
+        return new CheckerResponse(MConstants.TEST_FAILED_RO);
     }
 
     public boolean isOnline() {

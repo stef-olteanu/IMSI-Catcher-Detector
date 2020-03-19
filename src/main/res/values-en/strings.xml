@@ -75,6 +75,7 @@
     <string name="CHECKINGINDB">Checking internal DB</string>
     <string name="CHECKINGNEIGHBOUR">Checking neighbour list</string>
     <string name="CHECKINGCONSISTENCY">Checking cell consistency</string>
+    <string name="CHECKINGCONECTIVITY">Checking connectivity</string>
     <string name="CHECKNAME">Check done</string>
     <string name="RESULT">Result</string>
     <string name="FINAlRESULT">Final result:</string>
@@ -88,6 +89,7 @@
     <string name="INTERNALINFO">The test failed because the data of this cell was not found in the database of the application which contains verified cells.</string>
     <string name="NEIGHINFO">The test failed because the cell does not provide a list with the neighbouring antenas. An IMSI Catcher never provides a list with the neighbours.</string>
     <string name="CONSISTENCYINFO">The test failed because the data of the cell does not correspond with the data of the one in the application database. The LAC of the current cell is different from the one of the cell in database.</string>
+    <string name="CONNECTIVITYINFO">The test failed because the phone is not connected to the internet or it is connected but it doesn\'t offer mobile data services.</string>
     <string name="ALLCELLS">ALL</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>

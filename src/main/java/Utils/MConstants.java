@@ -11,7 +11,7 @@ public class MConstants {
     public static final String TEST_FAILED_EN = "Test failed";
     public static final String TEST_NEUTRAL_RO = "Neutru";
     public static final String TEST_NEUTRAL_EN = "Neutral";
-    public static final int NUM_OF_CHECKS = 6;
+    public static final int NUM_OF_CHECKS = 7;
     //endregion
 
     //region Checking Signal
@@ -62,6 +62,10 @@ public class MConstants {
     public static final String OVERALL_FAILED_RO = "Celula este un IMSI Catcher!";
     public static final String OVERALL_FAILED_EN ="The cell is an IMSI Catcher!";
     public static final int OVERALL_TEXT_VIEW_ID = 9458659;
+    //endregion
+
+    //region Checking Conectivity
+    public static final String CONNECTIVITY_CHECKER = "connectcheck";
     //endregion
 
 

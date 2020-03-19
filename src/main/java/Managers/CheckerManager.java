@@ -12,6 +12,7 @@ import CallBacks.CheckerCallBack;
 import CallBacks.InternalDatabaseCallBack;
 import Checkers.CellConsistencyChecker;
 import Checkers.CellSignalChecker;
+import Checkers.ConectivityChecker;
 import Checkers.InternalDBChecker;
 import Checkers.NeighbourListChecker;
 import Checkers.OverallChecker;
@@ -22,6 +23,7 @@ import Responses.InternalDBCheckerResponse;
 import Responses.NeighbourListCheckerResponse;
 import Responses.OverallResponse;
 import Responses.SignalCheckerResponse;
+import Utils.GlobalMainContext;
 import Utils.MConstants;
 
 public class CheckerManager {
@@ -47,6 +49,7 @@ public class CheckerManager {
                 performInteralDBCheck();
                 performNeighbourListCheck();
                 performCellConsistencyCheck();
+                //performConectivityCheck();
                 //performOverallCheck();
     }
 
@@ -102,6 +105,12 @@ public class CheckerManager {
                 mCheckerResponseManager.setmCellConsistencyCheckerResponse(cellConsistencyCheckerResponse);
             }
         });
+    }
+
+    public void performConectivityCheck() {
+        ConectivityChecker conectivityChecker = new ConectivityChecker();
+        CheckerResponse conectivityResponse =  conectivityChecker.checkForInternetConnection();
+        mCheckerResponseManager.setmConectivityCheckerResponse(conectivityResponse);
     }
 
     public void performOverallCheck() {

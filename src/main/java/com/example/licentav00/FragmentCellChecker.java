@@ -106,15 +106,7 @@ public class FragmentCellChecker extends Fragment {
             lastActivityTV.setText(lastActivity);
 
             v.setVisibility(View.INVISIBLE);
-            inflatedView.findViewById(R.id.progressBarCheck).setVisibility(View.VISIBLE);
-            inflatedView.findViewById(R.id.checkStartedText).setVisibility(View.VISIBLE);
-
-            inflatedView.findViewById(R.id.imageSignal).setVisibility(View.INVISIBLE);
-            inflatedView.findViewById(R.id.imagePBDB).setVisibility(View.INVISIBLE);
-            inflatedView.findViewById(R.id.imageINTDB).setVisibility(View.INVISIBLE);
-            inflatedView.findViewById(R.id.imageNeigh).setVisibility(View.INVISIBLE);
-            inflatedView.findViewById(R.id.imageCell).setVisibility(View.INVISIBLE);
-            inflatedView.findViewById(R.id.finalResult).setVisibility(View.INVISIBLE);
+            setViewVisibility(inflatedView);
             mCheckerStarter.startChecker();
         });
 
@@ -143,4 +135,21 @@ public class FragmentCellChecker extends Fragment {
 
 
     //endregion
+
+
+    //region Private Methods
+    private void setViewVisibility(View inflatedView) {
+        inflatedView.findViewById(R.id.progressBarCheck).setVisibility(View.VISIBLE);
+        inflatedView.findViewById(R.id.checkStartedText).setVisibility(View.VISIBLE);
+
+        inflatedView.findViewById(R.id.imageSignal).setVisibility(View.INVISIBLE);
+        inflatedView.findViewById(R.id.imagePBDB).setVisibility(View.INVISIBLE);
+        inflatedView.findViewById(R.id.imageINTDB).setVisibility(View.INVISIBLE);
+        inflatedView.findViewById(R.id.imageNeigh).setVisibility(View.INVISIBLE);
+        inflatedView.findViewById(R.id.imageCell).setVisibility(View.INVISIBLE);
+        inflatedView.findViewById(R.id.finalResult).setVisibility(View.INVISIBLE);
+        inflatedView.findViewById(R.id.conectivityImageView).setVisibility(View.INVISIBLE);
+    }
+    //endregion
+
 }

@@ -74,6 +74,11 @@ public class CheckerViewManager {
                 selectTextView(textView,checkStatus);
                 textView.setVisibility(View.VISIBLE);
                 break;
+            case MConstants.CONNECTIVITY_CHECKER:
+                imageView = this.mView.findViewById(R.id.conectivityImageView);
+                this.selectImage(imageView,checkStatus);
+                imageView.setVisibility(View.VISIBLE);
+                break;
         }
 
 
