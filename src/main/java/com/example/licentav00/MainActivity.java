@@ -10,6 +10,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -139,6 +140,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case R.id.nav_tutorial:
                         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentOptions()).commit();
+                        break;
+                    case R.id.nav_database:
+                        Intent intent = new Intent(GlobalMainContext.getMainContext(),DatabaseViewerActivity.class);
+                        startActivityForResult(intent,1);
                         break;
 
                 }

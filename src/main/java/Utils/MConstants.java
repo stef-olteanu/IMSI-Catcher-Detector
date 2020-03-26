@@ -68,6 +68,8 @@ public class MConstants {
     public static final String CONNECTIVITY_CHECKER = "connectcheck";
     //endregion
 
+    private static int DONE = 100;
+
 
     public static final class TextViewParameters {
         public static final String SHARE_TECH_MONO_FONT = "share_tech_mono";

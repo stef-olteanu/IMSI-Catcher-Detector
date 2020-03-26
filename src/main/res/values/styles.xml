@@ -22,5 +22,9 @@
         <item name="colorAccent">@color/blue</item>
     </style>
 
+    <style name="editTextBleu" parent="@style/Theme.AppCompat">
+        <item name="colorAccent">@color/blue</item>
+    </style>
+
 
 </resources>

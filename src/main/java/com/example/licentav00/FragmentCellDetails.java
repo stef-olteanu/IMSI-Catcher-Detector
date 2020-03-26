@@ -2,6 +2,7 @@ package com.example.licentav00;
 
 import android.annotation.TargetApi;
 import android.content.Context;
+import android.graphics.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -151,7 +152,7 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(cellToShow));
-            float zoomLevel = (float) 15.0;
+            float zoomLevel = (float) 12.0;
             googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cellToShow, zoomLevel));
         }else{
             LatLng cellToShow = new LatLng(Double.parseDouble(mDispozitiv.GetLatitude()), Double.parseDouble(mDispozitiv.GetLongitude()));
@@ -161,8 +162,8 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
                     .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
             googleMap.moveCamera(CameraUpdateFactory.newLatLng(cellToShow));
-            float zoomLevel = (float) 15.0;
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(cellToShow, zoomLevel));
+            float zoomLevel = (float) 12.0;
+            googleMap.animateCamera(CameraUpdateFactory.zoomTo(zoomLevel));
         }
     }
 

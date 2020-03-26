@@ -116,6 +116,7 @@ public class FragmentCellMap extends Fragment implements OnMapReadyCallback {
             }
         }
         DeviceLocationListener locationListener = new DeviceLocationListener(GlobalMainContext.getMainContext());
+        locationListener.getLocation();
         LatLng celllatlon = new LatLng(locationListener.getmLat(), locationListener.getmLon());
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(celllatlon));
 

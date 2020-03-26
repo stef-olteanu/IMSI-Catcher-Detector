@@ -91,6 +91,8 @@
     <string name="CONSISTENCYINFO">The test failed because the data of the cell does not correspond with the data of the one in the application database. The LAC of the current cell is different from the one of the cell in database.</string>
     <string name="CONNECTIVITYINFO">The test failed because the phone is not connected to the internet or it is connected but it doesn\'t offer mobile data services.</string>
     <string name="ALLCELLS">ALL</string>
+    <string name="DATABASEVIEWER">Database Viewer</string>
+    <string name="SEARCH">Search</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>
