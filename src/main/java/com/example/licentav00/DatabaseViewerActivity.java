@@ -1,9 +1,7 @@
 package com.example.licentav00;
 
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
@@ -23,7 +21,6 @@ import java.util.ArrayList;
 import Adapters.CellListAdapter;
 import DatabaseLogic.FirebaseHelper;
 import Model.Cell;
-import Utils.MConstants;
 
 public class DatabaseViewerActivity extends AppCompatActivity {
     //region Members Declaration
@@ -63,6 +60,7 @@ public class DatabaseViewerActivity extends AppCompatActivity {
 
         Context context = this;
         ProgressBar progressBar = findViewById(R.id.progressList);
+        EditText filterET = findViewById(R.id.editFilter);
         final CellListAdapter[] cellListAdapter = new CellListAdapter[1];
 
         Handler handler = new Handler();
@@ -70,26 +68,32 @@ public class DatabaseViewerActivity extends AppCompatActivity {
             progressBar.setVisibility(View.GONE);
             cellListAdapter[0] = new CellListAdapter(context,R.layout.item_list_view,mDatabaseList);
             mListView.setAdapter(cellListAdapter[0]);
+            mListView.setTextFilterEnabled(true);
+
+
+            filterET.addTextChangedListener(new TextWatcher() {
+                @Override
+                public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                }
+
+                @Override
+                public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    if(count < before) {
+                        cellListAdapter[0].ResetData();
+                    }
+                    cellListAdapter[0].getFilter().filter(s);
+                }
+
+                @Override
+                public void afterTextChanged(Editable s) {
+
+                }
+            });
         },3000);
 
 
-        EditText filterET = findViewById(R.id.editText);
-        filterET.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                cellListAdapter[0].FilterData(s);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
     }
 

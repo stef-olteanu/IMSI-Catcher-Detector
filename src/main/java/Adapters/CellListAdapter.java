@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,12 +18,13 @@ import java.util.List;
 import Model.Cell;
 import Utils.MConstants;
 
-public class CellListAdapter extends ArrayAdapter<Cell> {
+public class CellListAdapter extends ArrayAdapter<Cell> implements Filterable {
     //region Members Declaration
     private static final String TAG = "CellListAdapter";
     private Context mContext;
     private int mResource;
     private ArrayList<Cell> mObjects;
+    private ArrayList<Cell> mOrigObjects;
 
     static class ViewHolder {
         TextView cidTV;
@@ -38,6 +40,8 @@ public class CellListAdapter extends ArrayAdapter<Cell> {
         this.mContext = context;
         this.mResource = resource;
         this.mObjects = objects;
+        this.mOrigObjects = new ArrayList<>();
+        this.mOrigObjects.addAll(mObjects);
     }
     //endregion
 
@@ -91,6 +95,47 @@ public class CellListAdapter extends ArrayAdapter<Cell> {
         }
 
         return convertView;
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                FilterResults filteredResults = new FilterResults();
+                if (constraint == null || constraint.length() == 0) {
+                    filteredResults.values = mOrigObjects;
+                    filteredResults.count = mOrigObjects.size();
+                } else {
+                    ArrayList<Cell> newFilteredList = new ArrayList<>();
+                    for(Cell cell : mObjects) {
+                        if(cell.GetCid().startsWith(constraint.toString())) {
+                            newFilteredList.add(cell);
+                        }
+                    }
+                    filteredResults.values = newFilteredList;
+                    filteredResults.count = newFilteredList.size();
+                }
+                return filteredResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                if(results.count == 0)
+                    notifyDataSetInvalidated();
+                else {
+                    mObjects.clear();
+                    mObjects.addAll((ArrayList<Cell>)results.values);
+                    //mObjects = (ArrayList<Cell>) results.values;
+                    notifyDataSetChanged();
+                }
+            }
+        };
+    }
+
+    public void ResetData(){
+        this.mObjects.clear();
+        this.mObjects.addAll(mOrigObjects);
     }
 
 

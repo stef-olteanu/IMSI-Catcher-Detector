@@ -64,17 +64,16 @@
         android:layout_margin="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText">
+        app:layout_constraintTop_toBottomOf="@+id/editFilter">
 
     </ListView>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editFilter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -83,13 +82,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:ems="10"
-        android:fontFamily="@font/share_tech_mono"
         android:hint="@string/SEARCH"
-        android:inputType="textPersonName"
+        android:inputType="number"
+        android:shadowColor="#000000"
         android:textColor="#000000"
+        android:textColorHighlight="#000000"
+        android:textColorLink="#050000"
         android:theme="@style/editTextBleu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView56"
-        android:autofillHints="" />
+        app:layout_constraintTop_toBottomOf="@+id/textView56" />
 </androidx.constraintlayout.widget.ConstraintLayout>
