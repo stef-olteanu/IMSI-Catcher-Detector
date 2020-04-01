@@ -88,10 +88,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/DatabaseLogic/DatabaseAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Adapters/CellListAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Adapters/CellListAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/DatabaseViewerActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/DatabaseViewerActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_database_viewer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_database_viewer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -157,7 +158,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/DatabaseViewerActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
+            <state relative-caret-position="1071">
               <caret line="82" selection-start-line="82" selection-end-line="82" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -166,14 +167,56 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/CellListAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="136" column="30" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+            <state relative-caret-position="1887">
+              <caret line="127" column="69" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseLogic/DatabaseAdapter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3077">
+              <caret line="206" column="41" selection-start-line="206" selection-start-column="41" selection-end-line="206" selection-end-column="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1071">
+              <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -234,7 +277,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Responses/OverallResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/Responses/CheckerResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/VibratorHelper.java" />
         <option value="$PROJECT_DIR$/src/main/res/drawable-v24/custom_button_gray.xml" />
@@ -255,10 +297,7 @@
         <option value="$PROJECT_DIR$/src/main/java/Informers/CheckerStatusInformer.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_checker_info_popup.xml" />
         <option value="$PROJECT_DIR$/src/main/java/Utils/FirebaseHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Controller/CellController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Model/Cell.java" />
-        <option value="$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" />
         <option value="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CheckerPopUpDialog.java" />
         <option value="$PROJECT_DIR$/src/main/res/layout/fragment_result_info_popup.xml" />
@@ -285,14 +324,18 @@
         <option value="$PROJECT_DIR$/src/main/res/layout/activity_database_viewer.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/example/licentav00/DatabaseViewerActivity.java" />
         <option value="$PROJECT_DIR$/src/main/java/Adapters/CellListAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DatabaseLogic/DatabaseAdapter.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Controller/CellController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="952" />
-    <option name="y" value="32" />
-    <option name="width" value="976" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-7" />
+    <option name="y" value="40" />
+    <option name="width" value="974" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -300,8 +343,6 @@
     </navigator>
     <panes>
       <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -457,6 +498,53 @@
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Adapters" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Checkers" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="DatabaseLogic" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Listeners" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Projects" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="Utils" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -619,11 +707,11 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="952" y="32" width="976" height="1056" extended-state="0" />
+    <frame x="-7" y="40" width="974" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49919224" weight="0.14978679" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49919224" visible="true" weight="0.26586434" />
       <window_info id="Structure" order="2" sideWeight="0.50080776" side_tool="true" weight="0.12686567" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -635,11 +723,11 @@
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="4" weight="0.20801733" />
+      <window_info anchor="bottom" id="Build" order="4" visible="true" weight="0.21006565" />
       <window_info anchor="bottom" id="Run" order="5" weight="0.32502708" />
       <window_info anchor="bottom" id="Logcat" order="6" weight="0.32827735" />
       <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Debug" order="8" visible="true" weight="0.3261105" />
+      <window_info anchor="bottom" id="Debug" order="8" weight="0.3261105" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32936078" />
       <window_info anchor="right" id="Assistant" order="0" weight="0.32995737" />
@@ -657,7 +745,7 @@
     </layout>
     <layout-to-restore>
       <window_info id="Captures" order="0" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49919224" visible="true" weight="0.14978679" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49919224" visible="true" weight="0.26586434" />
       <window_info id="Structure" order="2" sideWeight="0.50080776" side_tool="true" weight="0.12686567" />
       <window_info id="Build Variants" order="3" side_tool="true" />
       <window_info id="Image Layers" order="4" />
@@ -669,10 +757,10 @@
       <window_info anchor="bottom" id="TODO" order="1" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.32827735" />
       <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Build" order="4" weight="0.20801733" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" visible="true" weight="0.32502708" />
+      <window_info anchor="bottom" id="Build" order="4" visible="true" weight="0.21006565" />
+      <window_info anchor="bottom" id="Run" order="5" weight="0.32502708" />
       <window_info anchor="bottom" id="Logcat" order="6" weight="0.32827735" />
-      <window_info anchor="bottom" id="Android Profiler" order="7" weight="0.32922733" />
+      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" weight="0.32922733" />
       <window_info anchor="bottom" id="Debug" order="8" weight="0.3261105" />
       <window_info anchor="bottom" id="Find" order="9" weight="0.32936078" />
       <window_info anchor="bottom" id="Statistic" order="10" weight="0.32936078" />
@@ -774,90 +862,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseLogic/FirebaseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-          <folding>
-            <element signature="method#insertCell#0;class#FirebaseHelper#0" />
-            <element signature="method#getAllCells#0;class#FirebaseHelper#0" />
-            <element signature="method#getCellByLatLon#0;class#FirebaseHelper#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Model/Cell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="63" column="47" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
-          <folding>
-            <element signature="e#288#334#0" />
-            <element signature="e#340#373#0" />
-            <element signature="e#596#629#0" />
-            <element signature="e#1255#1291#0" />
-            <element signature="e#2142#2166#0" />
-            <element signature="e#2171#2205#0" />
-            <element signature="e#2573#2609#0" />
-            <element signature="e#2760#2785#0" />
-            <element signature="e#2916#2939#0" />
-            <element signature="e#2944#2974#0" />
-            <element signature="e#3014#3015#0" expanded="true" />
-            <element signature="e#3002#3032#0" />
-            <element signature="e#3043#3044#0" expanded="true" />
-            <element signature="e#3073#3074#0" expanded="true" />
-            <element signature="e#3061#3090#0" />
-            <element signature="e#3101#3102#0" expanded="true" />
-            <element signature="e#3130#3131#0" expanded="true" />
-            <element signature="e#3118#3146#0" />
-            <element signature="e#3157#3158#0" expanded="true" />
-            <element signature="e#3186#3187#0" expanded="true" />
-            <element signature="e#3174#3202#0" />
-            <element signature="e#3213#3214#0" expanded="true" />
-            <element signature="e#3242#3243#0" expanded="true" />
-            <element signature="e#3230#3258#0" />
-            <element signature="e#3269#3270#0" expanded="true" />
-            <element signature="e#3298#3299#0" expanded="true" />
-            <element signature="e#3286#3314#0" />
-            <element signature="e#3325#3326#0" expanded="true" />
-            <element signature="e#3366#3367#0" expanded="true" />
-            <element signature="e#3354#3394#0" />
-            <element signature="e#3405#3406#0" expanded="true" />
-            <element signature="e#3662#3788#0" />
-            <element signature="e#3811#3847#0" />
-            <element signature="e#3811#4022#0" />
-            <element signature="e#4028#4202#0" />
-            <element signature="e#4250#4251#0" expanded="true" />
-            <element signature="e#4238#4274#0" />
-            <element signature="e#4285#4286#0" expanded="true" />
-            <element signature="e#4324#4325#0" expanded="true" />
-            <element signature="e#4312#4350#0" />
-            <element signature="e#4361#4362#0" expanded="true" />
-            <element signature="e#4372#4405#0" />
-            <element signature="e#4448#4449#0" expanded="true" />
-            <element signature="e#4436#4468#0" />
-            <element signature="e#4479#4480#0" expanded="true" />
-            <element signature="e#4513#4514#0" expanded="true" />
-            <element signature="e#4501#4534#0" />
-            <element signature="e#4545#4546#0" expanded="true" />
-            <element signature="e#4582#4583#0" expanded="true" />
-            <element signature="e#4570#4606#0" />
-            <element signature="e#4617#4618#0" expanded="true" />
-            <element signature="e#4629#4655#0" />
-            <element signature="e#5104#5218#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="52" column="34" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/CheckersViews/CheckerTextView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
@@ -900,13 +904,6 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="1190">
           <caret line="70" column="44" selection-start-line="70" selection-start-column="44" selection-end-line="70" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="81" column="56" selection-start-line="81" selection-start-column="56" selection-end-line="81" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1026,13 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="143" selection-start-line="143" selection-end-line="143" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="850">
@@ -1120,23 +1110,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="99" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="144" column="95" selection-start-line="144" selection-start-column="95" selection-end-line="144" selection-end-column="95" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/res/values/colors.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -1180,18 +1153,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_database_viewer.xml">
-      <provider selected="true" editor-type-id="android-designer2" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/AndroidSDK/sources/android-29/android/widget/Filter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
@@ -1205,9 +1166,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Listeners/CellLocationChangeListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="98" column="8" selection-start-line="98" selection-start-column="8" selection-end-line="99" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_main.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/res/layout/activity_database_viewer.xml">
+      <provider selected="true" editor-type-id="android-designer2" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="50" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/DatabaseViewerActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
+        <state relative-caret-position="1071">
           <caret line="82" selection-start-line="82" selection-end-line="82" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1217,8 +1204,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Adapters/CellListAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="136" column="30" selection-start-line="136" selection-start-column="30" selection-end-line="136" selection-end-column="30" />
+        <state relative-caret-position="1887">
+          <caret line="127" column="69" selection-start-line="127" selection-start-column="69" selection-end-line="127" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseLogic/DatabaseAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Controller/CellController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3077">
+          <caret line="206" column="41" selection-start-line="206" selection-start-column="41" selection-end-line="206" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="79" column="40" selection-start-line="79" selection-start-column="40" selection-end-line="79" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="144" column="95" selection-start-line="144" selection-start-column="95" selection-end-line="144" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/DatabaseLogic/IMSICatcherDetectorDatabase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

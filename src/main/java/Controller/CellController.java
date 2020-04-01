@@ -4,6 +4,7 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.telephony.CellIdentityGsm;
 import android.telephony.CellInfo;
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import DatabaseLogic.DatabaseAdapter;
 import DatabaseLogic.IMSICatcherDetectorDatabase;
 import Model.Cell;
 import Model.Dispozitiv;
@@ -31,7 +33,7 @@ public class CellController {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public CellController(Context mContext) throws IOException, InterruptedException {
         mainContext = mContext;
-        this.mDatabase = new IMSICatcherDetectorDatabase(this.mainContext);
+        this.mDatabase = new DatabaseAdapter(mainContext);
         mTelephonyManager = (TelephonyManager) mainContext.getSystemService(Context.TELEPHONY_SERVICE);
         if (mainContext.checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mCellInfoList = (List<CellInfo>) mTelephonyManager.getAllCellInfo();
@@ -61,7 +63,7 @@ public class CellController {
     private CellSignalStrengthGsm mCellSignalStrengthGsm;
     private Requester mRequester;
     private JsonObject mCellLocationJson;
-    private IMSICatcherDetectorDatabase mDatabase;
+    private DatabaseAdapter mDatabase;
     //endregion
 
 
@@ -200,7 +202,9 @@ public class CellController {
     //endregion
     //region Database Interraction
     public void addSignalStrengthToDB(int cellId, int signalStrength) {
+        this.mDatabase.OpenConnection();
         this.mDatabase.AddSignalStrength(cellId,signalStrength);
+        this.mDatabase.CloseConnection();
     }
     //endregion
 

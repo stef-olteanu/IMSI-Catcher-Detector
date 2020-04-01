@@ -10,6 +10,7 @@ import androidx.annotation.RequiresApi;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import DatabaseLogic.DatabaseAdapter;
 import DatabaseLogic.IMSICatcherDetectorDatabase;
 import Model.Cell;
 import Responses.CheckerResponse;
@@ -33,7 +34,7 @@ public class CellSignalChecker {
     final private long MAXIMUM_SAFE_PERIOD = 5000;
     private SharedPreferences mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("sharedTime",Context.MODE_PRIVATE);
     private SharedPreferences.Editor mEditor = mSharedPreferences.edit();
-    private IMSICatcherDetectorDatabase mDatabase;
+    private DatabaseAdapter mDatabase;
     //endregion
 
 
@@ -48,7 +49,7 @@ public class CellSignalChecker {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        this.mDatabase = new IMSICatcherDetectorDatabase(GlobalMainContext.getMainContext());
+        this.mDatabase = new DatabaseAdapter(GlobalMainContext.getMainContext());
     }
     //endregion
 
@@ -74,7 +75,9 @@ public class CellSignalChecker {
 
         mLastMovementTime = mSharedPreferences.getLong("lastMovementTime", mLastMovementTime);
         if (currentTimeMilis - mLastMovementTime >= MAXIMUM_SAFE_PERIOD) {
+            mDatabase.OpenConnection();
             ArrayList<Integer> signalValues =  this.mDatabase.getSignalValues(Integer.parseInt(this.mCurrentCell.GetCid()));
+            mDatabase.CloseConnection();
             Double signalAverage = signalValues.stream().mapToInt(val -> val).average().orElse(0.0);
             int currentSignalStrenght = Integer.parseInt(this.mCurrentCell.GetSignalDbm());
             if(currentSignalStrenght > signalAverage + 6)
