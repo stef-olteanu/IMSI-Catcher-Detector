@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_main);
         GlobalMainContext.getInstance(MainActivity.this);
         SharedPreferences sharedPreferences = getSharedPreferences("AppLanguage",MainActivity.this.MODE_PRIVATE);
@@ -87,16 +89,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         /**
          * Instantiate the listener
          */
-        TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-        CellLocationChangeListener mListener = null;
-        try {
-            mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        mTelephonyManager.listen(mListener, PhoneStateListener.LISTEN_CELL_LOCATION);
+//        TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+//        CellLocationChangeListener mListener = null;
+//        try {
+//            mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext());
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        mTelephonyManager.listen(mListener, PhoneStateListener.LISTEN_CELL_LOCATION);
 
 
     }
@@ -144,6 +146,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     case R.id.nav_database:
                         Intent intent = new Intent(GlobalMainContext.getMainContext(),DatabaseViewerActivity.class);
                         startActivityForResult(intent,1);
+                        break;
+                    case R.id.nav_statistics:
+                        Intent intent1 = new Intent(GlobalMainContext.getMainContext(),PieChartActivity.class);
+                        startActivity(intent1);
                         break;
 
                 }

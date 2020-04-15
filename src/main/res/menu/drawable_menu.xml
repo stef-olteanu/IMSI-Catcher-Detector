@@ -30,6 +30,10 @@
         <item android:id="@+id/nav_database"
             android:title="@string/DATABASEVIEWER"
             android:icon="@drawable/ic_library_books"/>
+
+        <item android:id="@+id/nav_statistics"
+            android:title="@string/STATISTICS"
+            android:icon="@drawable/ic_poll_black_24dp"/>
     </group>
 
     <item android:title="@string/ANOTHERDETAILS">

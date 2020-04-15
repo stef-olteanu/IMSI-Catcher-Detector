@@ -93,6 +93,7 @@
     <string name="ALLCELLS">TOATE</string>
     <string name="DATABASEVIEWER">Vizualizare baza de date</string>
     <string name="SEARCH">Cauta</string>
+    <string name="STATISTICS">Statistici</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

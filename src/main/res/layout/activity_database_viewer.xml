@@ -16,7 +16,7 @@
         android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hamburger" />
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/textView56"
@@ -74,6 +74,7 @@
 
     <EditText
         android:id="@+id/editFilter"
+        style="@style/editTextBleu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -87,7 +88,8 @@
         android:shadowColor="#000000"
         android:textColor="#000000"
         android:textColorHighlight="#000000"
-        android:textColorLink="#050000"
+        android:textColorHint="@color/blue"
+        android:textColorLink="#000000"
         android:theme="@style/editTextBleu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
