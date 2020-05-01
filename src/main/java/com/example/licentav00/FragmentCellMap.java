@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,6 +31,10 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polygon;
+import com.google.android.gms.maps.model.PolygonOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import org.w3c.dom.Text;
 
@@ -52,6 +57,7 @@ public class FragmentCellMap extends Fragment implements OnMapReadyCallback {
     private String mActiveChoice;
     private GoogleMap mGoogleMap;
     private ArrayList<Cell> mCellList;
+    Polygon polygon = null;
     //endregion
 
 
@@ -92,6 +98,7 @@ public class FragmentCellMap extends Fragment implements OnMapReadyCallback {
         this.mInflatedView = inflateView;
         return inflateView;
     }
+
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -143,6 +150,7 @@ public class FragmentCellMap extends Fragment implements OnMapReadyCallback {
             }
         });
         mGoogleMap = googleMap;
+
     }
 
 
