@@ -6,6 +6,7 @@ import android.view.View;
 
 import androidx.annotation.RequiresApi;
 
+import java.io.IOException;
 import java.util.HashMap;
 
 import CallBacks.CheckerCallBack;
@@ -17,6 +18,7 @@ import Checkers.InternalDBChecker;
 import Checkers.NeighbourListChecker;
 import Checkers.OverallChecker;
 import Checkers.PublicDBChecker;
+import Model.Cell;
 import Responses.CellConsistencyCheckerResponse;
 import Responses.CheckerResponse;
 import Responses.InternalDBCheckerResponse;
@@ -31,10 +33,12 @@ public class CheckerManager {
     private CheckerResponseManager mCheckerResponseManager;
     private HashMap<String,String> FinalCheckerResponse;
     private String mFinalSignalStatus;
+    private Cell mCell;
     //endregion
 
 
     //region Constructor
+    @RequiresApi(api = Build.VERSION_CODES.P)
     public CheckerManager() {
         this.mCheckerResponseManager = new CheckerResponseManager();
         this.FinalCheckerResponse = new HashMap<>();
@@ -44,6 +48,13 @@ public class CheckerManager {
     //region Public Methods
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void RunCheckers() {
+                try {
+                    this.mCell = new Cell(GlobalMainContext.getMainContext());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 performSignalCheck();
                 performPublicDBCheck();
                 performInteralDBCheck();
@@ -51,6 +62,21 @@ public class CheckerManager {
                 performCellConsistencyCheck();
                 //performConectivityCheck();
                 //performOverallCheck();
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.P)
+    public void RunCheckers(Cell cell) {
+
+        this.mCell = cell;
+
+        performSignalCheck();
+        performPublicDBCheck();
+        performInteralDBCheck();
+        performNeighbourListCheck();
+        performCellConsistencyCheck();
+        //performConectivityCheck();
+        //performOverallCheck();
     }
 
     public CheckerResponseManager getmCheckerResponseManager() {
@@ -63,7 +89,7 @@ public class CheckerManager {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void performSignalCheck() {
                 CellSignalChecker cellSignalChecker = new CellSignalChecker();
-                CheckerResponse signalCheckerResponse = cellSignalChecker.checkSignalStrength();
+                CheckerResponse signalCheckerResponse = cellSignalChecker.checkSignalStrength(this.mCell);
                 mCheckerResponseManager.setmSignalCheckerResponse(signalCheckerResponse);
                 mFinalSignalStatus =  mCheckerResponseManager.GetFinalSignalResponse();
                 FinalCheckerResponse.put(MConstants.SIGNAL_CHECKER, mFinalSignalStatus);
@@ -72,14 +98,14 @@ public class CheckerManager {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void performPublicDBCheck() {
                 PublicDBChecker publicDBChecker = new PublicDBChecker();
-                CheckerResponse publicDBResponse = publicDBChecker.checkPublicDB();
+                CheckerResponse publicDBResponse = publicDBChecker.checkPublicDB(this.mCell);
                 mCheckerResponseManager.setmPublicDbCheckerResponse(publicDBResponse);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void performInteralDBCheck() {
                 InternalDBChecker internalDBChecker = new InternalDBChecker();
-                internalDBChecker.checkInternalDatabase(response -> {
+                internalDBChecker.checkInternalDatabase(this.mCell, response -> {
                     InternalDBCheckerResponse internalDBCheckerResponse = new InternalDBCheckerResponse(response);
                     mCheckerResponseManager.setmInternalDBCheckerResponse(internalDBCheckerResponse);
                 });
@@ -90,7 +116,7 @@ public class CheckerManager {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void performNeighbourListCheck() {
         NeighbourListChecker neighbourListChecker = new NeighbourListChecker();
-        NeighbourListCheckerResponse neighbourListCheckerResponse =  neighbourListChecker.CheckNeighbourList();
+        NeighbourListCheckerResponse neighbourListCheckerResponse =  neighbourListChecker.CheckNeighbourList(this.mCell);
         mCheckerResponseManager.setmNeighbourListCheckerResponse(neighbourListCheckerResponse);
 
     }
@@ -98,12 +124,9 @@ public class CheckerManager {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public void performCellConsistencyCheck() {
         CellConsistencyChecker cellConsistencyChecker = new CellConsistencyChecker();
-        cellConsistencyChecker.CheckCellConsistency(new InternalDatabaseCallBack() {
-            @Override
-            public void OnReturnResponseCallback(String response) {
-                CellConsistencyCheckerResponse cellConsistencyCheckerResponse = new CellConsistencyCheckerResponse(response);
-                mCheckerResponseManager.setmCellConsistencyCheckerResponse(cellConsistencyCheckerResponse);
-            }
+        cellConsistencyChecker.CheckCellConsistency(this.mCell, response -> {
+            CellConsistencyCheckerResponse cellConsistencyCheckerResponse = new CellConsistencyCheckerResponse(response);
+            mCheckerResponseManager.setmCellConsistencyCheckerResponse(cellConsistencyCheckerResponse);
         });
     }
 
@@ -122,5 +145,10 @@ public class CheckerManager {
             overallResponse.setmCheckingStatus(MConstants.OVERALL_FAILED_RO);
         mCheckerResponseManager.setmOverallResponse(overallResponse);
     }
+
+    public Cell getmCell() {
+        return mCell;
+    }
+
     //endregion
 }

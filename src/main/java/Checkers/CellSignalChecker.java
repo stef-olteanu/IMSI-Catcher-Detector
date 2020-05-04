@@ -29,7 +29,6 @@ import Utils.GlobalMainContext;
  */
 public class CellSignalChecker {
     //region Private Members
-    private Cell mCurrentCell = null;
     private long mLastMovementTime;
     final private long MAXIMUM_SAFE_PERIOD = 5000;
     private SharedPreferences mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("sharedTime",Context.MODE_PRIVATE);
@@ -42,13 +41,6 @@ public class CellSignalChecker {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public CellSignalChecker(){
 
-        try {
-            mCurrentCell = new Cell(GlobalMainContext.getMainContext());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         this.mDatabase = new DatabaseAdapter(GlobalMainContext.getMainContext());
     }
     //endregion
@@ -69,17 +61,17 @@ public class CellSignalChecker {
      */
     @TargetApi(Build.VERSION_CODES.N)
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
-    public CheckerResponse checkSignalStrength() {
+    public CheckerResponse checkSignalStrength(Cell currentCell) {
         float currentTimeMilis = System.currentTimeMillis();
 
 
         mLastMovementTime = mSharedPreferences.getLong("lastMovementTime", mLastMovementTime);
         if (currentTimeMilis - mLastMovementTime >= MAXIMUM_SAFE_PERIOD) {
             mDatabase.OpenConnection();
-            ArrayList<Integer> signalValues =  this.mDatabase.getSignalValues(Integer.parseInt(this.mCurrentCell.GetCid()));
+            ArrayList<Integer> signalValues =  this.mDatabase.getSignalValues(Integer.parseInt(currentCell.GetCid()));
             mDatabase.CloseConnection();
             Double signalAverage = signalValues.stream().mapToInt(val -> val).average().orElse(0.0);
-            int currentSignalStrenght = Integer.parseInt(this.mCurrentCell.GetSignalDbm());
+            int currentSignalStrenght = Integer.parseInt(currentCell.GetSignalDbm());
             if(currentSignalStrenght > signalAverage + 6)
                 return new CheckerResponse(MConstants.TEST_FAILED_RO);
             if(currentSignalStrenght < signalAverage - 6)

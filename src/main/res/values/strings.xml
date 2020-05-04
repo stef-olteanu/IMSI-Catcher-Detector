@@ -94,6 +94,7 @@
     <string name="DATABASEVIEWER">Database Viewer</string>
     <string name="SEARCH">Search</string>
     <string name="STATISTICS">Statistics</string>
+    <string name="LOADING">Please wait while the application is loading</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

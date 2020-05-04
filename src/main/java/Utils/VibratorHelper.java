@@ -22,10 +22,8 @@ public class VibratorHelper {
     //region Methods
     @RequiresApi(api = Build.VERSION_CODES.O)
     public void Vibrate(String response){
-        if(response.equals(MConstants.TEST_PASSED_RO))
+        if(response.equals(MConstants.OVERALL_FAILED_RO))
             this.mVibrator.vibrate(VibrationEffect.createOneShot(1000,VibrationEffect.DEFAULT_AMPLITUDE));
-        else
-            this.mVibrator.vibrate(VibrationEffect.createOneShot(1500,VibrationEffect.DEFAULT_AMPLITUDE));
     }
     //endregion
 }

@@ -16,33 +16,25 @@ import Utils.MConstants;
 
 public class CellConsistencyChecker {
     //region Members Declaration
-    private Cell mCurrentCell;
     private FirebaseHelper mFirebaseHelper;
     //region
 
     //region Constructor
     @RequiresApi(api = Build.VERSION_CODES.P)
     public CellConsistencyChecker() {
-        try {
-            this.mCurrentCell = new Cell(GlobalMainContext.getMainContext());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         this.mFirebaseHelper = new FirebaseHelper();
     }
     //endregion
 
 
     //region Methods
-    public void CheckCellConsistency(final InternalDatabaseCallBack internalDatabaseCallBack) {
+    public void CheckCellConsistency(Cell currentCell,final InternalDatabaseCallBack internalDatabaseCallBack) {
         this.mFirebaseHelper.getAllCells(new DatabaseReaderCallBack() {
             @Override
             public void OnCallBack(List<Cell> databaseCellList) {
                 for(Cell cell : databaseCellList) {
-                    if(cell.GetCid().equals(mCurrentCell.GetCid())){
-                        if(cell.GetLac().equals(mCurrentCell.GetLac())) {
+                    if(cell.GetCid().equals(currentCell.GetCid())){
+                        if(cell.GetLac().equals(currentCell.GetLac())) {
                             internalDatabaseCallBack.OnReturnResponseCallback(MConstants.TEST_PASSED_RO);
                             return;
                         } else {
@@ -52,10 +44,10 @@ public class CellConsistencyChecker {
 
                     }
                 }
-                if(mCurrentCell.getmCellStatus().equals(MConstants.Cell.WARNING)) {
+                if(currentCell.getmCellStatus().equals(MConstants.Cell.WARNING)) {
                     internalDatabaseCallBack.OnReturnResponseCallback(MConstants.TEST_FAILED_RO);
                     return;
-                } else if(mCurrentCell.getmCellStatus().equals(MConstants.Cell.GOOD)){
+                } else if(currentCell.getmCellStatus().equals(MConstants.Cell.GOOD)){
                     internalDatabaseCallBack.OnReturnResponseCallback(MConstants.TEST_PASSED_RO);
                 }
             }

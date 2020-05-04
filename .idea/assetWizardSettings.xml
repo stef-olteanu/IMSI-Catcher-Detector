@@ -45,6 +45,17 @@
                                 <PersistentState>
                                   <option name="children">
                                     <map>
+                                      <entry key="backgroundImage">
+                                        <value>
+                                          <PersistentState>
+                                            <option name="values">
+                                              <map>
+                                                <entry key="scalingPercent" value="128" />
+                                              </map>
+                                            </option>
+                                          </PersistentState>
+                                        </value>
+                                      </entry>
                                       <entry key="foregroundClipArt">
                                         <value>
                                           <PersistentState>
@@ -62,7 +73,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="scalingPercent" value="99" />
+                                                <entry key="scalingPercent" value="53" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -72,10 +83,8 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="backgroundLayerName" value="ic_launcher_background" />
-                                      <entry key="foregroundImage" value="D:\ATM\Licenta\alertCell-removebg-preview.png" />
-                                      <entry key="foregroundLayerName" value="ic_alert_cell" />
-                                      <entry key="outputName" value="alert_alert_ic" />
+                                      <entry key="backgroundImage" value="D:\ATM\Licenta\abstract-technology-particle-background_52683-25766.png" />
+                                      <entry key="foregroundImage" value="D:\ATM\Licenta\logo.png" />
                                     </map>
                                   </option>
                                 </PersistentState>

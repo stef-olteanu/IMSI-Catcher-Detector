@@ -94,6 +94,7 @@
     <string name="DATABASEVIEWER">Vizualizare baza de date</string>
     <string name="SEARCH">Cauta</string>
     <string name="STATISTICS">Statistici</string>
+    <string name="LOADING">Te rugam sa astepti ca aplicatia sa se incarce</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

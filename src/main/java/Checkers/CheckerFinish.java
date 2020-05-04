@@ -16,8 +16,11 @@ import androidx.fragment.app.FragmentManager;
 import com.example.licentav00.Popups.ResultInfoPopup;
 import com.example.licentav00.R;
 
+import DatabaseLogic.FirebaseHelper;
 import Informers.CheckerStatusInformer;
 import Managers.CheckerManager;
+import Model.Cell;
+import Responses.OverallResponse;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 import Utils.VibratorHelper;
@@ -136,11 +139,14 @@ public class CheckerFinish {
                                 boolean isPaused15 = sharedPreferences15.getBoolean("isPaused",false);
                                 if(!isPaused15) {
                                     mCheckerManager.performOverallCheck();
-                                    String response = mCheckerManager.getmCheckerResponseManager().getmOverallResponse().getmCheckingStatus();
-                                    checkerStatusInformer.OnCheckCompleted(MConstants.OVERALL_CHECKER, response);
+                                    OverallResponse response = mCheckerManager.getmCheckerResponseManager().getmOverallResponse();
+                                    checkerStatusInformer.OnCheckCompleted(MConstants.OVERALL_CHECKER, response.getmCheckingStatus());
+
+                                    ResponseChecker responseChecker = new ResponseChecker(mCheckerManager);
+                                    responseChecker.checkToInsert(response);
 
                                     mView.findViewById(R.id.progressBarCheck).setVisibility(View.INVISIBLE);
-                                    mVibratorHelper.Vibrate(response);
+                                    mVibratorHelper.Vibrate(response.getmCheckingStatus());
                                     mView.findViewById(R.id.buttonRetake).setVisibility(View.VISIBLE);
                                     mView.findViewById(R.id.buttonPause).setVisibility(View.INVISIBLE);
                                     TextView textView = mView.findViewById(R.id.checkStartedText);

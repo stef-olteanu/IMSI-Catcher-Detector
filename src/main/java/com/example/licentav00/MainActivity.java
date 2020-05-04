@@ -13,9 +13,11 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
 import android.util.Log;
@@ -86,20 +88,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.addHeaderView(view);
 
 
-        /**
-         * Instantiate the listener
-         */
-//        TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
-//        CellLocationChangeListener mListener = null;
-//        try {
-//            mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext());
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        mTelephonyManager.listen(mListener, PhoneStateListener.LISTEN_CELL_LOCATION);
 
+        CellLocationChangeListener mListener;
+        mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext());
+        TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
+        mTelephonyManager.listen(mListener, PhoneStateListener.LISTEN_CELL_LOCATION);
 
     }
 

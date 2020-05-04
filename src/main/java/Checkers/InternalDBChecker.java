@@ -15,7 +15,6 @@ import Utils.MConstants;
 public class InternalDBChecker {
     //region Members Declaration
     private FirebaseHelper mFirebaseHelper;
-    private Cell mCurrentCell;
     public String mCheckerResponse;
     private InternalDBChecker mInternalDBChecker;
     //endregion
@@ -25,21 +24,14 @@ public class InternalDBChecker {
     @RequiresApi(api = Build.VERSION_CODES.P)
     public InternalDBChecker() {
         this.mFirebaseHelper = new FirebaseHelper();
-        try {
-            this.mCurrentCell = new Cell(GlobalMainContext.getMainContext());
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         this.mInternalDBChecker = this;
     }
     //endregion
 
 
     //region Methods
-    public void checkInternalDatabase(final InternalDatabaseCallBack internalDatabaseCallBack) {
-        mFirebaseHelper.checkDatabaseEntry(mCurrentCell, new InternalDatabaseCallBack() {
+    public void checkInternalDatabase(Cell currentCell,final InternalDatabaseCallBack internalDatabaseCallBack) {
+        mFirebaseHelper.checkDatabaseEntry(currentCell, new InternalDatabaseCallBack() {
             @Override
             public void OnReturnResponseCallback(String response) {
                 switch (response) {
