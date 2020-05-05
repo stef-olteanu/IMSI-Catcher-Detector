@@ -13,26 +13,18 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
 import android.telephony.PhoneStateListener;
 import android.telephony.TelephonyManager;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
 
 import com.google.android.material.navigation.NavigationView;
 
-import java.io.IOException;
-
-import Checkers.ConectivityChecker;
-import Checkers.InternalDBChecker;
 import Listeners.CellLocationChangeListener;
-import Model.Dispozitiv;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 
@@ -90,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         CellLocationChangeListener mListener;
-        mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext());
+        mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext(),navigationView,getSupportFragmentManager());
         TelephonyManager mTelephonyManager = (TelephonyManager) getSystemService(TELEPHONY_SERVICE);
         mTelephonyManager.listen(mListener, PhoneStateListener.LISTEN_CELL_LOCATION);
 

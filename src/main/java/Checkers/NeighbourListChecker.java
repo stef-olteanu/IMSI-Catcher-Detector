@@ -4,25 +4,24 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import java.io.IOException;
 import java.util.List;
 
 import Model.Cell;
-import Model.Dispozitiv;
+import Model.Device;
 import Responses.NeighbourListCheckerResponse;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 
 public class NeighbourListChecker {
     //region Members Declaration
-    private Dispozitiv mCurrentDevice;
+    private Device mCurrentDevice;
     //endregion
 
 
     //region Constructor
     @RequiresApi(api = Build.VERSION_CODES.P)
     public NeighbourListChecker(){
-        this.mCurrentDevice = new Dispozitiv(GlobalMainContext.getMainContext());
+        this.mCurrentDevice = new Device(GlobalMainContext.getMainContext());
     }
     //endregion
 

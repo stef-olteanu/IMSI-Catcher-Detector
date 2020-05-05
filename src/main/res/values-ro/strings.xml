@@ -95,6 +95,8 @@
     <string name="SEARCH">Cauta</string>
     <string name="STATISTICS">Statistici</string>
     <string name="LOADING">Te rugam sa astepti ca aplicatia sa se incarce</string>
+    <string name="IMSIALERT">ALERTA IMSI CATCHER</string>
+    <string name="IMSIINFO">TELEFONUL DUMNEAVOASTRA ESTE TINTA UNUI IMSI CATCHER. APASATI PE BUTONUL DE MAI JOS PENTRU A VEDEA CE TESTE A PICAT CELULA LA CARE SUNTETI CONECTAT</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

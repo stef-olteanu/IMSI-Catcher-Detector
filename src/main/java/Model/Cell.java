@@ -56,7 +56,7 @@ public class Cell {
          */
         if(mCellAddress == "Cell not found"){
             mCellStatus = MConstants.Cell.WARNING;
-            Dispozitiv dispozitiv = new Dispozitiv(mainContext);
+            Device dispozitiv = new Device(mainContext);
             mCellLat = dispozitiv.GetLatitude();
             mCellLong = dispozitiv.GetLongitude();
         }

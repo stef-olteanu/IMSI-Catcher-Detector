@@ -8,11 +8,11 @@ import androidx.annotation.RequiresApi;
 
 import Controller.DispozitivController;
 
-public class Dispozitiv {
+public class Device {
     //region Constructor
     @TargetApi(Build.VERSION_CODES.O)
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public Dispozitiv(Context mContext){
+    public Device(Context mContext){
         this.mDispozitivController = new DispozitivController(mContext);
         this.mPhoneType = mDispozitivController.GetPhoneType();
         this.mIMEI = mDispozitivController.GetIMEI();

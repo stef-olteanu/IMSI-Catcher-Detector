@@ -95,6 +95,8 @@
     <string name="SEARCH">Search</string>
     <string name="STATISTICS">Statistics</string>
     <string name="LOADING">Please wait while the application is loading</string>
+    <string name="IMSIALERT">IMSI CATCHER ALERT</string>
+    <string name="IMSIINFO">YOUR PHONE IS BEING ATTACKED BY AN IMSI CATCHER. PRESS TTHE BUTTON BELLOW TO SEE WHICH TESTS THE CELL YOU ARE CONNECTED TO FAILED</string>
     <string-array name="cellTypes">
         <item>GoodCells</item>
         <item>WarningCells</item>

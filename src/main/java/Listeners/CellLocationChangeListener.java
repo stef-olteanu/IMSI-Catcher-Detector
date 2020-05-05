@@ -9,6 +9,9 @@ import android.telephony.CellLocation;
 import android.telephony.PhoneStateListener;
 
 import androidx.annotation.RequiresApi;
+import androidx.fragment.app.FragmentManager;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,16 +31,20 @@ public class CellLocationChangeListener extends PhoneStateListener {
     private FirebaseHelper mFirebaseHelper;
     private CheckerManager mCheckerManager;
     private VibratorHelper mVibratorHelper;
+    private NavigationView mNavigationView;
+    private FragmentManager mFragmentManager;
 
     //endregion
 
     //region Constructor
     @RequiresApi(api = Build.VERSION_CODES.P)
-    public CellLocationChangeListener(Context mContext) {
+    public CellLocationChangeListener(Context mContext,NavigationView navigationView,FragmentManager fragmentManager) {
         mainContext = mContext;
         mFirebaseHelper = new FirebaseHelper();
         mCheckerManager = new CheckerManager();
         mVibratorHelper = new VibratorHelper();
+        mNavigationView = navigationView;
+        mFragmentManager = fragmentManager;
         //mCurrentCell = new Cell(mainContext);
     }
     //endregion
@@ -70,6 +77,7 @@ public class CellLocationChangeListener extends PhoneStateListener {
                 Handler handler2 = new Handler();
                 handler2.postDelayed(() -> responseChecker.checkToInsert(finalResponse),3000);
                 mVibratorHelper.Vibrate(finalResponse.getmCheckingStatus());
+                responseChecker.checkIfPopup(mCheckerManager,mNavigationView,mFragmentManager);
             },5000);
 
 

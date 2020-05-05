@@ -27,16 +27,18 @@ public class CheckerStarter {
     private CheckerFinish mCheckerFinish;
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
+    private boolean mPopUp;
     //endregion
 
 
     //region Constructor
-    public CheckerStarter(View view, CheckerManager checkerManager, CheckerFinish checkerFinish){
+    public CheckerStarter(View view, CheckerManager checkerManager, CheckerFinish checkerFinish,boolean popUp){
         this.mCheckerManager = checkerManager;
         this.mView = view;
         this.mCheckerFinish = checkerFinish;
         this.mSharedPreferences = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
         this.mEditor = this.mSharedPreferences.edit();
+        this.mPopUp = popUp;
     }
     //endregion
 
@@ -63,11 +65,18 @@ public class CheckerStarter {
             @RequiresApi(api = Build.VERSION_CODES.P)
             @Override
             public void run() {
-                mCheckerManager.RunCheckers();
+                if(mPopUp)
+                    mCheckerManager.RunCheckers(mCheckerManager.getmCell());
+                else
+                    mCheckerManager.RunCheckers();
             }
         });
         th.start();
         this.mCheckerFinish.onFinish();
+    }
+
+    public void setmPopUp(boolean mPopUp) {
+        this.mPopUp = mPopUp;
     }
 
     //endregion

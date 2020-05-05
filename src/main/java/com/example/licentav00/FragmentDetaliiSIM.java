@@ -18,9 +18,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 
 
-import org.w3c.dom.Text;
-
-import Model.Dispozitiv;
+import Model.Device;
 import Model.Network;
 import Model.SIM;
 
@@ -87,7 +85,7 @@ public class FragmentDetaliiSIM extends Fragment {
         //endregion
 
         //region Set Device Information
-        Dispozitiv device = new Dispozitiv(mainContext);
+        Device device = new Device(mainContext);
         TextView phoneTypeTextView = (TextView) inflaterView.findViewById(R.id.phoneTypeTextView);
         phoneTypeTextView.setText(device.getPhoneType());
 

@@ -4,7 +4,6 @@ import android.Manifest;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.pm.PackageManager;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Build;
 import android.telephony.CellIdentityGsm;
 import android.telephony.CellInfo;
@@ -21,9 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import DatabaseLogic.DatabaseAdapter;
-import DatabaseLogic.IMSICatcherDetectorDatabase;
 import Model.Cell;
-import Model.Dispozitiv;
+import Model.Device;
 import Utils.AsyncGetter;
 import Utils.Requester;
 
@@ -186,7 +184,7 @@ public class CellController {
                 neighbourCell.setmCellLong(cellLocationJson.get("lon").toString());
                 neighbourCell.setmCellStatus("GOOD");
             }else{
-                Dispozitiv dispozitiv = new Dispozitiv(mainContext);
+                Device dispozitiv = new Device(mainContext);
                 neighbourCell.setmCellLat(dispozitiv.GetLatitude());
                 neighbourCell.setmCellLong(dispozitiv.GetLongitude());
                 neighbourCell.setmCellStatus("WARNING");

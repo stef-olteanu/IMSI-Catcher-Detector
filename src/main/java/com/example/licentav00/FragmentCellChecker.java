@@ -36,11 +36,19 @@ public class FragmentCellChecker extends Fragment {
     private SharedPreferences mSharedPreferences;
     private CheckerStarter mCheckerStarter;
     private CheckerFinish mCheckerFinish;
+    private boolean mPopUp;
     //endregion
 
     //region Constructor
+    @RequiresApi(api = Build.VERSION_CODES.P)
     public FragmentCellChecker(){
         this.mCheckerManager = new CheckerManager();
+        this.mPopUp = false;
+    }
+
+    public FragmentCellChecker(CheckerManager checkerManager) {
+        this.mCheckerManager = checkerManager;
+        this.mPopUp = true;
     }
     //endregion
 
@@ -59,7 +67,7 @@ public class FragmentCellChecker extends Fragment {
         boolean isChecked = this.mSharedPreferences.getBoolean("checked",true);
 
         this.mCheckerFinish = new CheckerFinish(inflaterView,this.mCheckerManager,getFragmentManager());
-        this.mCheckerStarter = new CheckerStarter(inflaterView,this.mCheckerManager, this.mCheckerFinish);
+        this.mCheckerStarter = new CheckerStarter(inflaterView,this.mCheckerManager, this.mCheckerFinish, this.mPopUp);
 
         SimpleDateFormat formattter = new SimpleDateFormat("yyyy-MM-dd ' ' HH:mm:ss");
         Date date = new Date(System.currentTimeMillis());
@@ -107,6 +115,7 @@ public class FragmentCellChecker extends Fragment {
 
             v.setVisibility(View.INVISIBLE);
             setViewVisibility(inflatedView);
+            mCheckerStarter.setmPopUp(false);
             mCheckerStarter.startChecker();
         });
 

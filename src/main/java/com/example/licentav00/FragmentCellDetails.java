@@ -2,7 +2,6 @@ package com.example.licentav00;
 
 import android.annotation.TargetApi;
 import android.content.Context;
-import android.graphics.Camera;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -30,7 +29,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 
 import Model.Cell;
-import Model.Dispozitiv;
+import Model.Device;
 
 
 public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
@@ -40,7 +39,7 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
     @RequiresApi(api = Build.VERSION_CODES.P)
     public FragmentCellDetails(Context mContext) {
         mainContext = mContext;
-        mDispozitiv  = new Dispozitiv(mainContext);
+        mDispozitiv  = new Device(mainContext);
 
         try {
             mCell = new Cell(mainContext);
@@ -55,7 +54,7 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
     }
 
     Context mainContext;
-    Dispozitiv mDispozitiv;
+    Device mDispozitiv;
     Cell mCell;
     MapView mapView;
 
