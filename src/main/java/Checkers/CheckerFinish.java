@@ -61,10 +61,16 @@ public class CheckerFinish {
                             SharedPreferences sharedPreferences2 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                             boolean isPaused2 = sharedPreferences2.getBoolean("isPaused",false);
                             if(!isPaused2) {
-                                this.mCheckerManager.performConectivityCheck();
-                                String result = mCheckerManager.getmCheckerResponseManager().getmConectivityCheckerResponse().getmCheckingStatus();
-                                checkerStatusInformer.OnCheckCompleted(MConstants.CONNECTIVITY_CHECKER,result);
-                                startOnClickListeners(MConstants.CONNECTIVITY_CHECKER,result);
+                                mCheckerManager.performConectivityCheck();
+                                handler1.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        String result = mCheckerManager.getmCheckerResponseManager().getmConectivityCheckerResponse().getmCheckingStatus();
+                                        checkerStatusInformer.OnCheckCompleted(MConstants.CONNECTIVITY_CHECKER,result);
+                                        startOnClickListeners(MConstants.CONNECTIVITY_CHECKER,result);
+                                    }
+                                },3000);
+
                             } else {
                                 handler1.removeCallbacksAndMessages(null);
                             }
@@ -74,9 +80,15 @@ public class CheckerFinish {
                             sharedPreferences2 = GlobalMainContext.getMainContext().getSharedPreferences("CheckInfo", Context.MODE_PRIVATE);
                             isPaused2 = sharedPreferences2.getBoolean("isPaused",false);
                             if(!isPaused2) {
-                                String result = mCheckerManager.getmCheckerResponseManager().GetFinalSignalResponse();
-                                checkerStatusInformer.OnCheckCompleted(MConstants.SIGNAL_CHECKER, result);
-                                startOnClickListeners(MConstants.SIGNAL_CHECKER,result);
+                                handler1.postDelayed(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        String result = mCheckerManager.getmCheckerResponseManager().GetFinalSignalResponse();
+                                        checkerStatusInformer.OnCheckCompleted(MConstants.SIGNAL_CHECKER, result);
+                                        startOnClickListeners(MConstants.SIGNAL_CHECKER,result);
+                                    }
+                                },5000);
+
                             } else {
                                 handler1.removeCallbacksAndMessages(null);
                             }

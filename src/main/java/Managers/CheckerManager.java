@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import CallBacks.CheckerCallBack;
+import CallBacks.ConnectivityCheckCallBack;
 import CallBacks.InternalDatabaseCallBack;
 import Checkers.CellConsistencyChecker;
 import Checkers.CellSignalChecker;
@@ -132,8 +133,8 @@ public class CheckerManager {
 
     public void performConectivityCheck() {
         ConectivityChecker conectivityChecker = new ConectivityChecker();
-        CheckerResponse conectivityResponse =  conectivityChecker.checkForInternetConnection();
-        mCheckerResponseManager.setmConectivityCheckerResponse(conectivityResponse);
+        conectivityChecker.checkForInternetConnection(checkerResponse -> mCheckerResponseManager.setmConectivityCheckerResponse(checkerResponse));
+
     }
 
     public void performOverallCheck() {

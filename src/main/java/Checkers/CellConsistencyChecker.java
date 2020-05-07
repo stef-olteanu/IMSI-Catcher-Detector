@@ -34,7 +34,7 @@ public class CellConsistencyChecker {
             public void OnCallBack(List<Cell> databaseCellList) {
                 for(Cell cell : databaseCellList) {
                     if(cell.GetCid().equals(currentCell.GetCid())){
-                        if(cell.GetLac().equals(currentCell.GetLac())) {
+                        if(cell.GetLac().equals(currentCell.GetLac())&&cell.GetMcc().equals(currentCell.GetMcc())&&cell.GetMnc().equals(currentCell.GetMnc())) {
                             internalDatabaseCallBack.OnReturnResponseCallback(MConstants.TEST_PASSED_RO);
                             return;
                         } else {

@@ -71,13 +71,18 @@ public class CellLocationChangeListener extends PhoneStateListener {
             Handler handler1 = new Handler();
             handler1.postDelayed(() -> {
                 mCheckerManager.performConectivityCheck();
-                mCheckerManager.performOverallCheck();
-                OverallResponse finalResponse =  mCheckerManager.getmCheckerResponseManager().getmOverallResponse();
-                ResponseChecker responseChecker = new ResponseChecker(mCheckerManager);
-                Handler handler2 = new Handler();
-                handler2.postDelayed(() -> responseChecker.checkToInsert(finalResponse),3000);
-                mVibratorHelper.Vibrate(finalResponse.getmCheckingStatus());
-                responseChecker.checkIfPopup(mCheckerManager,mNavigationView,mFragmentManager);
+                handler1.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mCheckerManager.performOverallCheck();
+                        OverallResponse finalResponse =  mCheckerManager.getmCheckerResponseManager().getmOverallResponse();
+                        ResponseChecker responseChecker = new ResponseChecker(mCheckerManager);
+                        Handler handler2 = new Handler();
+                        handler2.postDelayed(() -> responseChecker.checkToInsert(finalResponse),3000);
+                        mVibratorHelper.Vibrate(finalResponse.getmCheckingStatus());
+                        responseChecker.checkIfPopup(mCheckerManager,mNavigationView,mFragmentManager);
+                    }
+                },3000);
             },5000);
 
 

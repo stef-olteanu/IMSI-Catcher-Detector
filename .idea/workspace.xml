@@ -88,24 +88,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/Popups/CellImsiCatcherPopUpDialog.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_imsicatcher_popup.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/CallBacks/ConnectivityCheckCallBack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Licenta/Documentatie Licenta Olteanu Stefan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Licenta/Documentatie Licenta Olteanu Stefan.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/NeighbourListChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/NeighbourListChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/ResponseChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/ResponseChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/CellController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/CellController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CellConsistencyChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CellConsistencyChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Listeners/CellLocationChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Listeners/CellLocationChangeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Dispozitiv.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Device.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentDetaliiSIM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentDetaliiSIM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Managers/CheckerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Managers/CheckerManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values-en/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-en/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-ro/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_imsicatcher_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_imsicatcher_popup.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -347,11 +340,6 @@
           <option name="timeStamp" value="158" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/Listeners/CellLocationChangeListener.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="175" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FragmentCellChecker.java</url>
           <line>85</line>
           <option name="timeStamp" value="176" />
@@ -360,6 +348,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/Checkers/CheckerStarter.java</url>
           <line>67</line>
           <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -7,7 +7,12 @@ import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
 
 import java.io.IOException;
+import java.net.InetSocketAddress;
+import java.net.Socket;
+import java.util.logging.Handler;
 
+import CallBacks.CheckerCallBack;
+import CallBacks.ConnectivityCheckCallBack;
 import Responses.CheckerResponse;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
@@ -27,31 +32,35 @@ public class ConectivityChecker {
 
 
     //region Public Methods
-    public CheckerResponse checkForInternetConnection() {
-        mWifiManager.setWifiEnabled(false);
-        boolean isConnected;
-        if(isOnline())
-            isConnected = true;
-        else
-            isConnected = false;
+    public void checkForInternetConnection(ConnectivityCheckCallBack connectivityCheckCallBack) {
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                mWifiManager.setWifiEnabled(false);
+                if(isOnline()) {
+                    mWifiManager.setWifiEnabled(true);
+                    connectivityCheckCallBack.onCheckCompleted(new CheckerResponse(MConstants.TEST_PASSED_RO));
+                }
+                else {
+                    mWifiManager.setWifiEnabled(true);
+                    connectivityCheckCallBack.onCheckCompleted(new CheckerResponse(MConstants.TEST_FAILED_RO));
+                }
 
-        mWifiManager.setWifiEnabled(true);
-        if(isConnected)
-            return new CheckerResponse(MConstants.TEST_PASSED_RO);
-        return new CheckerResponse(MConstants.TEST_FAILED_RO);
+            }
+        });
+        thread.start();
     }
 
     public boolean isOnline() {
-        Runtime runtime = Runtime.getRuntime();
         try {
-            Process ipProcess = runtime.exec("/system/bin/ping -c 1 8.8.8.8");
-            int     exitValue = ipProcess.waitFor();
-            return (exitValue == 0);
+            return (Runtime.getRuntime().exec("ping -c 1 -w 1 google.com").waitFor() == 0);
+        } catch (IOException e) {
+            System.out.println(e);
+            return false;
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+            return false;
         }
-        catch (IOException e)          { e.printStackTrace(); }
-        catch (InterruptedException e) { e.printStackTrace(); }
-
-        return false;
     }
     //endregion
 }
