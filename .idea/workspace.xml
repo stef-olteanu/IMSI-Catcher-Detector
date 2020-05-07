@@ -88,17 +88,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/CallBacks/ConnectivityCheckCallBack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Licenta/Documentatie Licenta Olteanu Stefan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Licenta/Documentatie Licenta Olteanu Stefan.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CellConsistencyChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CellConsistencyChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CellSignalChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/CheckerFinish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Listeners/CellLocationChangeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Listeners/CellLocationChangeListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Managers/CheckerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Managers/CheckerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_imsicatcher_popup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_cell_imsicatcher_popup.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -351,7 +343,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/Checkers/ConectivityChecker.java</url>
-          <line>39</line>
+          <line>40</line>
           <option name="timeStamp" value="182" />
         </line-breakpoint>
       </breakpoints>

@@ -5,6 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiManager;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -36,9 +37,9 @@ public class ConectivityChecker {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                mWifiManager.setWifiEnabled(false);
+                //mWifiManager.setWifiEnabled(false);
                 if(isOnline()) {
-                    mWifiManager.setWifiEnabled(true);
+                    //mWifiManager.setWifiEnabled(true);
                     connectivityCheckCallBack.onCheckCompleted(new CheckerResponse(MConstants.TEST_PASSED_RO));
                 }
                 else {
@@ -53,11 +54,14 @@ public class ConectivityChecker {
 
     public boolean isOnline() {
         try {
+            Log.i("CONNECTIVITY:","DEVICE IS ONLINE");
             return (Runtime.getRuntime().exec("ping -c 1 -w 1 google.com").waitFor() == 0);
         } catch (IOException e) {
+            Log.i("CONNECTIVITY:","DEVICE IS OFFLINE");
             System.out.println(e);
             return false;
         } catch (InterruptedException e) {
+            Log.i("CONNECTIVITY:","DEVICE IS OFFLINE");
             e.printStackTrace();
             return false;
         }
