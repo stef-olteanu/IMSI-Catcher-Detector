@@ -2,19 +2,26 @@ package com.example.licentav00;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 
@@ -27,6 +34,8 @@ public class DatabaseViewerActivity extends AppCompatActivity {
     private ListView mListView;
     private FirebaseHelper mFirebaseHelper;
     private ArrayList<Cell> mDatabaseList;
+    private NavigationView mNavigationView;
+    private FragmentManager mFragmentManager;
     //endregion
 
     //region Constructor
@@ -69,6 +78,18 @@ public class DatabaseViewerActivity extends AppCompatActivity {
             cellListAdapter[0] = new CellListAdapter(context,R.layout.item_list_view,mDatabaseList);
             mListView.setAdapter(cellListAdapter[0]);
             mListView.setTextFilterEnabled(true);
+
+            mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.P)
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    Cell cell  = (Cell) parent.getItemAtPosition(position);
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    intent.putExtra("openCellDetails","cell");
+                    intent.putExtra("cell",cell);
+                    startActivity(intent);
+                }
+            });
 
 
             filterET.addTextChangedListener(new TextWatcher() {

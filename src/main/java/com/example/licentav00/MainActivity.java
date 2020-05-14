@@ -26,6 +26,7 @@ import android.widget.ProgressBar;
 import com.google.android.material.navigation.NavigationView;
 
 import Listeners.CellLocationChangeListener;
+import Model.Cell;
 import Utils.GlobalMainContext;
 import Utils.MConstants;
 
@@ -80,6 +81,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView.addHeaderView(view);
 
+        Intent intent = getIntent();
+        String openFragment = intent.getStringExtra("openCellDetails");
+        if(openFragment != null) {
+            Cell cell = getIntent().getParcelableExtra("cell");
+            navigationView.setCheckedItem(R.id.nav_cell_info);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FragmentCellDetails(this,cell)).commit();
+        }
+
 
         CellLocationChangeListener mListener;
         mListener = new CellLocationChangeListener(GlobalMainContext.getMainContext(),navigationView,getSupportFragmentManager());
@@ -130,6 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         break;
                     case R.id.nav_database:
                         Intent intent = new Intent(GlobalMainContext.getMainContext(),DatabaseViewerActivity.class);
+                        Bundle bundle = new Bundle();
                         startActivityForResult(intent,1);
                         break;
                     case R.id.nav_statistics:

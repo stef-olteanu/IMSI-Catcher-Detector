@@ -3,6 +3,8 @@ package Model;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.os.Build;
+import android.os.Parcel;
+import android.os.Parcelable;
 
 import androidx.annotation.RequiresApi;
 
@@ -12,7 +14,7 @@ import java.util.List;
 import Controller.CellController;
 import Utils.MConstants;
 
-public class Cell {
+public class Cell implements Parcelable {
     //region Constructor
     public Cell(){
 
@@ -34,8 +36,8 @@ public class Cell {
         //endregion
 
         //region Signal Strength Initialize
-
-        mSignalDbm = mCellController.GetSignalDbm();mAsuLevel = mCellController.GetAsuLevel();
+        mSignalDbm = mCellController.GetSignalDbm();
+        mAsuLevel = mCellController.GetAsuLevel();
         mSignalLevel = mCellController.GetSignalLevel();
         mTimingAdvance = mCellController.GetTimingAdvance();
         //endregion
@@ -101,6 +103,36 @@ public class Cell {
     //endregion
 
 
+    protected Cell(Parcel in) {
+        mArfcn = in.readString();
+        mBsic = in.readString();
+        mCid = in.readString();
+        mLac = in.readString();
+        mMcc = in.readString();
+        mMnc = in.readString();
+        mNetworkOperator = in.readString();
+        mCellStatus = in.readString();
+        mNeighbouringCells = in.createTypedArrayList(Cell.CREATOR);
+        mAsuLevel = in.readString();
+        mSignalDbm = in.readString();
+        mSignalLevel = in.readString();
+        mCellLat = in.readString();
+        mCellLong = in.readString();
+        mCellAddress = in.readString();
+    }
+
+    public static final Parcelable.Creator<Cell> CREATOR = new Parcelable.Creator<Cell>() {
+        @Override
+        public Cell createFromParcel(Parcel in) {
+            return new Cell(in);
+        }
+
+        @Override
+        public Cell[] newArray(int size) {
+            return new Cell[size];
+        }
+    };
+
     //region Public Methods
     //region Cell Identity Getters
     public String GetArcn(){
@@ -152,13 +184,13 @@ public class Cell {
     //region Cel Signal Strength Getters
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public String GetAsuLevel(){
-        mAsuLevel = mCellController.GetAsuLevel();
-        return mAsuLevel;
+        //mAsuLevel = mCellController.GetAsuLevel();
+        return this.mAsuLevel;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public String GetSignalDbm(){
-        mSignalDbm = mCellController.GetSignalDbm();
+       // mSignalDbm = mCellController.GetSignalDbm();
         return mSignalDbm;
     }
 
@@ -242,6 +274,46 @@ public class Cell {
     public void setmCellAddress(String mCellAddress) {
         this.mCellAddress = mCellAddress;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(mArfcn);
+        dest.writeString(mBsic);
+        dest.writeString(mCid);
+        dest.writeString(mLac);
+        dest.writeString(mMcc);
+        dest.writeString(mMnc);
+        dest.writeString(mNetworkOperator);
+        dest.writeString(mCellStatus);
+        dest.writeString(mAsuLevel);
+        dest.writeString(mSignalDbm);
+        dest.writeString(mSignalLevel);
+        dest.writeString(mTimingAdvance);
+        dest.writeString(mCellLat);
+        dest.writeString(mCellLong);
+        dest.writeString(mCellAddress);
+    }
+
+    public class Creator implements Parcelable.Creator<Cell> {
+
+        @RequiresApi(api = Build.VERSION_CODES.P)
+        @Override
+        public Cell createFromParcel(Parcel source) {
+            return new Cell(source);
+
+        }
+
+        @Override
+        public Cell[] newArray(int size) {
+            return new Cell[size];
+        }
+    }
+
 
     //endregion
 

@@ -53,6 +53,13 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public FragmentCellDetails(Context context, Cell cell) {
+        this.mainContext = context;
+        this.mDispozitiv = new Device(this.mainContext);
+        this.mCell = cell;
+    }
+
     Context mainContext;
     Device mDispozitiv;
     Cell mCell;
@@ -78,49 +85,67 @@ public class FragmentCellDetails extends Fragment implements OnMapReadyCallback{
 
 
         TextView arfcnTextView = (TextView) inflateView.findViewById(R.id.arfcnTextView);
-        arfcnTextView.setText(mCell.GetArcn());
+        if(mCell.GetArcn() != null)
+            arfcnTextView.setText(mCell.GetArcn());
+
 
         TextView bsicTextView = (TextView) inflateView.findViewById(R.id.bsicTextView);
-        bsicTextView.setText(mCell.GetBsic());
+        if(mCell.GetBsic() != null)
+            bsicTextView.setText(mCell.GetBsic());
+
 
         TextView cidTextView = (TextView) inflateView.findViewById(R.id.cidTextView);
-        cidTextView.setText(mCell.GetCid());
+        if(mCell.GetCid() != null)
+            cidTextView.setText(mCell.GetCid());
+
 
         TextView lacTextView = (TextView) inflateView.findViewById(R.id.lacTextView);
-        lacTextView.setText(mCell.GetLac());
+        if(mCell.GetLac() != null)
+            lacTextView.setText(mCell.GetLac());
+
 
         TextView mccTextView = (TextView) inflateView.findViewById(R.id.mccTextView);
-        mccTextView.setText(mCell.GetMcc());
+        if(mCell.GetMcc() != null)
+            mccTextView.setText(mCell.GetMcc());
 
         TextView mncTextView = (TextView) inflateView.findViewById(R.id.mncTextView);
-        mncTextView.setText(mCell.GetMnc());
+
+        if(mCell.GetMnc() != null)
+            mncTextView.setText(mCell.GetMnc());
 
         TextView operatorTextView = (TextView) inflateView.findViewById(R.id.operatorTextView);
-        operatorTextView.setText(mCell.GetNetworkOperator());
+        if(mCell.GetNetworkOperator() != null)
+            operatorTextView.setText(mCell.GetNetworkOperator());
 
         TextView asuTextView = (TextView) inflateView.findViewById(R.id.asuTextVIew);
-        asuTextView.setText(mCell.GetAsuLevel());
+        if(mCell.GetAsuLevel() != null)
+            asuTextView.setText(mCell.GetAsuLevel());
 
         TextView dbmTextView = (TextView) inflateView.findViewById(R.id.dbmTextView);
-        dbmTextView.setText(mCell.GetSignalDbm());
+        if(mCell.GetSignalDbm() != null)
+            dbmTextView.setText(mCell.GetSignalDbm());
 
         TextView levelTextView = (TextView) inflateView.findViewById(R.id.siglevelTextView);
-        levelTextView.setText(mCell.GetSignalLevel());
+        if(mCell.GetSignalLevel() != null)
+            levelTextView.setText(mCell.GetSignalLevel());
 
         TextView timingTextView = (TextView) inflateView.findViewById(R.id.timingTextView);
-        timingTextView.setText(mCell.GetTimingAdvance());
+        if(mCell.GetTimingAdvance() != null)
+            timingTextView.setText(mCell.GetTimingAdvance());
 
 
 
         TextView latTextView = (TextView) inflateView.findViewById(R.id.latTextView);
-        latTextView.setText(mCell.GetCellLat());
+        if(mCell.GetCellLat() != null)
+            latTextView.setText(mCell.GetCellLat());
 
 
         TextView longTextView = (TextView) inflateView.findViewById(R.id.longTextView);
-        longTextView.setText(mCell.GetCellLong());
+        if(mCell.GetCellLong() != null)
+            longTextView.setText(mCell.GetCellLong());
 
         TextView addressTextView = (TextView) inflateView.findViewById(R.id.addressTextView);
-        if(mCell.getmCellStatus() != "WARNING")
+        if(mCell.getmCellStatus() != "WARNING" && mCell.getmCellStatus() !=null)
             addressTextView.setText(mCell.GetCellAddress());
         else
             addressTextView.setText(R.string.alert);
