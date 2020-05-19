@@ -8,7 +8,7 @@ import android.telephony.TelephonyManager;
 
 import androidx.annotation.RequiresApi;
 
-public class SIMController {
+public class  SIMController {
     //region Constructor
     public SIMController(Context mContext) {
         this.mContext = mContext;
