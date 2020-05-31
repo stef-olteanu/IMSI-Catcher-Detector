@@ -88,10 +88,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Licenta/Documentatie Licenta Olteanu Stefan.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Licenta/Documentatie Licenta Olteanu Stefan.docx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controller/SIMController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controller/SIMController.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
