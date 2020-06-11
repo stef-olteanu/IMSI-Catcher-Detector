@@ -62,7 +62,7 @@
     <string name="CELLINFODETAILS">Current Cell Info</string>
     <string name="SEECELLMAP">Cell Map</string>
     <string name="ANOTHERDETAILS">Other details</string>
-    <string name="InfOpt">Options and info</string>
+    <string name="InfOpt">Options</string>
     <string name="GOOD">GOOD</string>
     <string name="WARNING">WARNING</string>
     <string name="ALERT">ALERT</string>
