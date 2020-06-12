@@ -56,6 +56,9 @@ public class NetworkController {
         String typeProvider = "Necunoscut";
 
         switch (providerType) {
+            case 16:
+                typeProvider = "GSM";
+                break;
             case 7:
                 typeProvider = "1xRTT";
                 break;

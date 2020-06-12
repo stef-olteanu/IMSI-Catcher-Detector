@@ -26,7 +26,6 @@ public class ConectivityChecker {
 
     //region Constructor
     public ConectivityChecker() {
-        this.mWifiManager = (WifiManager) GlobalMainContext.getMainContext().getApplicationContext().getSystemService(Context.WIFI_SERVICE);
         this.mTelephonyManager =  (TelephonyManager) GlobalMainContext.getMainContext().getSystemService(Context.TELEPHONY_SERVICE);
     }
     //endregion
@@ -43,7 +42,6 @@ public class ConectivityChecker {
                     connectivityCheckCallBack.onCheckCompleted(new CheckerResponse(MConstants.TEST_PASSED_RO));
                 }
                 else {
-                    mWifiManager.setWifiEnabled(true);
                     connectivityCheckCallBack.onCheckCompleted(new CheckerResponse(MConstants.TEST_FAILED_RO));
                 }
 
