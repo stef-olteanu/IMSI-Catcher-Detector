@@ -40,8 +40,8 @@ public class ResponseChecker {
 
     public void checkIfPopup(CheckerManager checkerManager, NavigationView navigationView, FragmentManager fragmentManager) {
         if(checkerManager.getmCheckerResponseManager().getmOverallResponse().getmCheckingStatus().equals(MConstants.OVERALL_FAILED_RO)) {
-            CellImsiCatcherPopUpDialog cellImsiCatcherPopUpDialog = new CellImsiCatcherPopUpDialog(checkerManager, navigationView, fragmentManager);
-            cellImsiCatcherPopUpDialog.show(fragmentManager, "checkerpopup");
+                CellImsiCatcherPopUpDialog cellImsiCatcherPopUpDialog = new CellImsiCatcherPopUpDialog(checkerManager, navigationView, fragmentManager);
+                cellImsiCatcherPopUpDialog.show(fragmentManager, "checkerpopup");
         }
     }
     //endregion
