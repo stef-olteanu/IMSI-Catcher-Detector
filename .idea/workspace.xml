@@ -89,19 +89,18 @@
   <component name="ChangeListManager">
     <list default="true" id="c4da1ef1-4cae-456b-9726-821e88684adb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_17_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_21_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_firestore_21_1_1_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Licenta/Reguli redactare si altele/Prezentare diploma&amp;disertatie.docx" beforeDir="false" afterPath="$PROJECT_DIR$/Licenta/Reguli redactare si altele/Prezentare diploma&amp;disertatie.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Licenta/Reguli redactare si altele/~$ezentare diploma&amp;disertatie.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Checkers/ResponseChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Checkers/ResponseChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FirstActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/licentav00/FirstActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="GSM9X18922W06488" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Samsung_S20_Ultra_API_29" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -315,38 +314,46 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="279" key="GridCell.Tab.0.bottom" timestamp="1591952983945">
+    <state width="1323" height="276" key="GridCell.Tab.0.bottom" timestamp="1593861305528">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.bottom/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952983945" />
-    <state width="1877" height="279" key="GridCell.Tab.0.center" timestamp="1591952983945">
+    <state width="1323" height="276" key="GridCell.Tab.0.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1593861305528" />
+    <state width="1323" height="276" key="GridCell.Tab.0.center" timestamp="1593861305528">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.center/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952983945" />
-    <state width="1877" height="279" key="GridCell.Tab.0.left" timestamp="1591952983945">
+    <state width="1323" height="276" key="GridCell.Tab.0.center/0.40.1920.1040@0.40.1920.1040" timestamp="1593861305528" />
+    <state width="1323" height="276" key="GridCell.Tab.0.left" timestamp="1593861305528">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.left/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952983945" />
-    <state width="1877" height="279" key="GridCell.Tab.0.right" timestamp="1591952983945">
+    <state width="1323" height="276" key="GridCell.Tab.0.left/0.40.1920.1040@0.40.1920.1040" timestamp="1593861305528" />
+    <state width="1323" height="276" key="GridCell.Tab.0.right" timestamp="1593861305528">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="279" key="GridCell.Tab.0.right/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952983945" />
-    <state width="1877" height="239" key="GridCell.Tab.1.bottom" timestamp="1591952650494">
+    <state width="1323" height="276" key="GridCell.Tab.0.right/0.40.1920.1040@0.40.1920.1040" timestamp="1593861305528" />
+    <state width="1323" height="237" key="GridCell.Tab.1.bottom" timestamp="1593861205862">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="239" key="GridCell.Tab.1.bottom/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952650494" />
-    <state width="1877" height="239" key="GridCell.Tab.1.center" timestamp="1591952650494">
+    <state width="1323" height="237" key="GridCell.Tab.1.bottom/0.40.1920.1040@0.40.1920.1040" timestamp="1593861205862" />
+    <state width="1323" height="237" key="GridCell.Tab.1.center" timestamp="1593861205862">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="239" key="GridCell.Tab.1.center/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952650494" />
-    <state width="1877" height="239" key="GridCell.Tab.1.left" timestamp="1591952650494">
+    <state width="1323" height="237" key="GridCell.Tab.1.center/0.40.1920.1040@0.40.1920.1040" timestamp="1593861205862" />
+    <state width="1323" height="237" key="GridCell.Tab.1.left" timestamp="1593861205862">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="239" key="GridCell.Tab.1.left/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952650494" />
-    <state width="1877" height="239" key="GridCell.Tab.1.right" timestamp="1591952650494">
+    <state width="1323" height="237" key="GridCell.Tab.1.left/0.40.1920.1040@0.40.1920.1040" timestamp="1593861205862" />
+    <state width="1323" height="237" key="GridCell.Tab.1.right" timestamp="1593861205862">
       <screen x="0" y="40" width="1920" height="1040" />
     </state>
     <state width="1877" height="239" key="GridCell.Tab.1.right/0.40.1920.1040/1920.62.1680.1010@0.40.1920.1040" timestamp="1591952650494" />
+    <state width="1323" height="237" key="GridCell.Tab.1.right/0.40.1920.1040@0.40.1920.1040" timestamp="1593861205862" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -378,8 +385,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FirstActivity.java</url>
-          <line>66</line>
-          <option name="timeStamp" value="195" />
+          <line>47</line>
+          <option name="timeStamp" value="196" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/example/licentav00/FirstActivity.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
